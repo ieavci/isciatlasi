@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;1,400&display=swap');
+
+:root {
+    --lacivert: #222831;
+    --gri: #393E46;
+    --mavi: #00ADB5;
+    --beyaz: #EEEEEE;
+    --normal-font: 'Ubuntu', serif;
+}
+
+body {
+    background-color: var(--beyaz);
+}
+
+
+
+
+
+/* harita*/
+
+
+#map {
+    width: 1050px;
+    height: 620px;
+    position: relative;
+    margin: auto;
+}
+
+#map svg {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+}
+
+svg>a {
+    cursor: pointer;
+    display: block;
+}
+
+
+
+#sehir {
+    font-size: 10px;
+    text-align: center;
+    margin-top: 25px;
+    color: #666;
+    
+}
+
+.harita .container{
+    
+}
+
+/* harita sonu*/

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;1,400&display=swap');
+:root {
+    --lacivert: #222831;
+    --gri: #393E46;
+    --mavi: #00ADB5;
+    --beyaz: #EEEEEE;
+    --normal-font: 'Ubuntu', serif;
+}
+
+body {
+    background-color: var(--beyaz);
+}
+
+nav {
+    background-color: var(--lacivert);
+    font-family: var(--normal-font);
+}
+
+.navbar-brand {
+    color: var(--beyaz);
+    transition: color 0.5s ease
+}
+
+.navbar-brand:hover {
+    color: var(--mavi);
+}
+
+.nav-link {
+    color: var(--beyaz);
+    font-weight: normal;
+}
+
+.nav-link:hover {
+    color: var(--mavi);
+
+}
