@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labor Rights</title>
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css"> 
+    <!-- fontawesome-->
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/index.style.css">
+    
+
+    
+    <link rel="stylesheet" type="text/css" href="harita/css/normalize.css">
+    
+    <link rel="stylesheet" type="text/css" href="harita/css/jquery.qtip.min.css">
+    
+    
+    
+    <script type="text/javascript" src="harita/js/jquery-1.8.0.min.js"></script>
+    
+    <script type="text/javascript" src="harita/js/raphael-min.js"></script>
+    
+    <script type="text/javascript" src="harita/js/paths.js"></script>
+    
+    <script type="text/javascript" src="harita/js/turkiye.js?v=123"></script>
+    
+    <script type="text/javascript" src="harita/js/jquery.qtip.min.js"></script>
+    
+    <script type="text/javascript">
+    
+        $(function(){
+    
+            $("#map svg path").hover(
+    
+              function() {
+    
+                var id=$(this).attr("id");
+    
+                $("#sehir").text(id);
+    
+             });
+    
+        })
+    
+    </script>
+
+
+
+</head>
+
+<body>
+
+
+    
+
+    <%- include("../partials/nav") %>
+
+
+    <section class="harita">
+        <div class="container">
+            <div class="">
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- jquery -->
+<script src="js/code.jquery.com_jquery-3.7.1.js"></script>
+<!-- isotop js-->
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<!-- Bootstrap js-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+<!-- custom js -->
+<script src="js/script.js"></script>

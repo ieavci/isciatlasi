@@ -1,0 +1,31 @@
+{
+  "name": "labor-rights",
+  "version": "1.0.0",
+  "description": "tr- VTYS dersi kapsamında geliştirilen web projesi.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ieavci/Labor-Rights.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ieavci/Labor-Rights/issues"
+  },
+  "homepage": "https://github.com/ieavci/Labor-Rights#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
