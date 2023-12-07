@@ -1,23 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
+
 :root {
-    --lacivert: #222831;
-    --gri: #393E46;
-    --mavi: #00ADB5;
-    --beyaz: #EEEEEE;
-    --normal-font: 'Ubuntu', serif;
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    --red: #af0006;
+    --mavi: #346EAA;
+    --beyaz: #FFFFFF;
+
 }
 
 section .btn {
-    background-color: var(--gri);
+    background-color: var(--mavi);
     color: var(--beyaz);
     
 }
 section .btn:hover{
-    background-color: var(--mavi)!important;
+    background-color: var(--red)!important;
     color: var(--beyaz);
     
 }
 section .btn.active {
-    background-color: var(--mavi) !important;
+    background-color: var(--red) !important;
     color: var(--beyaz);
 }
 

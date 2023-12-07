@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    --red: #af0006;
+    --mavi: #346EAA;
+    --beyaz: #FFFFFF;
+    --turuncu: #EF4040;
+
+}
+
+
+
+.yasla {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#carouselExampleIndicators {
+
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+}
+
+.yasla img {
+    order: 2;
+}
+
+.yasla p {
+    order: 1;
+}
+
+.img-fluid {
+    max-width: 250px;
+    height: auto;
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+    .img-fluid {
+        max-width: 200px;
+
+    }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: red !important;
+    /* Beyaz yap */
+}
+
+.btn-ozel {
+
+    background-color: var(--turuncu);
+    color: var(--beyaz);
+}
+
+.btn-ozel:hover {
+    background-color: var(--red);
+    color: var(--beyaz);
+}
+
+.yazi {
+    text-align: center;
+}

@@ -1,10 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
+
 :root {
-    --lacivert: #222831;
-    --gri: #393E46;
-    --mavi: #00ADB5;
-    --beyaz: #EEEEEE;
-    --normal-font: 'Ubuntu', serif;
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    --red: #af0006;
+    --mavi: #346EAA;
+    --beyaz: #FFFFFF;
+    --turuncu: #EF4040;
+
 }
 
 body {
@@ -12,25 +15,49 @@ body {
 }
 
 nav {
-    background-color: var(--lacivert);
+    background-color: var(--beyaz);
     font-family: var(--normal-font);
 }
 
-.navbar-brand {
-    color: var(--beyaz);
-    transition: color 0.5s ease
+.navbar {
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
 }
 
+
+.navbar-brand {
+    color: var(--red);
+    transition: color 0.5s ease;
+    
+    
+}
+.navbar-brand img {
+    width: 55px;
+}
+
+.navbar-brand span {
+    letter-spacing: 2px;
+    font-family: var(--lg-font);
+}
+
+
 .navbar-brand:hover {
-    color: var(--mavi);
+    color: var(--turuncu);
 }
 
 .nav-link {
-    color: var(--beyaz);
+    color: var(--red);
     font-weight: normal;
+    font-size: large;
 }
 
 .nav-link:hover {
-    color: var(--mavi);
+    color: var(--turuncu);
 
+}
+
+.navbar-toggler-icon{
+    color: var(--red)!important;
+}
+.navbar-toggler{
+    color: var(--red)!important;
 }

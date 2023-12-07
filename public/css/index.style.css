@@ -52,3 +52,30 @@ svg>a {
 }
 
 /* harita sonu*/
+
+
+#offers {
+    background-color: #00ADB5;
+}
+
+
+#offers .row {
+    min-height: 60vh;
+}
+
+.offers-content span {
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.offers-content h2 {
+    font-size: 60px;
+    font-family: var(--lg-font);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) !important;
+
+}
+
+
+.offers-content btn {
+    border-color: transparent !important;
+}
