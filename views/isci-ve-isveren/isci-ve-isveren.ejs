@@ -4,15 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haklar</title>    
-    
+    <title>Labor Rights</title>
     <!-- bootstrap-->
     <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
     <!-- fontawesome-->
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/isci-ve-isveren.style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
     <script src="/libs/jquery/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="/static/css/isci-ve-isveren.style.css">
+
 
 </head>
 
@@ -20,12 +24,15 @@
 
 
 
-    <%- include('../partials/nav') %>
 
-        <div class="container mt-5">
-            <section id="navigate" class="py-5">
-                <div class="col-12 py-2">
-                    <h2>İşveren ve İşçi Hakları ile Yükümlülüklerinin Hukuki Dayanakları</h2>
+    <%- include("../partials/nav") %>
+
+        <header id="haklar-header" style="padding-top: 104px;">
+            <div class="container py-5">
+                <div class="yazi">
+                    <h3 class="text-uppercase fw-normal text-center">İşveren ve İşçİ Hakları İle Yükümlülüklerİnİn
+                        Hukukİ Dayanakları
+                    </h3>
                     <p> İşçi hakları ve işveren hakları ve yükümlülükleri konusundaki temel mevzuatımız anayasamızdır.
 
                         Bunun dışında Türkiye’nin taraf olduğu uluslararasını anlaşmalar da anayasa ve yasal arasında
@@ -48,636 +55,610 @@
                     </p>
 
                 </div>
-                <div class="row align-items-center">
-                    <div class="col-lg-12 col-md-12 py-2">
-                        <button id="sosyal-btn" class="btn w-100">Sosyal Sigortalar Ve Genel Sağlık Sigortası Kanunundan
-                            Doğan Yükümlülükler</button>
 
+
+            </div>
+
+        </header>
+
+
+
+        <div class="container py-5">
+            <div class="row text-center">
+                <div class="col-md-4 col-xl-6">
+                    <div class="card bg-c-blue order-card btn" id="sosyal-btn">
+                        <div class="card-block">
+                            <h6 class="m-b-20">Sosyal Sigortalar Ve Genel Sağlık Sigortası Kanunundan Doğan
+                                Yükümlülükler</h6>
+                        </div>
                     </div>
-                    <div class="col-lg-12 col-md-12 py-2">
-                        <button id="cezai-btn" class="btn w-100">İş Hukuku Yükümlülüklerine Uyulmamasının Hukuki ve
-                            Cezai
-                            Yaptırımları</button>
-
-                    </div>
-                    <div class="col-lg-6 col-md-12 py-2">
-                        <button id="isci-btn" class="btn w-100">İşçi Hakları</button>
-
-                    </div>
-                    <div class="col-lg-6 col-md-12 py-2">
-                        <button id="isveren-btn" class="btn w-100">İşveren Hakları</button>
-
-                    </div>
-
-
-
                 </div>
-                <div class="isveren">
-                    <div class="col-12 py-2">
-                        <h2>İşveren Hakları Nelerdir?</h2>
-                        <p>4857 sayılı İş Kanunu işçinin ve işverenin hak ve yükümlülükleri konusunu özel kanun olması
-                            nedeniyle
-                            kanununun tamamına dağıtmış ise de işçinin borçları Borçlar Kanunun 395- 400. maddeleri’ nde
-                            gösterilmiştir.
 
-                        </p>
+                <div class="col-md-4 col-xl-6">
+                    <div class="card bg-c-green order-card btn" id="cezai-btn">
+                        <div class="card-block">
+                            <h6 class="m-b-20">İş Hukuku Yükümlülüklerine Uyulmamasının Hukuki ve Cezai Yaptırımları
+                            </h6>
+                        </div>
                     </div>
-                    <div class="col-11 py-2">
-                        <ul>
-                            <li>
-                                <h3>
-                                    Bizzat çalışma borcu :
-                                </h3>
-                                <p>
-                                    ( 395. Madde)
-                                </p>
-                                <ul>
-                                    <li>Genel kural işçinin yüklendiği işi bizzat yapmasıdır.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    Özen ve sadakat borcu :
-                                </h3>
-                                <p>
-                                    ( 396. Madde)
-                                </p>
-                                <ul>
-                                    <li>İşini özenle yapmak ve işverenin haklı menfaatinin korunmasında sadakatle
-                                        davranmalıdır.</li>
-                                    <li>İşverene ait makineleri, araç ve gereçleri, teknik sistemleri, tesisleri ve
-                                        taşıtları ve kendisine teslim edilmiş olan malzemeyi özenle ve usulünce
-                                        kullanmakla
-                                        yükümlüdür. </li>
-                                    <li>Hizmet ilişkisinin devamı süresince, bir ücret karşılığında üçüncü kişiye
-                                        hizmette
-                                        bulunamaz ve özellikle kendi işvereni ile rekabete girişemez.</li>
-                                    <li>İşçi işverene ait özellikle üretim ve iş sırları gibi bilgileri gizli tutmakla
-                                        yükümlüdür. Ve bu bilgileri haksız rekabet oluşturacak şekilde kendisi için de
-                                        kullanamaz.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    Teslim ve hesap verme borcu :
-                                </h3>
-                                <p>
-                                    ( 397. Madde )
-                                </p>
+                </div>
 
-                                <ul>
-                                    <li>Üçüncü kişiden işveren için aldığı şeyleri ve özellikle paraları derhâl ona
-                                        teslim
-                                        etmek ve bunlar hakkında hesap vermekle yükümlüdür.</li>
-                                    <li>İşin görülmesinden doğan şeyleri işverene en kısa zamanda teslim etmekle
-                                        yükümlüdür.
-                                    </li>
-                                </ul>
+                <div class="col-md-4 col-xl-6">
+                    <div class="card bg-c-yellow order-card btn" id="isci-btn">
+                        <div class="card-block">
+                            <h6 class="m-b-20">İşçi Hakları Nelerdir?</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-xl-6">
+                    <div class="card bg-c-pink order-card btn" id="isveren-btn">
+                        <div class="card-block">
+                            <h6 class="m-b-20">İşveren Hakları Nelerdir?</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="isveren">
+            <div class="col-12 py-2">
+                <h2>İşveren Hakları Nelerdir?</h2>
+                <p>4857 sayılı İş Kanunu işçinin ve işverenin hak ve yükümlülükleri konusunu özel kanun olması
+                    nedeniyle
+                    kanununun tamamına dağıtmış ise de işçinin borçları Borçlar Kanunun 395- 400. maddeleri’ nde
+                    gösterilmiştir.
+
+                </p>
+            </div>
+            <div class="col-11 py-2">
+                <ul>
+                    <li>
+                        <h3>
+                            Bizzat çalışma borcu :
+                        </h3>
+                        <p>
+                            ( 395. Madde)
+                        </p>
+                        <ul>
+                            <li>Genel kural işçinin yüklendiği işi bizzat yapmasıdır.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            Özen ve sadakat borcu :
+                        </h3>
+                        <p>
+                            ( 396. Madde)
+                        </p>
+                        <ul>
+                            <li>İşini özenle yapmak ve işverenin haklı menfaatinin korunmasında sadakatle
+                                davranmalıdır.</li>
+                            <li>İşverene ait makineleri, araç ve gereçleri, teknik sistemleri, tesisleri ve
+                                taşıtları ve kendisine teslim edilmiş olan malzemeyi özenle ve usulünce
+                                kullanmakla
+                                yükümlüdür. </li>
+                            <li>Hizmet ilişkisinin devamı süresince, bir ücret karşılığında üçüncü kişiye
+                                hizmette
+                                bulunamaz ve özellikle kendi işvereni ile rekabete girişemez.</li>
+                            <li>İşçi işverene ait özellikle üretim ve iş sırları gibi bilgileri gizli tutmakla
+                                yükümlüdür. Ve bu bilgileri haksız rekabet oluşturacak şekilde kendisi için de
+                                kullanamaz.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            Teslim ve hesap verme borcu :
+                        </h3>
+                        <p>
+                            ( 397. Madde )
+                        </p>
+
+                        <ul>
+                            <li>Üçüncü kişiden işveren için aldığı şeyleri ve özellikle paraları derhâl ona
+                                teslim
+                                etmek ve bunlar hakkında hesap vermekle yükümlüdür.</li>
+                            <li>İşin görülmesinden doğan şeyleri işverene en kısa zamanda teslim etmekle
+                                yükümlüdür.
                             </li>
-                            <li>
-                                <h3>
-                                    Fazla Çalışma Borcu :
-                                </h3>
-                                <p>
-                                    ( 398. Madde )
-                                </p>
-                                <ul>
-                                    <li>Normal süreden daha fazla çalışmayı gerektiren bir işin yerine getirilmesi
-                                        zorunluluğu doğar ise ve çalışamamasını mahzur gösterek nedenleri yok ise fazla
-                                        çalışma yapmak zorundadır.</li>
-                                </ul>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            Fazla Çalışma Borcu :
+                        </h3>
+                        <p>
+                            ( 398. Madde )
+                        </p>
+                        <ul>
+                            <li>Normal süreden daha fazla çalışmayı gerektiren bir işin yerine getirilmesi
+                                zorunluluğu doğar ise ve çalışamamasını mahzur gösterek nedenleri yok ise fazla
+                                çalışma yapmak zorundadır.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            Düzenlemelere ve Talimata Uyma Borcu :
+                        </h3>
+                        <p>
+                            ( 399. Madde )
+                        </p>
+                        <ul>
+                            <li>Dürüstlük kurallarına aykırı olmamak kaydı ile, işin görülmesi ve işçilerin
+                                işyerindeki davranışlarıyla ilgili genel düzenlemelere ve özel talimatlara uymak
+                                zorundadır.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            İşçinin Kusurundan Sorumluluğu :
+                        </h3>
+                        <p>
+                            ( 400. Madde )
+                        </p>
+                        <ul>
+                            <li>İşçi, işverene kusuruyla verdiği her türlü zarardan sorumludur. Fakat
+                                sorumluluğun
+                                tayinin objektif ve subjektif durumların tamamı değerlendirilir.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            İşçinin İş Sağlığı Ve Güvenliği Tedbirlerine Uyma Borcu :
+                        </h3>
+                        <p>
+                            ( 6098 S.K. 399. Madde, 6331 S.K. 19. Madde )
+                        </p>
+                        <ul>
+                            <li>İşveren ve işveren adına hareket eden kişilerce belirlenen kurallara uymak
+                                zorundadırlar.</li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+
+
+        </div>
+        <div class="isci">
+            <div class="col-12 py-2">
+                <h2>İşçi Hakları Nelerdir?</h2>
+                <p>İşverenlerin yükümlülükleri ve işçilerin hakları konularındaki genel düzenleme bilindiği
+                    üzere İş
+                    Kanunu ve hüküm bulunmayan hallerde ise 6098 Sayılı Borçlar Kanunudur. 4857 sayılı İş
+                    Kanununda,
+                    5510 Sayılı Kanunda, Borçlar Kanununda ve genel olarak iş mevzuatının bütününde işverenlerin
+                    yükümlülükleri gösterilmiştir.
+                    <br>
+
+                    İşçinin borçlarının yanında işverenlerin yükümlülükleri doğal olarak daha geniş ve ayrıntısı
+                    ile
+                    açıklanmıştır.
+
+                </p>
+            </div>
+            <div class="col-11 py-2">
+                <ul>
+                    <li>
+                        <h3>
+                            İşverenin Ücret Ödeme Borcu
+                        </h3>
+                        <p>
+                            ( 6098 S. K. 401 – 412. Maddeleri ve 4857 S.K. 32. Ve devamı maddeleri)
+                        </p>
+                        <ul>
+                            <li>Genel kural işçinin yüklendiği işi bizzat yapmasıdır.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            İşverenin İş Araç Ve Malzemelerini Sağlama Borcu
+                        </h3>
+                        <p>
+                            ( 6098 S.K. 413. Madde )
+                        </p>
+                        <ul>
+                            <li>İşverenler işçisine işi görmesi nedeniyle kullanacağı araç ve malzemeleri vermek
+                                zorundadır.</li>
+                            <li>Buna rağmen işçinin kendine ait araçlarla iş görmesi halinde bunun karşılığı da
+                                işçiye ayrıca ödenmelidir. </li>
+                            <li>Bu halde işçinin karşılık alabilmesi için kendi araç veya aletini bu işe
+                                özgülemesi
+                                gerekmektedir</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            İşverenin İşin Görülmesinin Gerektirdiği Her Türlü Gideri Karşılama Borcu
+                        </h3>
+                        <p>
+                            (6098 S.K. 414. Madde)
+                        </p>
+
+                        <ul>
+                            <li>İşyeri dışında çalıştırmalarda işveren işçinin hayatını sürdürebilmesi için
+                                zaruri
+                                olan giderleri ödemelidir.</li>
+                            <li>Yine işin ifa edilmesinin gerektirdiği her türlü harcamayı da karşılamak
+                                zorundadır.
                             </li>
-                            <li>
-                                <h3>
-                                    Düzenlemelere ve Talimata Uyma Borcu :
-                                </h3>
-                                <p>
-                                    ( 399. Madde )
-                                </p>
-                                <ul>
-                                    <li>Dürüstlük kurallarına aykırı olmamak kaydı ile, işin görülmesi ve işçilerin
-                                        işyerindeki davranışlarıyla ilgili genel düzenlemelere ve özel talimatlara uymak
-                                        zorundadır.</li>
-                                </ul>
+                            <li>İşin görülmesinden doğan zorrunlu bir harcamanın az ya da çok işçi tarafından
+                                ödeneceğine dair anlaşmalar geçerli değildir.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            İşverenin Taşıma Araçlarının Ve Masraflarının Karşılaması Borcu
+                        </h3>
+                        <p>
+                            (6098 S.K. 415. Madde )
+                        </p>
+                        <ul>
+                            <li>İşin görüşmesi bir taşıma aracı ile sağlanması durumlarında ( satış temsilcileri
+                                gibi) bu taşıtın çalıştırılmasından ve bakımından doğan tüm masraflar ile
+                                sigorta ve
+                                vergi gibi giderleri ve aracın yıpranmasından doğan eskime payları da iş için
+                                kullanıldığı oranda işveren tarafından karşılanmalıdır.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            İşverenin İşçinin Kişiliğini Koruması Borcu
+                        </h3>
+                        <p>
+                            ( 6098 S.K. 417, 418 ve 419 )
+                        </p>
+                        <ul>
+                            <li>İşveren, hizmet ilişkisinde işçinin kişiliğini korumak ve saygı göstermek ve
+                                işyerinde dürüstlük ilkelerine uygun bir düzeni sağlamakla, özellikle işçilerin
+                                psikolojik ve cinsel tacize uğramamaları ve bu tür tacizlere uğramış olanların
+                                daha
+                                fazla zarar görmemeleri için gerekli önlemleri almakla yükümlüdür.</li>
+                            <li>İşveren, işyerinde iş sağlığı ve güvenliğinin sağlanması için gerekli her türlü
+                                önlemi almak, araç ve gereçleri noksansız bulundurmak; işçiler de iş sağlığı ve
+                                güvenliği konusunda alınan her türlü önleme uymakla yükümlüdür.</li>
+                            <li>İşverenin yukarıdaki hükümler dahil, kanuna ve sözleşmeye aykırı davranışı
+                                nedeniyle
+                                işçinin ölümü, vücut bütünlüğünün zedelenmesi veya kişilik haklarının ihlaline
+                                bağlı
+                                zararların tazmini, sözleşmeye aykırılıktan doğan sorumluluk hükümlerine
+                                tabidir.
                             </li>
-                            <li>
-                                <h3>
-                                    İşçinin Kusurundan Sorumluluğu :
-                                </h3>
-                                <p>
-                                    ( 400. Madde )
-                                </p>
-                                <ul>
-                                    <li>İşçi, işverene kusuruyla verdiği her türlü zarardan sorumludur. Fakat
-                                        sorumluluğun
-                                        tayinin objektif ve subjektif durumların tamamı değerlendirilir.</li>
-                                </ul>
+                            <li>İşçi işverenle birlikte ev düzeni içinde yaşıyorsa işveren, yeterli gıda ve
+                                uygun
+                                bir barınak ve sosyal sigortalar yardımlarından yararlanamayan işçinin bakım ve
+                                tedavisini ( iki hafta süreyle ) sağlamakla yükümlüdür. (6098 S.K. 418. Madde )
                             </li>
-                            <li>
-                                <h3>
-                                    İşçinin İş Sağlığı Ve Güvenliği Tedbirlerine Uyma Borcu :
-                                </h3>
-                                <p>
-                                    ( 6098 S.K. 399. Madde, 6331 S.K. 19. Madde )
-                                </p>
-                                <ul>
-                                    <li>İşveren ve işveren adına hareket eden kişilerce belirlenen kurallara uymak
-                                        zorundadırlar.</li>
-                                </ul>
-                            </li>
+                            <li>İşçiye ait kişisel veriler, ancak işçinin işe yatkınlığıyla ilgili veya hizmet
+                                sözleşmesinin ifası için zorunlu olduğu ölçüde kullanılabilir. (6098 S.K. 419.
+                                Madde)</li>
+                            <li>İşverenin bu yükümlülüklere aykırı hareketleri halinde kendisine karşı orta
+                                çıkan
+                                sonuca göre mobbing nedeniyle tazminat davası açılabileceği gibi, tedbirsiz ve
+                                kusurlu yönetimi nedeniyle iş kazası nedeniyle maddi ve manevi tazminat davası
+                                açılması da mümkündür.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            İşverenin Hafta Tatili ve İş Arama İzni Verme Yükümlülüğü
+                        </h3>
+                        <p>
+                            ( 6098 S.K. 421. )
+                        </p>
+                        <ul>
+                            <li>İşveren, işçiye her hafta, kural olarak pazar günü veya durum ve koşullar buna
+                                imkân
+                                vermezse, bir tam çalışma günü tatil vermekle yükümlüdür.</li>
+                            <li>İşveren, belirsiz süreli hizmet sözleşmesinin feshi halinde, bildirim süresi
+                                içinde
+                                işçiye ücretinde bir kesinti olmaksızın, günde iki saat iş arama izni vermekle
+                                yükümlüdür.</li>
+                            <li>İzin saatlerinin ve günlerinin belirlenmesinde, işyerinin ve işçinin haklı
+                                menfaatleri göz önünde tutulur.</li>
+                            <li>iş verenin bu yükümlülüğe aykırı hareketi halinde iş akdinin haklı fesih
+                                gerekçesi
+                                ile sonlandırılması, kıdem tazminatı ödemesi ve hafta tatili ücreti davası ve iş
+                                arama izni davası sonuçları ile karşılaşacaktır.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            İşverenin Yıllık İzin Verme Yükümlülüğü
+                        </h3>
+                        <p>
+                            ( 6098 S.K. 422, 423, 424 ve 425.)
+                        </p>
+                        <ul>
+                            <li>İşveren, en az bir yıl çalışmış olan işçilere yılda en az iki hafta ve onsekiz
+                                yaşından küçük işçiler ile elli yaşından büyük işçilere de en az üç hafta
+                                ücretli
+                                yıllık izin vermekle yükümlüdür.</li>
+                            <li>Yıllık ücretli izinler, kural olarak aralıksız biçimde verilir; ancak tarafların
+                                anlaşmasıyla ikiye bölünerek de kullanılabilir.</li>
+                            <li>İşveren, yıllık ücretli izin tarihlerini, işyerinin veya ev düzeninin
+                                menfaatleriyle
+                                bağdaştığı ölçüde, işçinin isteklerini göz önünde tutarak belirler.</li>
+                            <li>İşveren, yıllık ücretli iznini kullanan her işçiye, yıllık ücretli izin süresine
+                                ilişkin ücretini, ilgili işçinin izne başlamasından önce peşin olarak ödemek
+                                veya
+                                avans olarak vermekle yükümlüdür.</li>
+                            <li>İşçi, hizmet ilişkisi devam ettiği sürece, işverenden alacağı para ve başka
+                                menfaatler karşılığında yıllık ücretli izin hakkından feragat edemez.</li>
+                            <li>Hizmet sözleşmesinin herhangi bir sebeple sona ermesi hâlinde, işçinin hak
+                                kazanıp
+                                da kullanamadığı yıllık izin sürelerine ait ücreti, sözleşmenin sona erdiği
+                                tarihteki ücreti üzerinden kendisine veya hak sahiplerine ödenir.</li>
+                            <li>Yıllık izin ücretine ilişkin zaman aşımı, hizmet sözleşmesinin sona erdiği
+                                tarihte
+                                işlemeye başlar.</li>
+                            <li>Uzun süre yıllık izin verilmemesi işçi yönünden haklı fesih gerekçesi
+                                oluşturmaktadır.</li>
+                            <li>Buna bağlı olarak da işverenliğin bu hak kapsamında yapması gereken
+                                yükümlülükleri
+                                yerine getirmemesi halinde iş akdinin haklı nedenlerle feshine bağlı kıdem
+                                tazminatı
+                                davası ve kullandırılmayan izin süreleri için de yıllık izin ücreti davası
+                                açılacaktır.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            İşverenin Hizmet Belgesi Verme Yükümlülüğü
+                        </h3>
+                        <p>
+                            ( 6098 S.K. 421. )
+                        </p>
+                        <ul>
+                            <li>İşveren, işçinin isteği üzerine her zaman, işin türünü ve süresini içeren bir
+                                hizmet
+                                belgesi vermekle yükümlüdür.</li>
+                            <li>İşçinin açıkça istemde bulunması hâlinde, hizmet belgesinde onun işgörmedeki
+                                becerisi ile tutum ve davranışları da belirtilir.</li>
+                            <li>Hizmet belgesinin zamanında verilmemesinden veya belgede doğru olmayan bilgiler
+                                (
+                                İşten Ayrılış Nedeni bulunmasından zarar gören işçi veya işçiyi işe alan yeni
+                                işveren, eski işverenden tazminat isteyebilir.)</li>
 
                         </ul>
-                    </div>
-
-
-                </div>
-                <div class="isci">
-                    <div class="col-12 py-2">
-                        <h2>İşçi Hakları Nelerdir?</h2>
-                        <p>İşverenlerin yükümlülükleri ve işçilerin hakları konularındaki genel düzenleme bilindiği
-                            üzere İş
-                            Kanunu ve hüküm bulunmayan hallerde ise 6098 Sayılı Borçlar Kanunudur. 4857 sayılı İş
-                            Kanununda,
-                            5510 Sayılı Kanunda, Borçlar Kanununda ve genel olarak iş mevzuatının bütününde işverenlerin
-                            yükümlülükleri gösterilmiştir.
-                            <br>
-
-                            İşçinin borçlarının yanında işverenlerin yükümlülükleri doğal olarak daha geniş ve ayrıntısı
-                            ile
-                            açıklanmıştır.
-
+                    </li>
+                    <li>
+                        <h3>
+                            İşçinin Telif Hakları
+                        </h3>
+                        <p>
+                            ( 6098 S.K. 427. )
                         </p>
-                    </div>
-                    <div class="col-11 py-2">
                         <ul>
-                            <li>
-                                <h3>
-                                    İşverenin Ücret Ödeme Borcu
-                                </h3>
-                                <p>
-                                    ( 6098 S. K. 401 – 412. Maddeleri ve 4857 S.K. 32. Ve devamı maddeleri)
-                                </p>
-                                <ul>
-                                    <li>Genel kural işçinin yüklendiği işi bizzat yapmasıdır.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    İşverenin İş Araç Ve Malzemelerini Sağlama Borcu
-                                </h3>
-                                <p>
-                                    ( 6098 S.K. 413. Madde )
-                                </p>
-                                <ul>
-                                    <li>İşverenler işçisine işi görmesi nedeniyle kullanacağı araç ve malzemeleri vermek
-                                        zorundadır.</li>
-                                    <li>Buna rağmen işçinin kendine ait araçlarla iş görmesi halinde bunun karşılığı da
-                                        işçiye ayrıca ödenmelidir. </li>
-                                    <li>Bu halde işçinin karşılık alabilmesi için kendi araç veya aletini bu işe
-                                        özgülemesi
-                                        gerekmektedir</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    İşverenin İşin Görülmesinin Gerektirdiği Her Türlü Gideri Karşılama Borcu
-                                </h3>
-                                <p>
-                                    (6098 S.K. 414. Madde)
-                                </p>
-
-                                <ul>
-                                    <li>İşyeri dışında çalıştırmalarda işveren işçinin hayatını sürdürebilmesi için
-                                        zaruri
-                                        olan giderleri ödemelidir.</li>
-                                    <li>Yine işin ifa edilmesinin gerektirdiği her türlü harcamayı da karşılamak
-                                        zorundadır.
-                                    </li>
-                                    <li>İşin görülmesinden doğan zorrunlu bir harcamanın az ya da çok işçi tarafından
-                                        ödeneceğine dair anlaşmalar geçerli değildir.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    İşverenin Taşıma Araçlarının Ve Masraflarının Karşılaması Borcu
-                                </h3>
-                                <p>
-                                    (6098 S.K. 415. Madde )
-                                </p>
-                                <ul>
-                                    <li>İşin görüşmesi bir taşıma aracı ile sağlanması durumlarında ( satış temsilcileri
-                                        gibi) bu taşıtın çalıştırılmasından ve bakımından doğan tüm masraflar ile
-                                        sigorta ve
-                                        vergi gibi giderleri ve aracın yıpranmasından doğan eskime payları da iş için
-                                        kullanıldığı oranda işveren tarafından karşılanmalıdır.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    İşverenin İşçinin Kişiliğini Koruması Borcu
-                                </h3>
-                                <p>
-                                    ( 6098 S.K. 417, 418 ve 419 )
-                                </p>
-                                <ul>
-                                    <li>İşveren, hizmet ilişkisinde işçinin kişiliğini korumak ve saygı göstermek ve
-                                        işyerinde dürüstlük ilkelerine uygun bir düzeni sağlamakla, özellikle işçilerin
-                                        psikolojik ve cinsel tacize uğramamaları ve bu tür tacizlere uğramış olanların
-                                        daha
-                                        fazla zarar görmemeleri için gerekli önlemleri almakla yükümlüdür.</li>
-                                    <li>İşveren, işyerinde iş sağlığı ve güvenliğinin sağlanması için gerekli her türlü
-                                        önlemi almak, araç ve gereçleri noksansız bulundurmak; işçiler de iş sağlığı ve
-                                        güvenliği konusunda alınan her türlü önleme uymakla yükümlüdür.</li>
-                                    <li>İşverenin yukarıdaki hükümler dahil, kanuna ve sözleşmeye aykırı davranışı
-                                        nedeniyle
-                                        işçinin ölümü, vücut bütünlüğünün zedelenmesi veya kişilik haklarının ihlaline
-                                        bağlı
-                                        zararların tazmini, sözleşmeye aykırılıktan doğan sorumluluk hükümlerine
-                                        tabidir.
-                                    </li>
-                                    <li>İşçi işverenle birlikte ev düzeni içinde yaşıyorsa işveren, yeterli gıda ve
-                                        uygun
-                                        bir barınak ve sosyal sigortalar yardımlarından yararlanamayan işçinin bakım ve
-                                        tedavisini ( iki hafta süreyle ) sağlamakla yükümlüdür. (6098 S.K. 418. Madde )
-                                    </li>
-                                    <li>İşçiye ait kişisel veriler, ancak işçinin işe yatkınlığıyla ilgili veya hizmet
-                                        sözleşmesinin ifası için zorunlu olduğu ölçüde kullanılabilir. (6098 S.K. 419.
-                                        Madde)</li>
-                                    <li>İşverenin bu yükümlülüklere aykırı hareketleri halinde kendisine karşı orta
-                                        çıkan
-                                        sonuca göre mobbing nedeniyle tazminat davası açılabileceği gibi, tedbirsiz ve
-                                        kusurlu yönetimi nedeniyle iş kazası nedeniyle maddi ve manevi tazminat davası
-                                        açılması da mümkündür.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    İşverenin Hafta Tatili ve İş Arama İzni Verme Yükümlülüğü
-                                </h3>
-                                <p>
-                                    ( 6098 S.K. 421. )
-                                </p>
-                                <ul>
-                                    <li>İşveren, işçiye her hafta, kural olarak pazar günü veya durum ve koşullar buna
-                                        imkân
-                                        vermezse, bir tam çalışma günü tatil vermekle yükümlüdür.</li>
-                                    <li>İşveren, belirsiz süreli hizmet sözleşmesinin feshi halinde, bildirim süresi
-                                        içinde
-                                        işçiye ücretinde bir kesinti olmaksızın, günde iki saat iş arama izni vermekle
-                                        yükümlüdür.</li>
-                                    <li>İzin saatlerinin ve günlerinin belirlenmesinde, işyerinin ve işçinin haklı
-                                        menfaatleri göz önünde tutulur.</li>
-                                    <li>iş verenin bu yükümlülüğe aykırı hareketi halinde iş akdinin haklı fesih
-                                        gerekçesi
-                                        ile sonlandırılması, kıdem tazminatı ödemesi ve hafta tatili ücreti davası ve iş
-                                        arama izni davası sonuçları ile karşılaşacaktır.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    İşverenin Yıllık İzin Verme Yükümlülüğü
-                                </h3>
-                                <p>
-                                    ( 6098 S.K. 422, 423, 424 ve 425.)
-                                </p>
-                                <ul>
-                                    <li>İşveren, en az bir yıl çalışmış olan işçilere yılda en az iki hafta ve onsekiz
-                                        yaşından küçük işçiler ile elli yaşından büyük işçilere de en az üç hafta
-                                        ücretli
-                                        yıllık izin vermekle yükümlüdür.</li>
-                                    <li>Yıllık ücretli izinler, kural olarak aralıksız biçimde verilir; ancak tarafların
-                                        anlaşmasıyla ikiye bölünerek de kullanılabilir.</li>
-                                    <li>İşveren, yıllık ücretli izin tarihlerini, işyerinin veya ev düzeninin
-                                        menfaatleriyle
-                                        bağdaştığı ölçüde, işçinin isteklerini göz önünde tutarak belirler.</li>
-                                    <li>İşveren, yıllık ücretli iznini kullanan her işçiye, yıllık ücretli izin süresine
-                                        ilişkin ücretini, ilgili işçinin izne başlamasından önce peşin olarak ödemek
-                                        veya
-                                        avans olarak vermekle yükümlüdür.</li>
-                                    <li>İşçi, hizmet ilişkisi devam ettiği sürece, işverenden alacağı para ve başka
-                                        menfaatler karşılığında yıllık ücretli izin hakkından feragat edemez.</li>
-                                    <li>Hizmet sözleşmesinin herhangi bir sebeple sona ermesi hâlinde, işçinin hak
-                                        kazanıp
-                                        da kullanamadığı yıllık izin sürelerine ait ücreti, sözleşmenin sona erdiği
-                                        tarihteki ücreti üzerinden kendisine veya hak sahiplerine ödenir.</li>
-                                    <li>Yıllık izin ücretine ilişkin zaman aşımı, hizmet sözleşmesinin sona erdiği
-                                        tarihte
-                                        işlemeye başlar.</li>
-                                    <li>Uzun süre yıllık izin verilmemesi işçi yönünden haklı fesih gerekçesi
-                                        oluşturmaktadır.</li>
-                                    <li>Buna bağlı olarak da işverenliğin bu hak kapsamında yapması gereken
-                                        yükümlülükleri
-                                        yerine getirmemesi halinde iş akdinin haklı nedenlerle feshine bağlı kıdem
-                                        tazminatı
-                                        davası ve kullandırılmayan izin süreleri için de yıllık izin ücreti davası
-                                        açılacaktır.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    İşverenin Hizmet Belgesi Verme Yükümlülüğü
-                                </h3>
-                                <p>
-                                    ( 6098 S.K. 421. )
-                                </p>
-                                <ul>
-                                    <li>İşveren, işçinin isteği üzerine her zaman, işin türünü ve süresini içeren bir
-                                        hizmet
-                                        belgesi vermekle yükümlüdür.</li>
-                                    <li>İşçinin açıkça istemde bulunması hâlinde, hizmet belgesinde onun işgörmedeki
-                                        becerisi ile tutum ve davranışları da belirtilir.</li>
-                                    <li>Hizmet belgesinin zamanında verilmemesinden veya belgede doğru olmayan bilgiler
-                                        (
-                                        İşten Ayrılış Nedeni bulunmasından zarar gören işçi veya işçiyi işe alan yeni
-                                        işveren, eski işverenden tazminat isteyebilir.)</li>
-
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    İşçinin Telif Hakları
-                                </h3>
-                                <p>
-                                    ( 6098 S.K. 427. )
-                                </p>
-                                <ul>
-                                    <li>Buna göre 5846 Sayılı Fikir Ve Sanat Eserleri Kanunun 18. Maddesi gereğince de
-                                        iş
-                                        sözleşmesinde aksi bir şart öngörülmemiş ise ve ortaya çıkan eser işçinin
-                                        görevine
-                                        giren bir alanda meydana çıkarılmış ise memur, hizmetli ve işçilerin işlerini
-                                        görürken meydana getirdikleri eserler üzerindeki haklar bunları çalıştıran veya
-                                        tayin edenlerce kullanılır.</li>
-                                    <li>Buna karşılık işçinin görev tanımına girmeyen bir iş nedenleriyle üretilen bir
-                                        eserde FSEK anlamındaki bütün haklar işçiye aittir.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    İşverenin Eşit Davranma Borcu
-                                </h3>
-                                <p>
-                                    ( 4857 S.K. 5. )
-                                </p>
-                                <ul>
-                                    <li>İş ilişkisinde dil, ırk, renk, cinsiyet, engellilik, siyasal düşünce, felsefî
-                                        inanç,
-                                        din ve mezhep ve benzeri sebeplere dayalı ayrım yapılamaz.</li>
-                                    <li>İşveren, esaslı sebepler olmadıkça tam süreli çalışan işçi karşısında kısmî
-                                        süreli
-                                        çalışan işçiye, belirsiz süreli çalışan işçi karşısında belirli süreli çalışan
-                                        işçiye farklı işlem yapamaz.</li>
-                                    <li>İşveren, biyolojik veya işin niteliğine ilişkin sebepler zorunlu kılmadıkça, bir
-                                        işçiye, iş sözleşmesinin yapılmasında, şartlarının oluşturulmasında,
-                                        uygulanmasında
-                                        ve sona ermesinde, cinsiyet veya gebelik nedeniyle doğrudan veya dolaylı farklı
-                                        işlem yapamaz.</li>
-                                    <li>Aynı veya eşit değerde bir iş için cinsiyet nedeniyle daha düşük ücret
-                                        kararlaştırılamaz. İşçinin cinsiyeti nedeniyle özel koruyucu hükümlerin
-                                        uygulanması,
-                                        daha düşük bir ücretin uygulanmasını haklı kılmaz.</li>
-                                    <li>İş ilişkisinde veya sona ermesinde yukarıdaki fıkra hükümlerine aykırı
-                                        davranıldığında işçi, dört aya kadar ücreti tutarındaki uygun bir tazminattan
-                                        başka
-                                        yoksun bırakıldığı haklarını da talep edebilir. 2821 sayılı Sendikalar Kanununun
-                                        31
-                                        inci maddesi hükümleri saklıdır.</li>
-                                    <li>20 nci madde hükümleri saklı kalmak üzere işverenin yukarıdaki fıkra hükümlerine
-                                        aykırı davrandığını işçi ispat etmekle yükümlüdür. Ancak, işçi bir ihlalin
-                                        varlığı
-                                        ihtimalini güçlü bir biçimde gösteren bir durumu ortaya koyduğunda, işveren
-                                        böyle
-                                        bir ihlalin mevcut olmadığını ispat etmekle yükümlü olur.</li>
-                                    <li>İşverenin bu maddede gösterilen yükümlülüklere aykırı hareketleri halinde
-                                        işçinin
-                                        haklı fesih yoluna başvurarak, kıdem tazminatı davası ve şartlarını taşıması
-                                        halinde
-                                        de eşit davranmama tazminatı davası açma hakları bulunmaktadır.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    İşverenin İş Sağlığı ve Güvenliği Tedbirlerine Uyma Borcu
-                                </h3>
-                                <p>
-                                    (6098 S.K. 417. Maddesi, Ve 6331 sayılı İş Sağlığı ve Güvenliği Kanununda
-                                    gösterilmiştir. )
-                                </p>
-                                <ul>
-                                    <li>İşveren, çalışanların işle ilgili sağlık ve güvenliğini sağlamakla yükümlüdür.
-                                    </li>
-                                    <li>Mesleki risklerin önlenmesi, eğitim ve bilgi verilmesi dâhil her türlü tedbirin
-                                        alınması, organizasyonun yapılması, gerekli araç ve gereçlerin sağlanması,
-                                        sağlık ve
-                                        güvenlik tedbirlerinin değişen şartlara uygun hale getirilmesi ve mevcut durumun
-                                        iyileştirilmesi için çalışmalar yapar.</li>
-                                    <li>İş yerinde alınan iş sağlığı ve güvenliği tedbirlerine uyulup uyulmadığını
-                                        izler,
-                                        denetler ve uygunsuzlukların giderilmesini sağlar.</li>
-                                    <li>Risk değerlendirmesi yapar veya yaptırır.</li>
-                                    <li>Çalışana görev verirken, çalışanın sağlık ve güvenlik yönünden işe uygunluğunu
-                                        göz
-                                        önüne alır.</li>
-                                    <li>Yeterli bilgi ve talimat verilenler dışındaki çalışanların hayati ve özel
-                                        tehlike
-                                        bulunan yerlere girmemesi için gerekli tedbirleri alır.</li>
-                                    <li>İşyeri dışındaki uzman kişi ve kuruluşlardan hizmet alınması, işverenin
-                                        sorumluluklarını ortadan kaldırmaz.</li>
-                                    <li>Çalışanların iş sağlığı ve güvenliği alanındaki yükümlülükleri, işverenin
-                                        sorumluluklarını etkilemez.</li>
-                                    <li>İşveren, iş sağlığı ve güvenliği tedbirlerinin maliyetini çalışanlara
-                                        yansıtamaz.
-                                    </li>
-                                    <li>İş kazası bildirilmesi ile ilgili yükümlülükler.</li>
-                                    <li>İşverenin bu kapsamında gösterilen yükümlülüklere aykırı hareketi halinde
-                                        Mobbing
-                                        Nedeniyle Tazminat Davası açılabileceği gibi yine sonuca göre iş kazası
-                                        nedeniyle
-                                        maddi ve manevi tazminat davası açılabilecektir.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    İşverenin Hafta Tatili ve İş Arama İzni Verme Yükümlülüğü
-                                </h3>
-                                <p>
-                                    ( 6098 S.K. 421. )
-                                </p>
-                                <ul>
-                                    <li>İşveren, işçiye her hafta, kural olarak pazar günü veya durum ve koşullar buna
-                                        imkân
-                                        vermezse, bir tam çalışma günü tatil vermekle yükümlüdür.</li>
-                                    <li>İşveren, belirsiz süreli hizmet sözleşmesinin feshi halinde, bildirim süresi
-                                        içinde
-                                        işçiye ücretinde bir kesinti olmaksızın, günde iki saat iş arama izni vermekle
-                                        yükümlüdür.</li>
-                                    <li>İzin saatlerinin ve günlerinin belirlenmesinde, işyerinin ve işçinin haklı
-                                        menfaatleri göz önünde tutulur.</li>
-                                    <li>iş verenin bu yükümlülüğe aykırı hareketi halinde iş akdinin haklı fesih
-                                        gerekçesi
-                                        ile sonlandırılması, kıdem tazminatı ödemesi ve hafta tatili ücreti davası ve iş
-                                        arama izni davası sonuçları ile karşılaşacaktır.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <h3>
-                                    İşverenin Hafta Tatili ve İş Arama İzni Verme Yükümlülüğü
-                                </h3>
-                                <p>
-                                    ( 6098 S.K. 421. )
-                                </p>
-                                <ul>
-                                    <li>İşveren, işçiye her hafta, kural olarak pazar günü veya durum ve koşullar buna
-                                        imkân
-                                        vermezse, bir tam çalışma günü tatil vermekle yükümlüdür.</li>
-                                    <li>İşveren, belirsiz süreli hizmet sözleşmesinin feshi halinde, bildirim süresi
-                                        içinde
-                                        işçiye ücretinde bir kesinti olmaksızın, günde iki saat iş arama izni vermekle
-                                        yükümlüdür.</li>
-                                    <li>İzin saatlerinin ve günlerinin belirlenmesinde, işyerinin ve işçinin haklı
-                                        menfaatleri göz önünde tutulur.</li>
-                                    <li>iş verenin bu yükümlülüğe aykırı hareketi halinde iş akdinin haklı fesih
-                                        gerekçesi
-                                        ile sonlandırılması, kıdem tazminatı ödemesi ve hafta tatili ücreti davası ve iş
-                                        arama izni davası sonuçları ile karşılaşacaktır.</li>
-                                </ul>
-                            </li>
-
-
+                            <li>Buna göre 5846 Sayılı Fikir Ve Sanat Eserleri Kanunun 18. Maddesi gereğince de
+                                iş
+                                sözleşmesinde aksi bir şart öngörülmemiş ise ve ortaya çıkan eser işçinin
+                                görevine
+                                giren bir alanda meydana çıkarılmış ise memur, hizmetli ve işçilerin işlerini
+                                görürken meydana getirdikleri eserler üzerindeki haklar bunları çalıştıran veya
+                                tayin edenlerce kullanılır.</li>
+                            <li>Buna karşılık işçinin görev tanımına girmeyen bir iş nedenleriyle üretilen bir
+                                eserde FSEK anlamındaki bütün haklar işçiye aittir.</li>
                         </ul>
-                    </div>
-                </div>
-                <div class="sosyal">
-                    <h2>Sosyal Sigortalar Ve Genel Sağlık Sigortası Kanunundan
-                        Doğan Yükümlülükler</h2>
-                    <ul>
-                        <li>Sosyal Güvenlik Hukuku Konusuna girmekle birlikte işçiye iş aktini feshetme hakkı vermesi
-                            açısından başlık olarak anlatılmıştır. Gerçek duruma aykırı sigorta giriş ve çıkış işlemleri
-                            yapmak, prime esas kazancı düşük göstermek gibi hallerde işçinin hakları da zedelendiğinden
-                            bu
-                            durum işçiye iş aktini haklı nedenlerle fesih hakkı verecektir.</li>
-                        <li>İşe Giriş Bildirgesi Vermek ( 5510 S.K. 7. Ve 8. Maddesi)</li>
-                        <li>Prime Esas Kazancı Hukuka Uygun Bir Şekilde Belirlemek ( 5510 S.K. 80. Maddesi)</li>
-                        <li>Prime Esas Kazanç Üzerinden Prim Ödemesi Yapmak ( 5510 S.K. 79. Maddesi)</li>
-                        <li>İşverenliğin çalışanın gerçek maaşını sigortaya bildirmemesi, sigorta girişini yapmaması
-                            gibi
-                            nedenler işçi yönünden haklı fesih gerekçesi oluşturmaktadır.</li>
-                        <li>Madde kapsamındaki yükümlülüklerin yerine getirilmemesi halinde işçinin kıdem tazminatı
-                            davası
-                            açabileceği gibi sonuca göre hizmet tespiti davası ve ücretleri eksik bildiriliyorsa ( elden
-                            maaş ödemesi varsa) prime esas kazancın tespiti davası açılması söz konusu olacaktır.</li>
-                    </ul>
-                </div>
-                <div class="cezai">
-                    <h2>İş Hukuku Yükümlülüklerine Uyulmamasının Hukuki ve Cezai Yaptırımları</h2>
-                    <ul>
-                        <li>İş Akdinin İşçi Ya da İşveren Tarafından Feshi: İşverenin iş hukukundan kaynaklı
-                            yükümlülükleri
-                            yerine getirmemesi halinde bu durum işçiye 4857 Sayılı İş Kanunun 24. Maddesine göre derhal
-                            (
-                            Önelsiz ) ve haklı nedenlerle tazminatsız feshetme hakkı vermektedir. Buna karşılık işçinin
-                            iş
-                            hukukundan kaynaklı yükümlülükleri yerine getirmemesi halinde de işverene 4857 sayılı İş
-                            Kanunun
-                            25. Maddesine göre derhal ve haklı nedenlerle tazminatsız feshetme yetkisi vardır. Buna
-                            rağmen
-                            işverenin iş akdinin feshetmesi için feshin son çare olup olmadığına da bakılmalıdır.</li>
-                        <li>Ücretin Faizi İle Ödenmesi: İşçinin emeğinin karşılığı olan ücreti sözleşme ve iş kanununa
-                            göre
-                            ödemeyen işveren ücreti bütün ekleri ile birlikte ödenmediği takdirde işleyecek kanuni faizi
-                            ile
-                            birlikte ödemelidir.</li>
-                        <li>İşçinin Çalışmaktan Kaçınma Hakkı : Ücreti ödeme gününden itibaren yirmi gün içinde mücbir
-                            bir
-                            neden dışında ödenmeyen işçi, iş görme borcunu yerine getirmekten kaçınabilir. ( 4857 S.K.
-                            34.
-                            Maddesi )“Kurul veya işverenin çalışanın talebi yönünde karar vermesi hâlinde çalışan,
-                            gerekli
-                            tedbirler alınıncaya kadar çalışmaktan kaçınabilir.Çalışanların çalışmaktan kaçındığı
-                            dönemdeki
-                            ücreti ile kanunlardan ve iş sözleşmesinden doğan diğer hakları saklıdır.” ( 6331 S.K. 13.
-                            Maddesi )</li>
-                        <li>Kıdem ve İhbar Tazminatlarından Sorumluluk: İşçinin ve işverenin haklı nedenlerle feshetme
-                            hakkının söz konusu olduğu hallerde, işveren işçiye kıdem ve ihbar tazminatı ödemesi
-                            gerektiği
-                            gibi, işçinin hukuka aykırı hareketleri nedeniyle de işveren kıdem ve ihbar tazminatı ödeme
-                            yükümlülüğünden kurtulmaktadır.</li>
-                        <li>İşçinin İşe İade Edilmesi: İşverenin iş sözleşmesini yasada belirlenen şartlara göre
-                            feshetmemesi halinde şartları var ise işverene karşı dava açarak iş akdinin feshinin
-                            geçersizliğinin tespiti mahkemeden isteyerek işe iadesini sağlayabilir.</li>
-                        <li>Yargılama Masraflarından Sorumluluk: Haksız olarak dava açılmasına sebebiyet veren taraf
-                            yargılama masraflarından ve vekalet ücretlerinden sorumlu tutulacaktır.</li>
-                        <li>İş Sağlığı ve Güvenliği Tedbirlerine Uyulmamasının Cezası: 6331 Sayılı İş Sağlığı Ve
-                            Güvenliği
-                            Kanunu’nun 24-26 maddeleri arasında sayılmıştır. Bunlar “İşin Durdurulması”, “Kamu
-                            İhalelerine
-                            Girmek Yasaklılık” ve “İdari Para Cezaları”dır.</li>
-                        <li>Sosyal Güvenlik Primlerinin Yatırılmaması, Eksik Yatırılması, Prime Esas kazancın Eksik
-                            Bildirilmesi şeklinde idari cezalar uygulanacaktır.</li>
-                    </ul>
-                </div>
-            </section>
+                    </li>
+                    <li>
+                        <h3>
+                            İşverenin Eşit Davranma Borcu
+                        </h3>
+                        <p>
+                            ( 4857 S.K. 5. )
+                        </p>
+                        <ul>
+                            <li>İş ilişkisinde dil, ırk, renk, cinsiyet, engellilik, siyasal düşünce, felsefî
+                                inanç,
+                                din ve mezhep ve benzeri sebeplere dayalı ayrım yapılamaz.</li>
+                            <li>İşveren, esaslı sebepler olmadıkça tam süreli çalışan işçi karşısında kısmî
+                                süreli
+                                çalışan işçiye, belirsiz süreli çalışan işçi karşısında belirli süreli çalışan
+                                işçiye farklı işlem yapamaz.</li>
+                            <li>İşveren, biyolojik veya işin niteliğine ilişkin sebepler zorunlu kılmadıkça, bir
+                                işçiye, iş sözleşmesinin yapılmasında, şartlarının oluşturulmasında,
+                                uygulanmasında
+                                ve sona ermesinde, cinsiyet veya gebelik nedeniyle doğrudan veya dolaylı farklı
+                                işlem yapamaz.</li>
+                            <li>Aynı veya eşit değerde bir iş için cinsiyet nedeniyle daha düşük ücret
+                                kararlaştırılamaz. İşçinin cinsiyeti nedeniyle özel koruyucu hükümlerin
+                                uygulanması,
+                                daha düşük bir ücretin uygulanmasını haklı kılmaz.</li>
+                            <li>İş ilişkisinde veya sona ermesinde yukarıdaki fıkra hükümlerine aykırı
+                                davranıldığında işçi, dört aya kadar ücreti tutarındaki uygun bir tazminattan
+                                başka
+                                yoksun bırakıldığı haklarını da talep edebilir. 2821 sayılı Sendikalar Kanununun
+                                31
+                                inci maddesi hükümleri saklıdır.</li>
+                            <li>20 nci madde hükümleri saklı kalmak üzere işverenin yukarıdaki fıkra hükümlerine
+                                aykırı davrandığını işçi ispat etmekle yükümlüdür. Ancak, işçi bir ihlalin
+                                varlığı
+                                ihtimalini güçlü bir biçimde gösteren bir durumu ortaya koyduğunda, işveren
+                                böyle
+                                bir ihlalin mevcut olmadığını ispat etmekle yükümlü olur.</li>
+                            <li>İşverenin bu maddede gösterilen yükümlülüklere aykırı hareketleri halinde
+                                işçinin
+                                haklı fesih yoluna başvurarak, kıdem tazminatı davası ve şartlarını taşıması
+                                halinde
+                                de eşit davranmama tazminatı davası açma hakları bulunmaktadır.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            İşverenin İş Sağlığı ve Güvenliği Tedbirlerine Uyma Borcu
+                        </h3>
+                        <p>
+                            (6098 S.K. 417. Maddesi, Ve 6331 sayılı İş Sağlığı ve Güvenliği Kanununda
+                            gösterilmiştir. )
+                        </p>
+                        <ul>
+                            <li>İşveren, çalışanların işle ilgili sağlık ve güvenliğini sağlamakla yükümlüdür.
+                            </li>
+                            <li>Mesleki risklerin önlenmesi, eğitim ve bilgi verilmesi dâhil her türlü tedbirin
+                                alınması, organizasyonun yapılması, gerekli araç ve gereçlerin sağlanması,
+                                sağlık ve
+                                güvenlik tedbirlerinin değişen şartlara uygun hale getirilmesi ve mevcut durumun
+                                iyileştirilmesi için çalışmalar yapar.</li>
+                            <li>İş yerinde alınan iş sağlığı ve güvenliği tedbirlerine uyulup uyulmadığını
+                                izler,
+                                denetler ve uygunsuzlukların giderilmesini sağlar.</li>
+                            <li>Risk değerlendirmesi yapar veya yaptırır.</li>
+                            <li>Çalışana görev verirken, çalışanın sağlık ve güvenlik yönünden işe uygunluğunu
+                                göz
+                                önüne alır.</li>
+                            <li>Yeterli bilgi ve talimat verilenler dışındaki çalışanların hayati ve özel
+                                tehlike
+                                bulunan yerlere girmemesi için gerekli tedbirleri alır.</li>
+                            <li>İşyeri dışındaki uzman kişi ve kuruluşlardan hizmet alınması, işverenin
+                                sorumluluklarını ortadan kaldırmaz.</li>
+                            <li>Çalışanların iş sağlığı ve güvenliği alanındaki yükümlülükleri, işverenin
+                                sorumluluklarını etkilemez.</li>
+                            <li>İşveren, iş sağlığı ve güvenliği tedbirlerinin maliyetini çalışanlara
+                                yansıtamaz.
+                            </li>
+                            <li>İş kazası bildirilmesi ile ilgili yükümlülükler.</li>
+                            <li>İşverenin bu kapsamında gösterilen yükümlülüklere aykırı hareketi halinde
+                                Mobbing
+                                Nedeniyle Tazminat Davası açılabileceği gibi yine sonuca göre iş kazası
+                                nedeniyle
+                                maddi ve manevi tazminat davası açılabilecektir.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            İşverenin Hafta Tatili ve İş Arama İzni Verme Yükümlülüğü
+                        </h3>
+                        <p>
+                            ( 6098 S.K. 421. )
+                        </p>
+                        <ul>
+                            <li>İşveren, işçiye her hafta, kural olarak pazar günü veya durum ve koşullar buna
+                                imkân
+                                vermezse, bir tam çalışma günü tatil vermekle yükümlüdür.</li>
+                            <li>İşveren, belirsiz süreli hizmet sözleşmesinin feshi halinde, bildirim süresi
+                                içinde
+                                işçiye ücretinde bir kesinti olmaksızın, günde iki saat iş arama izni vermekle
+                                yükümlüdür.</li>
+                            <li>İzin saatlerinin ve günlerinin belirlenmesinde, işyerinin ve işçinin haklı
+                                menfaatleri göz önünde tutulur.</li>
+                            <li>iş verenin bu yükümlülüğe aykırı hareketi halinde iş akdinin haklı fesih
+                                gerekçesi
+                                ile sonlandırılması, kıdem tazminatı ödemesi ve hafta tatili ücreti davası ve iş
+                                arama izni davası sonuçları ile karşılaşacaktır.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>
+                            İşverenin Hafta Tatili ve İş Arama İzni Verme Yükümlülüğü
+                        </h3>
+                        <p>
+                            ( 6098 S.K. 421. )
+                        </p>
+                        <ul>
+                            <li>İşveren, işçiye her hafta, kural olarak pazar günü veya durum ve koşullar buna
+                                imkân
+                                vermezse, bir tam çalışma günü tatil vermekle yükümlüdür.</li>
+                            <li>İşveren, belirsiz süreli hizmet sözleşmesinin feshi halinde, bildirim süresi
+                                içinde
+                                işçiye ücretinde bir kesinti olmaksızın, günde iki saat iş arama izni vermekle
+                                yükümlüdür.</li>
+                            <li>İzin saatlerinin ve günlerinin belirlenmesinde, işyerinin ve işçinin haklı
+                                menfaatleri göz önünde tutulur.</li>
+                            <li>iş verenin bu yükümlülüğe aykırı hareketi halinde iş akdinin haklı fesih
+                                gerekçesi
+                                ile sonlandırılması, kıdem tazminatı ödemesi ve hafta tatili ücreti davası ve iş
+                                arama izni davası sonuçları ile karşılaşacaktır.</li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="sosyal">
+            <h2>Sosyal Sigortalar Ve Genel Sağlık Sigortası Kanunundan
+                Doğan Yükümlülükler</h2>
+            <ul>
+                <li>Sosyal Güvenlik Hukuku Konusuna girmekle birlikte işçiye iş aktini feshetme hakkı vermesi
+                    açısından başlık olarak anlatılmıştır. Gerçek duruma aykırı sigorta giriş ve çıkış işlemleri
+                    yapmak, prime esas kazancı düşük göstermek gibi hallerde işçinin hakları da zedelendiğinden
+                    bu
+                    durum işçiye iş aktini haklı nedenlerle fesih hakkı verecektir.</li>
+                <li>İşe Giriş Bildirgesi Vermek ( 5510 S.K. 7. Ve 8. Maddesi)</li>
+                <li>Prime Esas Kazancı Hukuka Uygun Bir Şekilde Belirlemek ( 5510 S.K. 80. Maddesi)</li>
+                <li>Prime Esas Kazanç Üzerinden Prim Ödemesi Yapmak ( 5510 S.K. 79. Maddesi)</li>
+                <li>İşverenliğin çalışanın gerçek maaşını sigortaya bildirmemesi, sigorta girişini yapmaması
+                    gibi
+                    nedenler işçi yönünden haklı fesih gerekçesi oluşturmaktadır.</li>
+                <li>Madde kapsamındaki yükümlülüklerin yerine getirilmemesi halinde işçinin kıdem tazminatı
+                    davası
+                    açabileceği gibi sonuca göre hizmet tespiti davası ve ücretleri eksik bildiriliyorsa ( elden
+                    maaş ödemesi varsa) prime esas kazancın tespiti davası açılması söz konusu olacaktır.</li>
+            </ul>
+        </div>
+        <div class="cezai">
+            <h2>İş Hukuku Yükümlülüklerine Uyulmamasının Hukuki ve Cezai Yaptırımları</h2>
+            <ul>
+                <li>İş Akdinin İşçi Ya da İşveren Tarafından Feshi: İşverenin iş hukukundan kaynaklı
+                    yükümlülükleri
+                    yerine getirmemesi halinde bu durum işçiye 4857 Sayılı İş Kanunun 24. Maddesine göre derhal
+                    (
+                    Önelsiz ) ve haklı nedenlerle tazminatsız feshetme hakkı vermektedir. Buna karşılık işçinin
+                    iş
+                    hukukundan kaynaklı yükümlülükleri yerine getirmemesi halinde de işverene 4857 sayılı İş
+                    Kanunun
+                    25. Maddesine göre derhal ve haklı nedenlerle tazminatsız feshetme yetkisi vardır. Buna
+                    rağmen
+                    işverenin iş akdinin feshetmesi için feshin son çare olup olmadığına da bakılmalıdır.</li>
+                <li>Ücretin Faizi İle Ödenmesi: İşçinin emeğinin karşılığı olan ücreti sözleşme ve iş kanununa
+                    göre
+                    ödemeyen işveren ücreti bütün ekleri ile birlikte ödenmediği takdirde işleyecek kanuni faizi
+                    ile
+                    birlikte ödemelidir.</li>
+                <li>İşçinin Çalışmaktan Kaçınma Hakkı : Ücreti ödeme gününden itibaren yirmi gün içinde mücbir
+                    bir
+                    neden dışında ödenmeyen işçi, iş görme borcunu yerine getirmekten kaçınabilir. ( 4857 S.K.
+                    34.
+                    Maddesi )“Kurul veya işverenin çalışanın talebi yönünde karar vermesi hâlinde çalışan,
+                    gerekli
+                    tedbirler alınıncaya kadar çalışmaktan kaçınabilir.Çalışanların çalışmaktan kaçındığı
+                    dönemdeki
+                    ücreti ile kanunlardan ve iş sözleşmesinden doğan diğer hakları saklıdır.” ( 6331 S.K. 13.
+                    Maddesi )</li>
+                <li>Kıdem ve İhbar Tazminatlarından Sorumluluk: İşçinin ve işverenin haklı nedenlerle feshetme
+                    hakkının söz konusu olduğu hallerde, işveren işçiye kıdem ve ihbar tazminatı ödemesi
+                    gerektiği
+                    gibi, işçinin hukuka aykırı hareketleri nedeniyle de işveren kıdem ve ihbar tazminatı ödeme
+                    yükümlülüğünden kurtulmaktadır.</li>
+                <li>İşçinin İşe İade Edilmesi: İşverenin iş sözleşmesini yasada belirlenen şartlara göre
+                    feshetmemesi halinde şartları var ise işverene karşı dava açarak iş akdinin feshinin
+                    geçersizliğinin tespiti mahkemeden isteyerek işe iadesini sağlayabilir.</li>
+                <li>Yargılama Masraflarından Sorumluluk: Haksız olarak dava açılmasına sebebiyet veren taraf
+                    yargılama masraflarından ve vekalet ücretlerinden sorumlu tutulacaktır.</li>
+                <li>İş Sağlığı ve Güvenliği Tedbirlerine Uyulmamasının Cezası: 6331 Sayılı İş Sağlığı Ve
+                    Güvenliği
+                    Kanunu’nun 24-26 maddeleri arasında sayılmıştır. Bunlar “İşin Durdurulması”, “Kamu
+                    İhalelerine
+                    Girmek Yasaklılık” ve “İdari Para Cezaları”dır.</li>
+                <li>Sosyal Güvenlik Primlerinin Yatırılmaması, Eksik Yatırılması, Prime Esas kazancın Eksik
+                    Bildirilmesi şeklinde idari cezalar uygulanacaktır.</li>
+            </ul>
+        </div>
+        </section>
         </div>
 
 
 
-        <script>
-            $(document).ready(function () {
-                $(".isveren").hide();
-                $(".isci").hide();
-                $(".sosyal").hide();
-                $(".cezai").hide();
-                $("#sosyal-btn").click(function () {
-                    $(".isci").hide("slow");
-                    $(".isveren").hide("slow");
-                    $(".cezai").hide("slow");
-                    $(".sosyal").show("slow");
-                    $("#sosyal-btn").addClass("active");
-                    $("#isci-btn").removeClass("active");
-                    $("#isveren-btn").removeClass("active");
-                    $("#cezai-btn").removeClass("active");
-                });
-                $("#cezai-btn").click(function () {
-                    $(".isci").hide("slow");
-                    $(".isveren").hide("slow");
-                    $(".sosyal").hide("slow");
-                    $(".cezai").show("slow");
-                    $("#cezai-btn").addClass("active");
-                    $("#isci-btn").removeClass("active");
-                    $("#isveren-btn").removeClass("active");
-                    $("#sosyal-btn").removeClass("active");
-                });
-                $("#isci-btn").click(function () {
-                    $(".isveren").hide("slow");
-                    $(".isci").show("slow");
-                    $(".sosyal").hide("slow");
-                    $(".cezai").show("slow");
-                    $("#isci-btn").addClass("active");
-                    $("#isveren-btn").removeClass("active");
-                    $("#sosyal-btn").removeClass("active");
-                    $("#cezai-btn").removeClass("active");
-                });
+        <script src="../../static/js/haklar-jquery.js"></script>
 
-                $("#isveren-btn").click(function () {
-                    $(".isci").hide("slow");
-                    $(".isveren").show("slow");
-                    $(".sosyal").hide("slow");
-                    $(".cezai").show("slow");
-                    $("#isveren-btn").addClass("active");
-                    $("#isci-btn").removeClass("active");
-                    $("#sosyal-btn").removeClass("active");
-                    $("#cezai-btn").removeClass("active");
-                });
-
-            });
-        </script>
-
-
-
+        <%- include('../partials/footer') %>
 
 </body>
 
 </html>
+
+
+
 
 <!-- Bootstrap js-->
 <script src="/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

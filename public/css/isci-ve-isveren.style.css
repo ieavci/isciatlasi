@@ -1,35 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
-
 :root {
     --lg-font: 'Kaisei Tokumin', serif;
     --sm-font: 'Poppins', sans-serif;
     --red: #af0006;
     --mavi: #346EAA;
     --beyaz: #FFFFFF;
+    --turuncu: #EF4040;
 
 }
-
-section .btn {
-    background-color: var(--mavi);
-    color: var(--beyaz);
-    
-}
-section .btn:hover{
-    background-color: var(--red)!important;
-    color: var(--beyaz);
-    
-}
-section .btn.active {
-    background-color: var(--red) !important;
-    color: var(--beyaz);
+.order-card {
+    color: #fff;
 }
 
-section a{
-    text-decoration: none;
-    color: var(--mavi);
-}
-section a:hover{
-    
-    color: #3f005c;
+
+.bg-c-blue {
+    background: linear-gradient(45deg,#4099ff,#73b4ff);
 }
 
+.bg-c-green {
+    background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg,#FFB64D,#ffcb80);
+}
+
+.bg-c-pink {
+    background: linear-gradient(45deg,#FF5370,#ff869a);
+}
+
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.card:hover {
+    color: #ef4040d8;
+    background: linear-gradient(45deg,#ffffff,#f8f5f5);
+}
+
+.card .card-block {
+    padding: 25px;
+}   
+
+
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+#haklar-header{
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+}
+
+.active{
+    color: #ef4040d8!important;
+    background: linear-gradient(45deg,#ffffff,#f8f5f5);
+}
