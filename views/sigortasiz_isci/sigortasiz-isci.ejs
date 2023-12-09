@@ -29,215 +29,245 @@
 
 
 
-        <div>
-            <header id="haklar-header" style="padding-top: 104px;">
-                <div class="container py-5">
-                    <div class="yazi">
-                        <h3 class="text-uppercase fw-normal text-center">İşveren ve İşçİ Hakları İle Yükümlülüklerİnİn
-                            Hukukİ Dayanakları
-                        </h3>
-                        <p> İşçi hakları ve işveren hakları ve yükümlülükleri konusundaki temel mevzuatımız
-                            anayasamızdır.
 
-                            Bunun dışında Türkiye’nin taraf olduğu uluslararasını anlaşmalar da anayasa ve yasal
-                            arasında
-                            bir
-                            hiyerarşiye sahip ve uygulama hiyerarşisi yönünden yasalardan üstün durumdadır.
+        <header id="haklar-header" style="padding-top: 104px;">
+            <div class="container py-5">
+                <div class="yazi">
+                    <h3 class="text-uppercase fw-normal text-center">İşveren ve İşçİ Hakları İle Yükümlülüklerİnİn
+                        Hukukİ Dayanakları
+                    </h3>
+                    <p> İşçi hakları ve işveren hakları ve yükümlülükleri konusundaki temel mevzuatımız
+                        anayasamızdır.
 
-                            İşçi hakları ile ilgili en temel düzenlemeler ILO ( Dünya Çalışma Örgütü ) sözleşmeleridir.
-                            <a target="_blank"
-                                href="https://www.ilo.org/wcmsp5/groups/public/---europe/---ro-geneva/---ilo-ankara/documents/genericdocument/wcms_645630.pdf">Türkiyenin
-                                imzaladığı ILO sözleşmelerine</a> ulaşmak için yazı başlığına tıklayabilirsiniz.
+                        Bunun dışında Türkiye’nin taraf olduğu uluslararasını anlaşmalar da anayasa ve yasal
+                        arasında
+                        bir
+                        hiyerarşiye sahip ve uygulama hiyerarşisi yönünden yasalardan üstün durumdadır.
 
-                            Türkiye mevzuatı açısından da kanunlarımız bu mevzuatlara aykırı olmamak üzere yürürlüğe
-                            konulmalıdır.
+                        İşçi hakları ile ilgili en temel düzenlemeler ILO ( Dünya Çalışma Örgütü ) sözleşmeleridir.
+                        <a target="_blank"
+                            href="https://www.ilo.org/wcmsp5/groups/public/---europe/---ro-geneva/---ilo-ankara/documents/genericdocument/wcms_645630.pdf">Türkiyenin
+                            imzaladığı ILO sözleşmelerine</a> ulaşmak için yazı başlığına tıklayabilirsiniz.
 
-                            İş hukukta ise Temel Yasamız 6098 Sayılı Borçlar Kanunu, 4857 Sayılı İş Kanunu, 5510 Sayılı
-                            Sosyal
-                            Sigortalar ve Genel Sağlık Sigortası Kanunu ve bu kanunlara göre düzenlenmiş yönetmelik ve
-                            tebliğlerdir.
+                        Türkiye mevzuatı açısından da kanunlarımız bu mevzuatlara aykırı olmamak üzere yürürlüğe
+                        konulmalıdır.
 
-                        </p>
+                        İş hukukta ise Temel Yasamız 6098 Sayılı Borçlar Kanunu, 4857 Sayılı İş Kanunu, 5510 Sayılı
+                        Sosyal
+                        Sigortalar ve Genel Sağlık Sigortası Kanunu ve bu kanunlara göre düzenlenmiş yönetmelik ve
+                        tebliğlerdir.
 
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </header>
+
+        <div class="container pt-5 pb-3">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12">
+                    <h2 class="dilekce-baslik">SİGORTASIZ İŞÇİLER İÇİN DİLEKÇE OLUŞTURMA</h2>
+                </div>
+            </div>
+        </div>
+
+        <section class="form-area">
+            <div class="container py-4 ana">
+                <div class="row">
+
+                    <div class="row">
+                        <div class="btn-group" data-toggle="buttons">
+                            <label id="ediyorumBtn" class="btn btn-secondary">
+                                İşyerinde Çalışıyorum
+                            </label>
+                            <label id="etmiyorumBtn" class="btn btn-secondary">
+                                İşyerinden Ayrıldım
+                            </label>
+                        </div>
+                        <script>
+                            document.getElementById('ediyorumBtn').addEventListener('click', function () {
+                                this.classList.add('active');
+                                document.getElementById('etmiyorumBtn').classList.remove('active');
+
+
+                                const aralikInputs = document.querySelectorAll('.aralik input');
+                                aralikInputs.forEach(input => {
+                                    input.removeAttribute('disabled');
+                                });
+                            });
+
+                            document.getElementById('etmiyorumBtn').addEventListener('click', function () {
+                                this.classList.add('active');
+                                document.getElementById('ediyorumBtn').classList.remove('active');
+
+
+                                const aralikInputs = document.querySelectorAll('.aralik input');
+                                aralikInputs.forEach(input => {
+                                    input.setAttribute('disabled', 'disabled');
+                                });
+                            });
+
+                        </script>
                     </div>
 
 
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form action="" class="d-flex">
+                            <div class="col-md-6 p-4 input-alani">
+                                <label for="">İl Seçiniz</label>
+                                <select class="form-select form-group" aria-label="Default select example"
+                                    id="sehirler">
+                                    <option selected disabled>İlgili SGK İl Müdürlüğünü Seçiniz</option>
 
-            </header>
-
-
-
-            <section class="form-area">
-                <div class="container py-4 ana">
-                    <div class="row">
-                        <div class="col-md-6 d-flex justify-content-center">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    İşyerinde Çalışmaya Devam Ediyorum
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 d-flex justify-content-center">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2" checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    İşyerinden Ayrıldım
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form action="">
-                                <label for="">Bağlı Bulunduğunuz SGK İl Müdürlüğünü Seçiniz</label>
-                                <select class="form-control">    <!-- İLLER VERİTABANINDAN ÇEKİLECEK-->
-                                    <option>Adana</option>
-                                    <option>Adıyaman</option>
-                                    <option>Afyonkarahisar</option>
-                                    <option>Ağrı</option>
-                                    <option>Amasya</option>
-                                    <option>Ankara</option>
-                                    <option>Antalya</option>
-                                    <option>Artvin</option>
-                                    <option>Aydın</option>
-                                    <option>Balıkesir</option>
-                                    <option>Bilecik</option>
-                                    <option>Bingöl</option>
-                                    <option>Bitlis</option>
-                                    <option>Bolu</option>
-                                    <option>Burdur</option>
-                                    <option>Bursa</option>
-                                    <option>Çanakkale</option>
-                                    <option>Çankırı</option>
-                                    <option>Çorum</option>
-                                    <option>Denizli</option>
-                                    <option>Diyarbakır</option>
-                                    <option>Edirne</option>
-                                    <option>Elazığ</option>
-                                    <option>Erzincan</option>
-                                    <option>Erzurum</option>
-                                    <option>Eskişehir</option>
-                                    <option>Gaziantep</option>
-                                    <option>Giresun</option>
-                                    <option>Gümüşhane</option>
-                                    <option>Hakkari</option>
-                                    <option>Hatay</option>
-                                    <option>Isparta</option>
-                                    <option>Mersin</option>
-                                    <option>İstanbul</option>
-                                    <option>İzmir</option>
-                                    <option>Kars</option>
-                                    <option>Kastamonu</option>
-                                    <option>Kayseri</option>
-                                    <option>Kırklareli</option>
-                                    <option>Kırşehir</option>
-                                    <option>Kocaeli</option>
-                                    <option>Konya</option>
-                                    <option>Kütahya</option>
-                                    <option>Malatya</option>
-                                    <option>Manisa</option>
-                                    <option>Kahramanmaraş</option>
-                                    <option>Mardin</option>
-                                    <option>Muğla</option>
-                                    <option>Muş</option>
-                                    <option>Nevşehir</option>
-                                    <option>Niğde</option>
-                                    <option>Ordu</option>
-                                    <option>Rize</option>
-                                    <option>Sakarya</option>
-                                    <option>Samsun</option>
-                                    <option>Siirt</option>
-                                    <option>Sinop</option>
-                                    <option>Sivas</option>
-                                    <option>Tekirdağ</option>
-                                    <option>Tokat</option>
-                                    <option>Trabzon</option>
-                                    <option>Tunceli</option>
-                                    <option>Şanlıurfa</option>
-                                    <option>Uşak</option>
-                                    <option>Van</option>
-                                    <option>Yozgat</option>
-                                    <option>Zonguldak</option>
-                                    <option>Aksaray</option>
-                                    <option>Bayburt</option>
-                                    <option>Karaman</option>
-                                    <option>Kırıkkale</option>
-                                    <option>Batman</option>
-                                    <option>Şırnak</option>
-                                    <option>Bartın</option>
-                                    <option>Ardahan</option>
-                                    <option>Iğdır</option>
-                                    <option>Yalova</option>
-                                    <option>Karabük</option>
-                                    <option>Kilis</option>
-                                    <option>Osmaniye</option>
-                                    <option>Düzce</option>
                                 </select>
+
+                                <script>
+
+                                    const sehirler = ["Adana", "Ankara", "Antalya", "Adıyaman"];
+                                    sehirler.sort();
+
+                                    const select = document.getElementById("sehirler");
+                                    sehirler.forEach(sehir => {
+                                        const option = document.createElement("option");
+                                        option.value = sehir.toLowerCase();
+                                        option.text = sehir;
+                                        select.appendChild(option);
+                                    });
+                                </script>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">SGK'de İşlem Gören Dosya Sicil Numarası</label>
-                                    <input type="text" class="form-control" id=""
-                                        placeholder="Örn:1234567">
+                                    <label for="">SGK'de İşlem Gören Dosya Sicil Numarası</label>
+                                    <input type="number" class="form-control" id="" placeholder="Örn:1234567">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password">
+                                    <label for="">İşverenin veya Şirketin İsmi </label>
+                                    <input type="" class="form-control" id="" placeholder="Örn: loremipsum ltd. şti.">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password">
+                                    <label for="">Çalışılan İşyerinin Adresi</label>
+                                    <textarea type="" class="form-control adres" id=""
+                                        placeholder="123 Sokak, Çankaya Mahallesi, Ankara, Türkiye"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password">
+                                    <label for="">Sektör</label>
+                                    <input type="" class="form-control" id=""
+                                        placeholder="Örn: Kuaför, Şirket, Fabrika">
+                                </div>
+                                <div class="aralik">
+                                    <div class="form-group">
+                                        <label for="tarih">İşe Başladığınız Tarih</label>
+                                        <input type="date" class="form-control" id="tarih">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tarih">İşten Ayrıldığınız Tarih</label>
+                                        <input type="date" class="form-control" id="tarih">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-6 p-4 input-alani">
+                                <div class="form-group">
+                                    <label for="">Şikayetçi Adı</label>
+                                    <input type="" class="form-control" id="" placeholder="Örn: Jhon">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password">
+                                    <label for="">Şikayetçi Soyadı</label>
+                                    <input type="" class="form-control" id="" placeholder="Örn: DOE">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password">
+                                    <label for="">TC Kimlik Numarası</label>
+                                    <input type="number" class="form-control" id="" placeholder="12233456789">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password">
+                                    <label for="">Sigorta Sicil Numarası</label>
+                                    <input type="" class="form-control" id="" placeholder="Örn: 1234567879123">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password">
+                                    <label for="">Şikayetçi Adresi</label>
+                                    <textarea type="" class="form-control adres" id="" placeholder=""></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password">
+                                    <label for="">Telefon</label>
+                                    <input type="" class="form-control" id="" placeholder="505 505 50 05">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password">
+                                    <label for="tarih">Dilekçenin Yazıldığı Tarih</label>
+                                    <input type="date" class="form-control" id="tarih">
                                 </div>
-                            </form>
-                        </div>
+
+                            </div>
+                        </form>
+
                     </div>
                 </div>
 
+                <div class="d-flex justify-content-center pt-4">
+                    <button class="dilekce-btn col-md-4 btn btn-dark py-3">
+                        <img src="/static/img/dilekce-btn.png" alt="">
+                        Dilekçe Oluştur
+                    </button>
+                </div>
+            </div>
 
-            </section>
+
+        </section>
 
 
+        <div id="onemli-aciklama">
+            <div class="container py-5">
+                <div class="yazi">
+                    <h3 class="text-uppercase fw-normal text-center text-danger">Önemlİ Açıklamalar:
+                    </h3>
+                    <table class="table table-hover">
+                        
+                        <tbody>
+                            <tr>
+                                <th scope="row">1-</th>
+                                <td>Yukarıdaki T. C. Kimlik Numarası / Sigorta Sicil Numarası, adres, telefon bilgileri
+                                    kısmına şikayet sahibine ait bilgiler yazılacak.</td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">2-</th>
+                                <td>Yukarıdaki dilekçe sadece örnek olup, dilekçedeki şekil şartlarını bozmamak şartıyla
+                                    dilekçede istenilen değişiklik yapılabilir. Zaten dilekçe SGK tarafından işleme
+                                    alındığında, şikayet sahibi ile irtibata geçecek, gerekirse şikayet sahibinin bilgi
+                                    ve ifadesine başvurulacaktır.</td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">3-</th>
+                                <td colspan="2">Dilekçeye, şikayet sahibinin elinde söz konusu işyerinde çalıştığına
+                                    delil teşkil edecek belgeler varsa fotokopisi eklenebilir. Bu tür belgelerin aslı
+                                    şikayet sahibinde kalmalıdır. Şikayet dilekçesi işleme alındıktan sonra denetim ve
+                                    inceleme aşamasında denetim elemanı gerekirse söz konusu belgelerin aslını şikayet
+                                    sahibinden alır.</td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">4-</th>
+                                <td colspan="2">İşten ayrılmış olan kişinin, geriye dönük olarak iddia ettiği
+                                    çalışmalarını ispatlayabilmesi ve sonuç alabilmesi için, iddia ettiği çalışmalarını
+                                    gösterir belge - delil sunması büyük önem taşımaktadır.</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+            </div>
 
         </div>
+
+
+
 
 
 

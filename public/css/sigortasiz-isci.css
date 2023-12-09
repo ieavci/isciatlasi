@@ -1,7 +1,77 @@
-#haklar-header{
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    --red: #af0006;
+    --mavi: #346EAA;
+    --beyaz: #FFFFFF;
+    --turuncu: #EF4040;
+
+}
+
+#haklar-header {
     box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
 }
-.ana{
-    background-color: aquamarine;
-    border: 2px double red;
+
+.ana {
+    background-color: var(--beyaz);
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
 }
+
+
+.adres{
+    height: 108px;
+}
+
+.btn-secondary{
+    background-color: #747474!important;
+}
+.active{
+    background-color: #EF4040!important;
+    border-color: var(--turuncu)!important;
+}
+#ediyorumBtn{
+    border-right: 1px solid;
+}
+#etmiyorumBtn{
+    border-left: 1px solid;
+}
+#ediyorumBtn:hover{
+    background-color: #EF4040!important;
+    border-color: var(--turuncu)!important;
+}
+#etmiyorumBtn:hover{
+    background-color: #EF4040!important;
+    border-color: var(--turuncu)!important;
+}
+
+.dilekce-baslik{
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    color: #353535;
+}
+
+.input-alani label,input{
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.input-alani label{
+    font-weight: bold;
+}
+
+.dilekce-btn img{
+    width: 55px;
+    padding-right: 20px;
+}
+.dilekce-btn{
+    font-size: larger;
+}
+.dilekce-btn:hover{
+    background-color: #EF4040!important;
+    border-color: var(--turuncu)!important;
+}
+th{
+    color: var(--red)!important;
+}
+
