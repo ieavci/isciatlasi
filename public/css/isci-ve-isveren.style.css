@@ -41,6 +41,7 @@
 .card:hover {
     color: #ef4040d8;
     background: linear-gradient(45deg,#ffffff,#f8f5f5);
+    transition: color 0.5s ease;
 }
 
 .card .card-block {
@@ -64,4 +65,12 @@
 .active{
     color: #ef4040d8!important;
     background: linear-gradient(45deg,#ffffff,#f8f5f5);
+}
+
+.haklar-section .container{
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-button{
+    
 }

@@ -1,20 +1,28 @@
-const express =require("express");
+const express = require("express");
 
-const app=express();
+const app = express();
 
-const path=require("path");
+const path = require("path");
 
-const userRoutes=require("./routes/user");
+const mongoose = require("mongoose");
 
-app.set("view engine","ejs");
+const userRoutes = require("./routes/user");
 
-app.use("/libs",express.static(path.join(__dirname,"node_modules")));
-app.use("/static",express.static(path.join(__dirname,"public")));
+app.set("view engine", "ejs");
+
+app.use("/libs", express.static(path.join(__dirname, "node_modules")));
+app.use("/static", express.static(path.join(__dirname, "public")));
 
 app.use(userRoutes);
 
+//mongoose
 
+mongoose.connect("mongodb+srv://ieavci:mongohesap1@cluster0.jza4kdk.mongodb.net/?retryWrites=true&w=majority")
+    .then(() => console.log("mongodb connected."))
+    .catch((err) => {
+        console.log(err+"error");
+    })
 
-app.listen(3000,function(){
+app.listen(3000, function () {
     console.log("listening port at 3000")
 })
