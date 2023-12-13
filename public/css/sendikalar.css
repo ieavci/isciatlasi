@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;1,400&display=swap');
+
+:root {
+    --lacivert: #222831;
+    --gri: #393E46;
+    --mavi: #00ADB5;
+    --beyaz: #EEEEEE;
+    --normal-font: 'Ubuntu', serif;
+}
+
+body {
+    background-color: var(--beyaz);
+}
+
+
+.sendika-header{
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+    padding-top: 104px;
+    background: white!important;
+}
+
+.content-image{
+    background-color: red!important;
+}
+
+.head{
+    
+}
+
+.content-image-isveren{
+    background-image: url(/static/img/isveren.jpg);
+}

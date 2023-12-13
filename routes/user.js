@@ -10,6 +10,9 @@ router.use("/haklar", function(req,res){
 router.use("/sigortasiz", function(req,res){
     res.render("sigortasiz_isci/sigortasiz-isci.ejs");
 });
+router.use("/sendikalar", function(req,res){
+    res.render("sendikalar/sendikalar.ejs");
+});
 
 
 router.use("/", function(req,res){

@@ -17,11 +17,11 @@ app.use(userRoutes);
 
 //mongoose
 
-mongoose.connect("mongodb+srv://ieavci:mongohesap1@cluster0.jza4kdk.mongodb.net/?retryWrites=true&w=majority")
-    .then(() => console.log("mongodb connected."))
-    .catch((err) => {
-        console.log(err+"error");
-    })
+// mongoose.connect("mongodb+srv://ieavci:mongohesap1@cluster0.jza4kdk.mongodb.net/?retryWrites=true&w=majority")
+//     .then(() => console.log("mongodb connected."))
+//     .catch((err) => {
+//         console.error("MongoDB connection error:", err);
+//     });
 
 app.listen(3000, function () {
     console.log("listening port at 3000")
