@@ -26,83 +26,53 @@
 
 
     <%- include("../partials/nav") %>
+
+
+        <section class="sendika-header">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="head text-center py-3">
+                        <h2>Türkiye'de Sendikalaşma</h2>
+                        <p>Türkiye'de sendikalaşma süreci, bir dizi karmaşık sorunla karşı karşıya. Özellikle işçi
+                            sendikalarının özgürce faaliyet gösterememesi ve sendikalı olmanın teşvik edilmemesi
+                            gibi
+                            önemli
+                            engeller bulunuyor. İşverenlerin sendika üyelerine yönelik baskıları, işten çıkarmalar
+                            veya
+                            ayrımcılık gibi uygulamalar, işçilerin sendikalaşma haklarını kullanmalarını engelliyor.
+                            Bununla
+                            birlikte, belirli sektörlerde sendikaların etkin olamaması ve sendikalı işçi sayısının
+                            düşük
+                            olması, sendikalaşmanın yaygınlaşmasını ve etkili olmasını zorlaştırıyor. Bu durum, işçi
+                            haklarının korunması, daha adil çalışma koşullarının sağlanması ve işçi temsilinin
+                            güçlenmesi
+                            açısından önemli bir sorun olarak karşımıza çıkıyor. Sendikal hakların daha geniş
+                            kapsamda
+                            korunması ve desteklenmesi, işçilerin güçlenmesi ve iş ilişkilerinin daha dengeli bir
+                            noktaya
+                            gelmesi açısından kritik bir öneme sahip.</p>
+                    </div>
+                </div>
+            </div>
+            <%- include("sendika-header-card") %>
+        </section>
+
         
 
-            <section class="sendika-header">
+        <h2 class="text-center pt-5">Türkiye'deki Sendikalar ve İşçi Sendikaları Konfederasyonları</h2>
+
+        <section class="sendikalar">
+            <div class="col-md-12">
                 <div class="container">
-                    <div class="col-md-12">
-                        <div class="head text-center py-3">
-                            <h2>Türkiye'de Sendikalaşma</h2>
-                            <p>Türkiye'de sendikalaşma süreci, bir dizi karmaşık sorunla karşı karşıya. Özellikle işçi
-                                sendikalarının özgürce faaliyet gösterememesi ve sendikalı olmanın teşvik edilmemesi
-                                gibi
-                                önemli
-                                engeller bulunuyor. İşverenlerin sendika üyelerine yönelik baskıları, işten çıkarmalar
-                                veya
-                                ayrımcılık gibi uygulamalar, işçilerin sendikalaşma haklarını kullanmalarını engelliyor.
-                                Bununla
-                                birlikte, belirli sektörlerde sendikaların etkin olamaması ve sendikalı işçi sayısının
-                                düşük
-                                olması, sendikalaşmanın yaygınlaşmasını ve etkili olmasını zorlaştırıyor. Bu durum, işçi
-                                haklarının korunması, daha adil çalışma koşullarının sağlanması ve işçi temsilinin
-                                güçlenmesi
-                                açısından önemli bir sorun olarak karşımıza çıkıyor. Sendikal hakların daha geniş
-                                kapsamda
-                                korunması ve desteklenmesi, işçilerin güçlenmesi ve iş ilişkilerinin daha dengeli bir
-                                noktaya
-                                gelmesi açısından kritik bir öneme sahip.</p>
-                        </div>
+                    <div class="row">                        
+                            <%- include('sendika-card') %>                        
                     </div>
                 </div>
-                <%- include("sendika-header-card") %>
-            </section>
-
-            <section class="sendikalar">
-                <div class="container ">
-                    <div class="col-md-12 d-flex">
-                        div.
-                        <div class="col-md-4">
-                            <%- include('sendika-card') %>
-                        </div>
-                        <div class="col-md-4">
-                            <%- include('sendika-card') %>
-                        </div>
-                        <div class="col-md-4">
-                            <%- include('sendika-card') %>
-                        </div>
-                        <div class="col-md-4">
-                            <%- include('sendika-card') %>
-                        </div>
-                        <div class="col-md-4">
-                            <%- include('sendika-card') %>
-                        </div>
-                        <div class="col-md-4">
-                            <%- include('sendika-card') %>
-                        </div>
-                        <div class="col-md-4">
-                            <%- include('sendika-card') %>
-                        </div>
-                        <div class="col-md-4">
-                            <%- include('sendika-card') %>
-                        </div>
-                        <div class="col-md-4">
-                            <%- include('sendika-card') %>
-                        </div>
-                        <div class="col-md-4">
-                            <%- include('sendika-card') %>
-                        </div>
-                        <div class="col-md-4">
-                            <%- include('sendika-card') %>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        
-
-            
+            </div>
+        </section>
 
 
+        <%- include('./sendika-modal') %>
             <%- include('../partials/footer') %>
 
 
@@ -118,5 +88,3 @@
 
 <!-- Bootstrap js-->
 <script src="/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-

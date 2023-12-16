@@ -1,0 +1,74 @@
+<!-- Modal -->
+<link rel="stylesheet" href="/static/css/sendika-modal.css">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+        <div class="modal-content" style=" height: 500px; ">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Türkiye Devrimci İşçi Sendikaları Konfederasyonu
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr class="text-">
+                            <th scope="col">Sendika # </th>
+                            <th scope="col">Sendika Adi
+                            </th>
+                            <th scope="col">Sendika Kisaltma
+                            </th>
+                            <th scope="col">Sendika Kurulus
+                            </th>
+                            <th scope="col">Sendika Genel Baskan
+                            </th>
+                            <th scope="col">Is Kolu Is Kolu Kodu
+                            </th>
+                            <th scope="col">Is Kolu ve Uye Sayisi
+                            </th>
+                            <th scope="col">Is Kolu ve Uye Sayisi %
+                            </th>
+                            <th scope="col">Is Kolu ve Uye Sayisi +%-
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% disk.forEach(disk=> { %>
+                            <tr>
+                                <th scope="row">
+                                    <%=disk.Sendika%>
+                                </th>
+                                <td>
+                                    <%=disk.SendikaAdi %>
+                                </td>
+                                <td>
+                                    <%=disk.SendikaKisaltma %>
+                                </td>
+                                <td>
+                                    <%= disk.SendikaKurulus%>
+                                </td>
+                                <td>
+                                    <%= disk.SendikaGenelBaskan %>
+                                </td>
+                                <td>
+                                    <%= disk.IsKoluIsKoluKodu %>
+                                </td>
+                                <td>
+                                    <%= disk.IsKoluUyeSayisi %>
+                                </td>
+                                <td>
+                                    <%=disk.IsKoluUyeSayisiYuzde %>
+                                </td>
+                                <td>
+                                    <%=disk.IsKoluUyeSayisiDegisim %>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-kapat" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,29 +1,43 @@
 <link rel="stylesheet" href="/static/css/sendika-card.css">
+<% sendikaKonfederasyonlar.forEach(sendikaKonfederasyonlar=> { %>
+  <div class="pt-1">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 mt-3">
+          <div class="card">
+            <div class="card-horizontal d-flex align-items-center">
+              <div class="img-square-wrapper d-flex justify-content-center align-items-center">
+                <figure class="image">
+                  <img src="<%= sendikaKonfederasyonlar.img %>" alt="City picture via LoremPixel" />
+                </figure>
+              </div>
+              <div class="card-body">
+                <div class="card-body">
+                  <h3 class="card-title">
+                    <%=sendikaKonfederasyonlar.kisaltma %>
+                  </h3>
+                  <h5 class="text-secondary text-normal">
+                    <%=sendikaKonfederasyonlar.adi %>
+                  </h5>
+                  <p class="card-text">
+                    <%= sendikaKonfederasyonlar.aciklama %>
+                  </p>
 
-<div class="sendika-container">
-   
-    
-    <div class="example">
-      <h2>Image Card</h2>
-      <article class="card depth--two">
-        <figure class="image">
-          <img src="http://lorempixel.com/output/city-q-c-640-480-1.jpg" alt="City picture via LoremPixel" />
-        </figure>
-        <div class="card__body">
-          <header class="card__primary-title">
-            <h2 class="text-large">Card Title</h2>
-            <h3 class="text-secondary text-normal text-small">Card Subtitle</h3>
-          </header>
-          <div class="card__supporting-text">
-            Supporting text. Lorem ipsum dolor sit amet.
+                  <a class="btn btn-sendika" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    type="button">Bağlı
+                    Sendikalar</a>
+                  <a class="btn btn-sendika" target="_blank" href="<%=sendikaKonfederasyonlar.website %>">Web Adresi</a>
+
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <footer class="card__actions">
-          <a class="btn" href="#">Action 1</a>
-          <a class="btn" href="#">Action 2</a>
-        </footer>
-      </article>
+      </div>
     </div>
-    
-    
   </div>
+
+
+
+
+  <% }) %>

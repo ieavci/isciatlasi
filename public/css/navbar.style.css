@@ -55,9 +55,11 @@ nav {
 
 }
 
-.navbar-toggler-icon{
-    color: var(--red)!important;
+.navbar-toggler-icon {
+    color: var(--turuncu) !important; /* Mavi renk */
+    font-size: 18px;
 }
-.navbar-toggler{
-    color: var(--red)!important;
+
+.custom-icon-size{
+    
 }

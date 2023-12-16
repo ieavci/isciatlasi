@@ -110,88 +110,50 @@
             <div class="container py-4">
                 <div class="isci">
                     <div class="haklar-header-content">
-                        <h2>İşçi Hakları Nelerdir?</h2>
-                        <p>İşverenlerin yükümlülükleri ve işçilerin hakları konularındaki genel düzenleme bilindiği
-                            üzere İş
-                            Kanunu ve hüküm bulunmayan hallerde ise 6098 Sayılı Borçlar Kanunudur. 4857 sayılı İş
-                            Kanununda,
-                            5510 Sayılı Kanunda, Borçlar Kanununda ve genel olarak iş mevzuatının bütününde işverenlerin
-                            yükümlülükleri gösterilmiştir.
-                            İşçinin borçlarının yanında işverenlerin yükümlülükleri doğal olarak daha geniş ve ayrıntısı
-                            ile
-                            açıklanmıştır.</p>
+                        <h2>İşçi Hakları ve Sorumluluları Nelerdir?</h2>
+                        <p>İş hukukunda işçi ile işveren arasındaki iş ilişkisinin işçinin kişiliğine bağlı olduğu kabul
+                            edilir. Bu durumun sonucu olarak da birtakım bilinmesi gereken işçi hakları ortaya çıkar.
+
+                            Bir iş sözleşmesine dayanarak çalışan gerçek kişiye “işçi”, iş görme karşılığı ücret ödemeyi
+                            üstlenen sözleşmelere “iş sözleşmesi” denir.
+
+                            İşçi, başkasına bağımlı ve onun talimatına uygun olarak çalışan kişidir. İşveren ekonomik
+                            açıdan üstünlüğü ve iş becerisi sayesinde işçinin aleyhine çalışma koşulları ortaya
+                            koyabilir. İşte işçiyi bundan koruma amacı güden iş hukuku; emredici kurallarla işçiye
+                            gerçek bir hukuki statü kazandırır.</p>
                     </div>
                     <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
-                                    İşverenin İş Araç Ve Malzemelerini Sağlama Borcu
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    <strong>( 6098 S.K. 413. Madde )</strong>
-                                    <ul>
-                                        <li>İşverenler işçisine işi görmesi nedeniyle kullanacağı araç ve malzemeleri
-                                            vermek
-                                            zorundadır.</li>
-                                        <li>İşverenler işçisine işi görmesi nedeniyle kullanacağı araç ve malzemeleri
-                                            vermek
-                                            zorundadır.</li>
-                                        <li>İşverenler işçisine işi görmesi nedeniyle kullanacağı araç ve malzemeleri
-                                            vermek
-                                            zorundadır.</li>
-                                        <li>İşverenler işçisine işi görmesi nedeniyle kullanacağı araç ve malzemeleri
-                                            vermek
-                                            zorundadır.</li>
-                                    </ul>
+                        <% isci.forEach(function(kanun) { %>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed fs-4" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                        aria-expanded="false" aria-controls="flush-collapseOne">
+                                        <p>
+                                            <%= kanun.kanunbasligi %>
+                                        </p>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        
+                                        <ul>
+                                            <li>
+                                                <%=kanun.icerik %>
+                                            </li>
+
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                    aria-controls="flush-collapseTwo">
-                                    Accordion Item #2
-                                </button>
-                            </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is the second item's
-                                    accordion
-                                    body. Let's imagine this being filled with some actual content.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                    aria-controls="flush-collapseThree">
-                                    Accordion Item #3
-                                </button>
-                            </h2>
-                            <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is the third item's
-                                    accordion
-                                    body. Nothing more exciting happening here in terms of content, but just filling up
-                                    the
-                                    space to make it look, at least at first glance, a bit more representative of how
-                                    this
-                                    would look in a real-world application.</div>
-                            </div>
-                        </div>
+                            <% }); %>
+
                     </div>
                 </div>
                 <div class="isveren">
                     <div class="haklar-header-content">
-                        <h2>İşçi Hakları Nelerdir?</h2>
+                        <h2>İşveren Hakları ve Sorumluluları Nelerdir?</h2>
                         <p>İşverenlerin yükümlülükleri ve işçilerin hakları konularındaki genel düzenleme bilindiği
                             üzere İş
                             Kanunu ve hüküm bulunmayan hallerde ise 6098 Sayılı Borçlar Kanunudur. 4857 sayılı İş
@@ -203,71 +165,34 @@
                             açıklanmıştır.</p>
                     </div>
                     <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
-                                    İşverenin İş Araç Ve Malzemelerini Sağlama Borcu
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    <strong>( 6098 S.K. 413. Madde )</strong>
-                                    <ul>
-                                        <li>İşverenler işçisine işi görmesi nedeniyle kullanacağı araç ve malzemeleri
-                                            vermek
-                                            zorundadır.</li>
-                                        <li>İşverenler işçisine işi görmesi nedeniyle kullanacağı araç ve malzemeleri
-                                            vermek
-                                            zorundadır.</li>
-                                        <li>İşverenler işçisine işi görmesi nedeniyle kullanacağı araç ve malzemeleri
-                                            vermek
-                                            zorundadır.</li>
-                                        <li>İşverenler işçisine işi görmesi nedeniyle kullanacağı araç ve malzemeleri
-                                            vermek
-                                            zorundadır.</li>
-                                    </ul>
+                        <% isveren.forEach(function(kanun) { %>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed fs-4" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                        aria-expanded="false" aria-controls="flush-collapseOne">
+                                        <p>
+                                            <%= kanun.kanunbasligi %>
+                                        </p>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">       
+                                        <strong>
+                                            <%=kanun.madde_numarasi %>
+                                        </strong>                                 
+                                        <ul>
+                                            <li>
+                                                <%=kanun.icerik %>
+                                            </li>
+
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                    aria-controls="flush-collapseTwo">
-                                    Accordion Item #2
-                                </button>
-                            </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is the second item's
-                                    accordion
-                                    body. Let's imagine this being filled with some actual content.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                    aria-controls="flush-collapseThree">
-                                    Accordion Item #3
-                                </button>
-                            </h2>
-                            <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is the third item's
-                                    accordion
-                                    body. Nothing more exciting happening here in terms of content, but just filling up
-                                    the
-                                    space to make it look, at least at first glance, a bit more representative of how
-                                    this
-                                    would look in a real-world application.</div>
-                            </div>
-                        </div>
+                            <% }); %>
+
                     </div>
                 </div>
                 <div class="sosyal">

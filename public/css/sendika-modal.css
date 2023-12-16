@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    --red: #af0006;
+    --mavi: #346EAA;
+    --beyaz: #FFFFFF;
+    --turuncu: #EF4040;
+
+}
+
+
+
+th{
+    font-size: small;
+}
+
+.btn-kapat{
+    background-color: var(--turuncu)!important;
+    color: var(--beyaz)!important;
+    border-color: var(--beyaz)!important;
+}
+.btn-kapat:hover{
+    background-color: var(--beyaz)!important;
+    color: var(--turuncu)!important;
+    border-color: var(--turuncu)!important
+}
