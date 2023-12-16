@@ -25,16 +25,26 @@ router.use("/haklar", async function (req, res) {
         console.log(error)
     }
 });
-router.use("/sigortasiz", function (req, res) {
-    res.render("sigortasiz_isci/sigortasiz-isci.ejs");
+router.use("/sigortasiz", async function (req, res) {
+    const [tblIller] = await db.execute("select * from iller order by sehiradi")
+    console.log(tblIller)
+    try {
+        res.render("sigortasiz_isci/sigortasiz-isci.ejs", {
+            iller:tblIller,            
+        });
+       
+    } catch (error) {
+        console.log(error)
+    }
+
 });
 router.use("/sendikalar", async function (req, res) {
-    const [tblDisk] = await db.execute("select * from `isciatlasi`.`disk sendika`");    
-    const [tblSendikaKonfederasyonlar] = await db.execute("select * from `isciatlasi`.`sendikakonfederasyonlar`");    
+    const [tblDisk] = await db.execute("select * from `isciatlasi`.`disk sendika`");
+    const [tblSendikaKonfederasyonlar] = await db.execute("select * from `isciatlasi`.`sendikakonfederasyonlar`");
     try {
         res.render("sendikalar/sendikalar.ejs", {
             disk: tblDisk,
-            sendikaKonfederasyonlar:tblSendikaKonfederasyonlar,
+            sendikaKonfederasyonlar: tblSendikaKonfederasyonlar,
         });
 
     } catch (error) {
