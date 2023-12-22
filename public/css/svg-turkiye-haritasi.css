@@ -1,0 +1,43 @@
+:root {
+  --lg-font: 'Kaisei Tokumin', serif;
+  --sm-font: 'Poppins', sans-serif;
+  --red: #af0006;
+  --mavi: #346EAA;
+  --beyaz: #FFFFFF;
+  --turuncu: #EF4040;
+
+}
+
+.svg-turkiye-haritasi {
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: center;
+}
+.svg-turkiye-haritasi svg {
+  width: 100%;
+  height: auto;
+}
+.il-isimleri {
+  position: absolute;
+  z-index: 2;
+}
+.il-isimleri div {
+  font-family: 'Open Sans';
+  display: inline-block;
+  background: var(--red)!important;
+  color: #fff;
+  padding: 8px 16px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+#svg-turkiye-haritasi path {
+  cursor: pointer;
+  fill: var(--turuncu);
+}
+#svg-turkiye-haritasi path:hover {
+  fill: var(--mavi);
+}
+#guney-kibris {
+  pointer-events: none;
+}

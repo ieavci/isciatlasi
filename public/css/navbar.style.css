@@ -47,7 +47,7 @@ nav {
 .nav-link {
     color: var(--red);
     font-weight: normal;
-    font-size: large;
+    font-size: medium;
 }
 
 .nav-link:hover {
@@ -58,8 +58,4 @@ nav {
 .navbar-toggler-icon {
     color: var(--turuncu) !important; /* Mavi renk */
     font-size: 18px;
-}
-
-.custom-icon-size{
-    
 }

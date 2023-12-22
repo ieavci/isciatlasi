@@ -1,0 +1,34 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div>
+    <canvas id="myChart"></canvas>
+    
+</div>
+
+
+<script>
+    // sgietoplamyuz verisini almak için EJS ile sunucudan gelen veriyi alın
+    const sgietoplamyuz = <%- JSON.stringify(sgietoplamyuz) %>;
+    
+
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Yıllar', 'Toplam', 'Tarım', 'Sanayi', 'İnsaat', 'Hizmetler'],
+            datasets: [{
+                label: '# Kişi',                
+                data: [sgietoplamyuz.Yillar, sgietoplamyuz.Tarim, sgietoplamyuz.Sanayi, sgietoplamyuz.İnsaat, sgietoplamyuz.Hizmetler],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+</script>

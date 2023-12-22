@@ -113,36 +113,33 @@
                         <h2>İşçi Hakları ve Sorumluluları Nelerdir?</h2>
                         <p>İş hukukunda işçi ile işveren arasındaki iş ilişkisinin işçinin kişiliğine bağlı olduğu kabul
                             edilir. Bu durumun sonucu olarak da birtakım bilinmesi gereken işçi hakları ortaya çıkar.
-
-                            Bir iş sözleşmesine dayanarak çalışan gerçek kişiye “işçi”, iş görme karşılığı ücret ödemeyi
-                            üstlenen sözleşmelere “iş sözleşmesi” denir.
-
-                            İşçi, başkasına bağımlı ve onun talimatına uygun olarak çalışan kişidir. İşveren ekonomik
-                            açıdan üstünlüğü ve iş becerisi sayesinde işçinin aleyhine çalışma koşulları ortaya
-                            koyabilir. İşte işçiyi bundan koruma amacı güden iş hukuku; emredici kurallarla işçiye
-                            gerçek bir hukuki statü kazandırır.</p>
+                        </p>
                     </div>
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <% isci.forEach(function(kanun) { %>
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingOne">
+
+                                <h2 class="accordion-header" id="flush-heading<%= kanun.kanun_id %>">
                                     <button class="accordion-button collapsed fs-4" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                        aria-expanded="false" aria-controls="flush-collapseOne">
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapse<%= kanun.kanun_id %>"
+                                        aria-expanded="false" aria-controls="flush-collapse<%= kanun.kanun_id %>">
                                         <p>
-                                            <%= kanun.kanunbasligi %>
+                                            <%= kanun.kanunBasligi %>
                                         </p>
                                     </button>
                                 </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        
-                                        <ul>
-                                            <li>
-                                                <%=kanun.icerik %>
-                                            </li>
 
+                                <div id="flush-collapse<%= kanun.kanun_id %>" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-heading<%= kanun.kanun_id %>"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <% isciKanunlari.forEach(kanunIcerik=> { %>
+
+                                                <li>
+                                                    <%= kanunIcerik.icerik %>
+                                                </li>
+                                                <% }) %>
                                         </ul>
                                     </div>
                                 </div>
@@ -151,6 +148,7 @@
 
                     </div>
                 </div>
+
                 <div class="isveren">
                     <div class="haklar-header-content">
                         <h2>İşveren Hakları ve Sorumluluları Nelerdir?</h2>
@@ -178,10 +176,10 @@
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">       
+                                    <div class="accordion-body">
                                         <strong>
                                             <%=kanun.madde_numarasi %>
-                                        </strong>                                 
+                                        </strong>
                                         <ul>
                                             <li>
                                                 <%=kanun.icerik %>
