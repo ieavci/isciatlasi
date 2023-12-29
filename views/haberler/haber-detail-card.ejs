@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/static/css/haber-detail-card.css">
+<% haberler.forEach(haber => { %>
+ 
+  <div class="card">
+    <div class="card-horizontal d-flex align-items-center">
+      <div class="img-square-wrapper d-flex justify-content-center align-items-center">
+        <figure class="image">
+          <img src="<%= haber.img %>" class="img-fluid img-sm p-1" alt="City picture via LoremPixel" />
+        </figure>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">
+          <a href="/haberler/<%=haber.id %>" style="text-decoration: none; color: #292929;;"><%= haber.baslik %></a>
+        </h3>
+        <p class="card-text">
+          <%= haber.icerik.slice(0, 350) %>... 
+        </p>
+                      
+        <div class="d-flex justify-content-between align-items-end">
+          <div class="yazar">
+            <%= haber.yazar %>
+          </div>
+          <a class="btn btn-sendika" target="_blank" href="/haberler/<%=haber.id %>">Haberin Devamı</a>
+          <div class="tarih">
+            <%= haber.tarih %>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<% }) %>

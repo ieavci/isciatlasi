@@ -1,0 +1,73 @@
+/* Prettify */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic);
+
+
+:root {
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    --red: #af0006;
+    --mavi: #346EAA;
+    --beyaz: #FFFFFF;
+    --turuncu: #EF4040;
+
+}
+
+.sendika-container {
+
+    margin: 20px auto;
+    width: 60%;
+    text-align: center;
+}
+
+/* Card Styles */
+.card {
+    background-image: linear-gradient(-30deg, rgba(168, 43, 43, 0.1), transparent 50%);
+    text-align: left;
+    border-radius: 4px;
+    overflow: hidden;
+
+}
+
+
+
+
+/*# sourceMappingURL=sendika-card.css.map */
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+
+  
+
+
+.btn-sendika {
+
+    background-color: var(--turuncu);
+    color: var(--beyaz);
+    border-color: var(--beyaz);
+}
+
+.btn-sendika:hover {
+    transition: background-color 0.5s;
+    color: var(--turuncu);
+    border-color: var(--turuncu);
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1000px) {
+    .img-square-wrapper img {
+        max-width: 450px;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 600px) {
+    .img-square-wrapper img {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .img-square-wrapper img {
+        display: none;
+    }
+}
