@@ -1,15 +1,15 @@
-const mysql=require("mysql2");
-const config=require("../config");
+const mysql = require('mysql2/promise');
+const config = require('../config');
 
-let connection = mysql.createConnection(config.db);
+const pool = mysql.createPool(config.db);
 
+pool.getConnection()
+  .then(connection => {
+    console.log('MySQL bağlantısı oluşturuldu.');
+    connection.release();
+  })
+  .catch(err => {
+    console.error('MySQL bağlantı hatası: ', err);
+  });
 
-connection.connect(function(err){
-    if(err){
-        return console.log(err)
-    }
-    
-    console.log("mysql bağlantısı oluştu.")
-})
-module.exports=connection.promise();
-
+module.exports = pool;

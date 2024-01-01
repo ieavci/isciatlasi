@@ -5,6 +5,9 @@ const router = express.Router();
 const path = require("path");
 const db = require("../data/db");
 
+
+
+
 router.use("/haklar", async function (req, res) {
 
     const [tblSosyal] = await db.execute("select * from sosyalsigortalar")
@@ -59,11 +62,11 @@ router.use("/haberler/:id", async function (req, res) {
 
 
     try {
-        const [haber,] = await db.query("select * from haberler where id=?", [id])     
-        
+        const [haber,] = await db.query("select * from haberler where id=?", [id])
+
         if (haber[0]) {
             res.render("haberler/haber-detail", {
-               
+
                 haber: haber[0]
             });
         } else {
@@ -75,13 +78,13 @@ router.use("/haberler/:id", async function (req, res) {
         console.log(error)
     }
 
-   
+
 });
 
 router.get("/haberler", async function (req, res) {
-const [haberler]=await db.execute("select* from haberler")
+    const [haberler] = await db.execute("select* from haberler")
     try {
-       
+
         res.render("haberler/haberler.ejs", {
             haberler: haberler
         });
@@ -91,26 +94,58 @@ const [haberler]=await db.execute("select* from haberler")
 
 });
 
+////////////////////////////////////////////////////////////////////////////////////
 
+async function getDataFromTable(tableName) {
+    try {
+        const [data] = await db.execute(`SELECT * FROM ${tableName}`);
+        return data;
+    } catch (error) {
+        throw new Error(`Veri alınırken hata oluştu: ${error}`);
+    }
+}
 
+function prepareChartData(data, label, backgroundColor) {
+    const labels = data.map(item => item.Yillar);
+    const values = Object.keys(data[0]).filter(key => key !== 'Yillar').map(key => ({
+        label: key,
+        data: data.map(item => parseFloat(item[key].replace(',', '.'))),
+        backgroundColor: backgroundColor[key],
+        // İhtiyaca göre diğer özellikler eklenebilir
+    }));
 
-
+    return {
+        labels: labels,
+        datasets: values,
+    };
+}
 
 router.use("/", async function (req, res) {
-    const [sgietoplamyuz] = await db.execute("select * from sgietopyuz where Yillar=2013");
-    const [haberler]=await db.execute("SELECT * FROM haberler ORDER BY id DESC LIMIT 3")
-   
     try {
+        const sgietopyuzData = await getDataFromTable('sgietopyuz');
+        const [haberler] = await db.execute("SELECT * FROM haberler ORDER BY id DESC LIMIT 3");
+
+        const backgroundColor = {
+            Tarim: '#bafa7b',
+            Sanayi: '#3303a9',
+            Insaat: '#ffb6c1',
+            Hizmetler: '#be4d4d',
+        };
+
+        const chartDataTarim = prepareChartData(sgietopyuzData, 'Tarim', backgroundColor);
+        const chartDataSanayi = prepareChartData(sgietopyuzData, 'Sanayi', backgroundColor);
+        // Diğer veri türleri için aynı işlemi yapabilirsiniz
+
         res.render("anasayfa/index", {
-            sgietoplamyuz: sgietoplamyuz,
-            haberler:haberler
-        })
-        module.exports = { sgietoplamyuz };
+            chartDataTarim: JSON.stringify(chartDataTarim),
+            chartDataSanayi: JSON.stringify(chartDataSanayi),
+            haberler: haberler
+        });
 
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
-
 });
+
 
 module.exports = router;

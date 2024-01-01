@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labor Rights</title>
+    <title>İşçi Atlası</title>
+    <link rel="icon" href="/static/img/atlas.png" sizes="64x64" type="image/x-icon">
     <!-- bootstrap-->
     <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css">
     <!-- fontawesome-->
@@ -20,7 +21,7 @@
     <!-- JavaScript dosyasını çağırma -->
     <script src="/static/js/svg-turkiye-haritasi.js"></script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -40,8 +41,41 @@
                         <div class="row">
                             <div class="col-md-10">
                                 <div class="col-md-6">
-                                    <%- include('../../public/js/chart_sgie.ejs') %>
-                                </div>                                
+                                    <canvas id="cubukGrafik" width="400" height="400"></canvas>
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <canvas id="noktaliGrafik" width="400" height="400"></canvas>
+
+                                </div>
+                                <script>
+                                    var chartDataTarim = JSON.parse('<%- chartDataTarim %>'); // Grafik verilerini alın
+                                    var chartDataSanayi = JSON.parse('<%- chartDataSanayi %>'); // Diğer grafik verilerini alın
+
+                                    // JavaScript dosyasında Chart.js kullanarak grafikleri oluşturun ve ilgili canvas elementlerine yerleştirin
+                                    var ctxCubuk = document.getElementById('cubukGrafik').getContext('2d');
+                                    var ctxNoktali = document.getElementById('noktaliGrafik').getContext('2d');
+                                    // Diğer canvas elementleri için ctx ler oluşturun
+
+                                    var chartDataTarim = JSON.parse('<%- chartDataTarim %>'); // Grafik verilerini alın
+                                    var chartDataSanayi = JSON.parse('<%- chartDataSanayi %>'); // Diğer grafik verilerini alın
+
+                                    var cubukGrafik = new Chart(ctxCubuk, {
+                                        type: 'bar', // Grafik tipi (çubuk, çizgi, vs.)
+                                        data: chartDataTarim, // Grafik için veri
+                                        // Diğer grafik ayarları...
+                                    });
+
+                                    var noktaliGrafik = new Chart(ctxNoktali, {
+                                        type: 'line', // Grafik tipi (çubuk, çizgi, vs.)
+                                        data: chartDataSanayi, // Grafik için veri
+                                        // Diğer grafik ayarları...
+                                    });
+
+                                    // Diğer grafikler için aynı şekilde ctx oluşturun ve grafikleri oluşturun
+
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -50,9 +84,9 @@
 
 
                 <%- include('../haberler/haber.card.ejs') %>
-               
 
-                <%- include('../partials/footer') %>
+
+                    <%- include('../partials/footer') %>
 
 
 
