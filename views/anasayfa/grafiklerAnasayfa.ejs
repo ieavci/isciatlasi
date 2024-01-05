@@ -1,0 +1,125 @@
+<div class="container m-5">
+    <small> Türkiye'deki işgücüne dair istatistikler ve grafikler: </small>
+    <hr>
+    <div class="row">
+        <div class="col-md-4">
+            <h4>15+ Nüfus İşgücüne Katılım Verileri</h4>
+            <button type="button" class="btn btn-ozel"
+                onclick="toggleChart('Grafiktemel15yiltoplam', 'Grafiktemel15yiltoplamBar')">Toplam</button>
+            <button type="button" class="btn btn-ozel"
+                onclick="toggleChart('charttemel15yilerkekData', 'charttemel15yilerkekDataBar')">Erkek</button>
+            <button type="button" class="btn btn-ozel"
+                onclick="toggleChart('charttemel15yilkadinData', 'charttemel15yilkadinDataBar')">Kadın</button>
+            
+            <!-- Diğer butonlar -->
+        </div>
+        <div class="col-md-4">
+            <h4>Sektöre Göre İstihdam Verileri</h4>
+            <button type="button" class="btn btn-ozel"
+                onclick="toggleChart('noktaliGrafik', 'cubukGrafik')">Toplam</button>
+            <button type="button" class="btn btn-ozel"
+                onclick="toggleChart('chartSgietoperkekData','chartSgietoperkekDataBar')">Erkek</button>
+            <button type="button" class="btn btn-ozel"
+                onclick="toggleChart('chartSgietopkadinData','chartSgietopkadinDataBar')">Kadın</button>
+
+            <!-- Diğer butonlar -->
+        </div>
+        <div class="col-md-4">
+            <h4>Bölgelere Göre İstihdam Verileri</h4>
+            <button type="button" class="btn btn-ozel"
+                onclick="toggleChart2('chartBolgeleregoreistihdam2022yuzdeleri')">Toplam</button>
+            <!-- Diğer butonlar -->
+        </div>
+    </div>
+    <hr>
+</div>
+
+<div class="grafikler">
+    <!-- Grafikler -->
+    <div class="col-md-12">
+        <div class="chart-container">
+            <div class="row">
+                <div class="col-md-6">
+                    <canvas id="Grafiktemel15yiltoplam" class="hidden-chart m-5" width="500" height="500"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <canvas id="Grafiktemel15yiltoplamBar" class="hidden-chart m-5" width="500" height="500"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="chart-container">
+            <div class="row">
+                <div class="col-md-6">
+                    <canvas id="charttemel15yilerkekData" class="hidden-chart m-5" width="500" height="500"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <canvas id="charttemel15yilerkekDataBar" class="hidden-chart m-5" width="500" height="500"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="chart-container">
+            <div class="row">
+                <div class="col-md-6">
+                    <canvas id="charttemel15yilkadinData" class="hidden-chart m-5" width="500" height="500"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <canvas id="charttemel15yilkadinDataBar" class="hidden-chart m-5" width="500" height="500"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="chart-container">
+            <div class="row">
+                <div class="col-md-6">
+                    <canvas id="noktaliGrafik" class="hidden-chart m-5" width="500" height="500"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <canvas id="cubukGrafik" class="hidden-chart m-5" width="500" height="500"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="chart-container">
+            <div class="row">
+                <div class="col-md-6">
+                    <canvas id="chartSgietoperkekData" class="hidden-chart m-5" width="500" height="500"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <canvas id="chartSgietoperkekDataBar" class="hidden-chart m-5" width="500" height="500"></canvas>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="chart-container">
+            <div class="row">
+                <div class="col-md-6">
+                    <canvas id="chartSgietopkadinData" class="hidden-chart m-5" width="500" height="500"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <canvas id="chartSgietopkadinDataBar" class="hidden-chart m-5" width="500" height="500"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="chart-container">
+            <div class="row">
+                <div class="col">
+                    <canvas id="chartBolgeleregoreistihdam2022yuzdeleri" class="hidden-chart m-5" width="750"
+                        height="750"></canvas>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Diğer grafikler için aynı yapıyı devam ettirin -->
+</div>

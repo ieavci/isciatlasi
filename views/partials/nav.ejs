@@ -7,7 +7,7 @@
         </a>
 
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-            <span class="navbar-toggler-icon">                
+            <span class="navbar-toggler-icon">
                 <i class="fas fa-bars custom-icon-size"></i>
             </span>
         </button>
@@ -17,9 +17,7 @@
                 <li class="nav-item px-2 py-2">
                     <a href="/" class="nav-link text-uppercase ">anasayfa</a>
                 </li>
-                <li class="nav-item px-2 py-2">
-                    <a href="#isgucu" class="nav-link text-uppercase ">İşgücüne Katılım</a>
-                </li>
+                
                 <li class="nav-item px-2 py-2">
                     <a href="/sigortasiz" class="nav-link text-uppercase">Sİgortasız İşçİ</a>
                 </li>
@@ -38,3 +36,28 @@
         </div>
     </div>
 </nav>
+<script>$(document).ready(function () {
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('.navbar').outerHeight();
+
+        $(window).scroll(function (event) {
+            var st = $(this).scrollTop();
+
+            // Scroll aşağı doğru yapılıyorsa ve mesafe delta'dan büyükse navbar kaybolur
+            if (Math.abs(lastScrollTop - st) <= delta)
+                return;
+
+            if (st > lastScrollTop && st > navbarHeight) {
+                // Scroll aşağı doğru yapılıyor
+                $('.navbar').removeClass('nav-down').addClass('nav-up');
+            } else {
+                // Scroll yukarı doğru yapılıyor
+                if (st + $(window).height() < $(document).height()) {
+                    $('.navbar').removeClass('nav-up').addClass('nav-down');
+                }
+            }
+
+            lastScrollTop = st;
+        });
+    });</script>

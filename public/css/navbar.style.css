@@ -27,9 +27,10 @@ nav {
 .navbar-brand {
     color: var(--red);
     transition: color 0.5s ease;
-    
-    
+
+
 }
+
 .navbar-brand img {
     width: 55px;
 }
@@ -56,6 +57,20 @@ nav {
 }
 
 .navbar-toggler-icon {
-    color: var(--turuncu) !important; /* Mavi renk */
+    color: var(--turuncu) !important;
+    /* Mavi renk */
     font-size: 18px;
+}
+
+
+.navbar {
+    transition: transform 0.5s ease;
+}
+
+.nav-up {
+    transform: translateY(-100%);
+}
+
+.nav-down {
+    transform: translateY(0);
 }

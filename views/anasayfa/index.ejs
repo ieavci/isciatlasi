@@ -18,10 +18,23 @@
     <!-- CSS dosyasını çağırma -->
     <link rel="stylesheet" href="/static/css/svg-turkiye-haritasi.css">
 
+
+
+
     <!-- JavaScript dosyasını çağırma -->
     <script src="/static/js/svg-turkiye-haritasi.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+
+
+
+
 </head>
 
 <body>
@@ -36,51 +49,11 @@
 
             <%- include('../harita/svg-turkiye-haritasi-master/harita') %>
 
-                <section class="grafikler ">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-10">
-                                <div class="col-md-6">
-                                    <canvas id="cubukGrafik" width="400" height="400"></canvas>
-
-                                </div>
-
-                                <div class="col-md-6">
-                                    <canvas id="noktaliGrafik" width="400" height="400"></canvas>
-
-                                </div>
-                                <script>
-                                    var chartDataTarim = JSON.parse('<%- chartDataTarim %>'); // Grafik verilerini alın
-                                    var chartDataSanayi = JSON.parse('<%- chartDataSanayi %>'); // Diğer grafik verilerini alın
-
-                                    // JavaScript dosyasında Chart.js kullanarak grafikleri oluşturun ve ilgili canvas elementlerine yerleştirin
-                                    var ctxCubuk = document.getElementById('cubukGrafik').getContext('2d');
-                                    var ctxNoktali = document.getElementById('noktaliGrafik').getContext('2d');
-                                    // Diğer canvas elementleri için ctx ler oluşturun
-
-                                    var chartDataTarim = JSON.parse('<%- chartDataTarim %>'); // Grafik verilerini alın
-                                    var chartDataSanayi = JSON.parse('<%- chartDataSanayi %>'); // Diğer grafik verilerini alın
-
-                                    var cubukGrafik = new Chart(ctxCubuk, {
-                                        type: 'bar', // Grafik tipi (çubuk, çizgi, vs.)
-                                        data: chartDataTarim, // Grafik için veri
-                                        // Diğer grafik ayarları...
-                                    });
-
-                                    var noktaliGrafik = new Chart(ctxNoktali, {
-                                        type: 'line', // Grafik tipi (çubuk, çizgi, vs.)
-                                        data: chartDataSanayi, // Grafik için veri
-                                        // Diğer grafik ayarları...
-                                    });
-
-                                    // Diğer grafikler için aynı şekilde ctx oluşturun ve grafikleri oluşturun
-
-                                </script>
-                            </div>
-                        </div>
-                    </div>
-
+                <section id="grafikler">
+                    <%- include('./grafiklerAnasayfa') %>
                 </section>
+
+
 
 
                 <%- include('../haberler/haber.card.ejs') %>
@@ -88,7 +61,14 @@
 
                     <%- include('../partials/footer') %>
 
+                        <script>
+                            function goToSection() {
+                         
+                                var hedefBolge = document.getElementById('grafikler');
+                                hedefBolge.scrollIntoView({ behavior: 'smooth' });
 
+                            }
+                        </script>
 
 
 </body>
@@ -96,7 +76,82 @@
 </html>
 
 
+<!--Grafik oluşturma-->
+<script>
 
+    // Strategy Interface
+    class ChartStrategy {
+        constructor(type, data, ctx) {
+            this.type = type;
+            this.data = data;
+            this.ctx = ctx;
+        }
+
+        drawChart() {
+            return new Chart(this.ctx, {
+                type: this.type,
+                data: this.data,
+                // Diğer grafik ayarları...
+            });
+        }
+    }
+
+    // Veri alımı
+    const chartDataTarim = JSON.parse('<%- chartDataTarim %>');
+    const chartDataSanayi = JSON.parse('<%- chartDataSanayi %>');
+    const chartDatatemel15yiltoplam = JSON.parse('<%- chartDatatemel15yiltoplam %>');
+    const chartDatatemel15yiltoplamBar = JSON.parse('<%- chartDatatemel15yiltoplam %>');
+    const charttemel15yilerkekData = JSON.parse('<%- charttemel15yilerkekData %>');
+    const charttemel15yilkadinData = JSON.parse('<%- charttemel15yilkadinData %>');
+    const charttemel15yilkadinDataBar = JSON.parse('<%- charttemel15yilkadinData %>');
+    const charttemel15yilerkekDataBar = JSON.parse('<%- charttemel15yilerkekData %>');
+    const chartBolgeleregoreistihdam2022yuzdeleri = JSON.parse('<%- chartBolgeleregoreistihdam2022yuzdeleri %>');
+    const chartSgietoperkekData = JSON.parse('<%- chartSgietoperkekData %>');
+    const chartSgietoperkekDataBar = JSON.parse('<%- chartSgietoperkekData %>');
+    const chartSgietopkadinData = JSON.parse('<%- chartSgietopkadinData %>');
+    const chartSgietopkadinDataBar = JSON.parse('<%- chartSgietopkadinData %>');
+
+    // Canvas context'leri
+    const ctxCubuk = document.getElementById('cubukGrafik').getContext('2d');
+    const ctxNoktali = document.getElementById('noktaliGrafik').getContext('2d');
+    const ctxNoktalitemel15yiltoplam = document.getElementById('Grafiktemel15yiltoplam').getContext('2d');
+    const ctxNoktalitemel15yiltoplamBar = document.getElementById('Grafiktemel15yiltoplamBar').getContext('2d');
+    const ctxtemel15yilerkekData = document.getElementById('charttemel15yilerkekData').getContext('2d');
+    const ctxtemel15yilerkekDataBar = document.getElementById('charttemel15yilerkekDataBar').getContext('2d');
+    const ctxtemel15yilkadinData = document.getElementById('charttemel15yilkadinData').getContext('2d');
+    const ctxtemel15yilkadinDataBar = document.getElementById('charttemel15yilkadinDataBar').getContext('2d');
+    const ctxcBolgeleregoreistihdam2022yuzdeleri = document.getElementById('chartBolgeleregoreistihdam2022yuzdeleri').getContext('2d');
+    const ctxSgietoperkekData = document.getElementById('chartSgietoperkekData').getContext('2d');
+    const ctxSgietoperkekDataBar = document.getElementById('chartSgietoperkekDataBar').getContext('2d');
+    const ctxSgietopkadinData = document.getElementById('chartSgietopkadinData').getContext('2d');
+    const ctxSgietopkadinDataBar = document.getElementById('chartSgietopkadinDataBar').getContext('2d');
+
+    // Strategies oluşturma
+    const chartStrategies = [
+        new ChartStrategy('bar', chartDataTarim, ctxCubuk),
+        new ChartStrategy('line', chartDataSanayi, ctxNoktali),
+        new ChartStrategy('line', chartDatatemel15yiltoplam, ctxNoktalitemel15yiltoplam),
+        new ChartStrategy('bar', chartDatatemel15yiltoplamBar, ctxNoktalitemel15yiltoplamBar),
+        new ChartStrategy('line', charttemel15yilerkekData, ctxtemel15yilerkekData),
+        new ChartStrategy('bar', charttemel15yilerkekDataBar, ctxtemel15yilerkekDataBar),
+        new ChartStrategy('line', charttemel15yilkadinData, ctxtemel15yilkadinData),
+        new ChartStrategy('bar', charttemel15yilkadinDataBar, ctxtemel15yilkadinDataBar),
+        new ChartStrategy('radar', chartBolgeleregoreistihdam2022yuzdeleri, ctxcBolgeleregoreistihdam2022yuzdeleri),
+        new ChartStrategy('line', chartSgietoperkekData, ctxSgietoperkekData),
+        new ChartStrategy('bar', chartSgietoperkekDataBar, ctxSgietoperkekDataBar),
+        new ChartStrategy('line', chartSgietopkadinData, ctxSgietopkadinData),
+        new ChartStrategy('bar', chartSgietopkadinDataBar, ctxSgietopkadinDataBar),
+        // Diğer stratejiler...
+    ];
+
+    const charts = chartStrategies.map(strategy => strategy.drawChart());
+
+
+</script>
+
+<!-- JavaScript kısmı -->
+<script src="../../static/js/grafik-hide.js"></script>
 
 <!-- Bootstrap js-->
 <script src="/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>

@@ -15,7 +15,7 @@ router.use("/haklar", async function (req, res) {
     const [tblIsverenhaklari] = await db.execute("SELECT m.*, k.kanunbasligi FROM isverenkanunlarimaddeleri m JOIN isverenkanunlari k ON m.kanun_id = k.kanun_id ")
     const [tblIscihaklari] = await db.execute("select * from iscikanunlari")
     const [tblIscihaklariMaddeleri] = await db.execute("SELECT m.*, k.kanunbasligi FROM iscikanunlarimaddeleri m JOIN iscikanunlari k ON m.kanun_id = k.kanun_id where m.kanun_id=1 ")
-    console.log(tblIscihaklariMaddeleri)
+
 
     try {
         res.render("isci-ve-isveren/isci-ve-isveren.ejs", {
@@ -94,11 +94,13 @@ router.get("/haberler", async function (req, res) {
 
 });
 
+
+
 ////////////////////////////////////////////////////////////////////////////////////
 
 async function getDataFromTable(tableName) {
     try {
-        const [data] = await db.execute(`SELECT * FROM ${tableName}`);
+        const [data] = await db.execute(`SELECT * from ${tableName}`);
         return data;
     } catch (error) {
         throw new Error(`Veri alınırken hata oluştu: ${error}`);
@@ -109,7 +111,7 @@ function prepareChartData(data, label, backgroundColor) {
     const labels = data.map(item => item.Yillar);
     const values = Object.keys(data[0]).filter(key => key !== 'Yillar').map(key => ({
         label: key,
-        data: data.map(item => parseFloat(item[key].replace(',', '.'))),
+        data: data.map(item => parseFloat(item[key].replace(',', '.').replace(" ", ""))),
         backgroundColor: backgroundColor[key],
         // İhtiyaca göre diğer özellikler eklenebilir
     }));
@@ -120,25 +122,107 @@ function prepareChartData(data, label, backgroundColor) {
     };
 }
 
+function prepareChartData2(data) {
+    const labels = data.map(item => item.bolge);
+    const datasets = Object.keys(data[0])
+        .filter(key => key !== 'bolge')
+        .map(key => {
+            const dataPoints = data.map(item => parseFloat(item[key].replace(',', '.').replace(" ", "")));
+            return {
+                label: key,
+                data: dataPoints,
+                // Diğer özellikler eklenebilir
+            };
+        });
+
+    return {
+        labels: labels,
+        datasets: datasets,
+    };
+}
+function prepareChartData3(data, label) {
+    const labels = data.map(item => item.Yillar);
+    const values = Object.keys(data[0]).filter(key => key !== 'Yillar').map(key => ({
+        label: key,
+        data: data.map(item => {
+            const value = item[key].replace(',', '.').replace(" ", "");
+            return !isNaN(value) ? parseFloat(value) : null;
+        }),
+        // İhtiyaca göre diğer özellikler eklenebilir
+    }));
+
+    return {
+        labels: labels,
+        datasets: values,
+    };
+}
+
+
+
+
+
 router.use("/", async function (req, res) {
     try {
         const sgietopyuzData = await getDataFromTable('sgietopyuz');
+        const sgietoperkekData = await getDataFromTable('sgieerkekbin');
+        const sgietopkadinData = await getDataFromTable('sgiekadinyuz');
+
+
         const [haberler] = await db.execute("SELECT * FROM haberler ORDER BY id DESC LIMIT 3");
+
+        //deneme
+        const temel15yiltoplamData = await getDataFromTable('temel15yiltoplam');
+        const temel15yilerkekData = await getDataFromTable('temel15yilerkek');
+        const temel15yilkadinData = await getDataFromTable('temel15yilkadindata');
+        const bolgeleregoreistihdam2022yuzdeleriData = await getDataFromTable('bolgeleregoreistihdam2022yuzdeleri')
+        
 
         const backgroundColor = {
             Tarim: '#bafa7b',
             Sanayi: '#3303a9',
             Insaat: '#ffb6c1',
+            İnsaat: '#ffb6c1',
             Hizmetler: '#be4d4d',
+        };
+        const backgroundtemel15yiltoplam = {
+            nufus: '#bafa7b',
+            isgucu: '#3303a9',
+            istihdam: '#ff0000',
+            issiz: '#00ff00',
+            dahilOlmayanlar: '#0000ff',
+            isgucuneKatilim: '#ffff00',
+            istihdamOrani: '#00ffff',
+            issizlikOrani: '#ff00ff',
+
         };
 
         const chartDataTarim = prepareChartData(sgietopyuzData, 'Tarim', backgroundColor);
         const chartDataSanayi = prepareChartData(sgietopyuzData, 'Sanayi', backgroundColor);
+
+        //deneme
+        const chartDatatemel15yiltoplam = prepareChartData(temel15yiltoplamData, 'nufus', backgroundtemel15yiltoplam);
+        const charttemel15yilerkekData = prepareChartData3(temel15yilerkekData, 'nufus');
+        const charttemel15yilkadinData = prepareChartData3(temel15yilkadinData, 'nufus');
+        const chartBolgeleregoreistihdam2022yuzdeleri = prepareChartData2(bolgeleregoreistihdam2022yuzdeleriData)
+
+        const chartSgietoperkekData = prepareChartData(sgietoperkekData, 'Tarim', backgroundColor)
+        const chartSgietopkadinData = prepareChartData(sgietopkadinData, 'Tarim', backgroundColor)
+
+
         // Diğer veri türleri için aynı işlemi yapabilirsiniz
+       
 
         res.render("anasayfa/index", {
             chartDataTarim: JSON.stringify(chartDataTarim),
             chartDataSanayi: JSON.stringify(chartDataSanayi),
+            //deneme
+            chartDatatemel15yiltoplam: JSON.stringify(chartDatatemel15yiltoplam),
+            charttemel15yilerkekData: JSON.stringify(charttemel15yilerkekData),
+            charttemel15yilkadinData: JSON.stringify(charttemel15yilkadinData),
+            chartBolgeleregoreistihdam2022yuzdeleri: JSON.stringify(chartBolgeleregoreistihdam2022yuzdeleri),
+            chartSgietoperkekData: JSON.stringify(chartSgietoperkekData),
+            chartSgietopkadinData: JSON.stringify(chartSgietopkadinData),
+
             haberler: haberler
         });
 
@@ -146,6 +230,7 @@ router.use("/", async function (req, res) {
         console.log(error);
     }
 });
+
 
 
 module.exports = router;

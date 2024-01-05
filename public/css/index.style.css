@@ -44,12 +44,10 @@ svg>a {
     text-align: center;
     margin-top: 25px;
     color: #666;
-    
+
 }
 
-.harita .container{
-    
-}
+.harita .container {}
 
 /* harita sonu*/
 
@@ -79,3 +77,20 @@ svg>a {
 .offers-content btn {
     border-color: transparent !important;
 }
+
+.selected {
+    background-color: #00ADB5;
+}
+
+
+
+
+.ui-widget-header {
+    padding: 0.2em;
+}
+
+.chart-transition {
+    opacity: 0;
+    transition: opacity 1s linear; /* Geçiş süresi ve efekt tipi burada belirlenir */
+}
+
