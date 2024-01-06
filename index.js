@@ -4,6 +4,10 @@ const app = express();
 
 const path = require("path");
 
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+
 const userRoutes = require("./routes/user");
 const adminRoutes = require("./routes/admin");
 

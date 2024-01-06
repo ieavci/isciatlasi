@@ -94,6 +94,45 @@ router.get("/haberler", async function (req, res) {
 
 });
 
+router.post('/getVeri', async function (req, res) {
+    const { ilAdi } = req.body;
+
+    try {
+        const [veri] = await db.execute('SELECT * FROM sehirleregoreistihdam WHERE il = ?', [ilAdi]);
+        const [veriSayi] = await db.execute('SELECT * FROM sehirleregoreistihdamsayilari WHERE il = ?', [ilAdi]);
+
+        const combinedData = {
+            istihdam: veri,
+            istihdamSayilari: veriSayi
+        };
+
+        const veriTemizle = (veri) => {
+            for (const key in veri) {
+                if (veri.hasOwnProperty(key)) {
+                    for (const prop in veri[key]) {
+                        if (veri[key].hasOwnProperty(prop)) {
+                            if (typeof veri[key][prop] === 'string') {
+                                // Boşlukları ve virgülleri temizle
+                                veri[key][prop] = veri[key][prop].replace(/\s/g, '').replace(/,/g, '.');
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // Boşlukları ve virgülleri temizlenmiş veri
+        veriTemizle(combinedData.istihdam);
+        veriTemizle(combinedData.istihdamSayilari);
+
+        res.json(combinedData);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Veri alınamadı.' });
+    }
+});
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -175,7 +214,7 @@ router.use("/", async function (req, res) {
         const temel15yilerkekData = await getDataFromTable('temel15yilerkek');
         const temel15yilkadinData = await getDataFromTable('temel15yilkadindata');
         const bolgeleregoreistihdam2022yuzdeleriData = await getDataFromTable('bolgeleregoreistihdam2022yuzdeleri')
-        
+
 
         const backgroundColor = {
             Tarim: '#bafa7b',
@@ -210,7 +249,7 @@ router.use("/", async function (req, res) {
 
 
         // Diğer veri türleri için aynı işlemi yapabilirsiniz
-       
+
 
         res.render("anasayfa/index", {
             chartDataTarim: JSON.stringify(chartDataTarim),
