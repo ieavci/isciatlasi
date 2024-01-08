@@ -75,3 +75,6 @@ th{
     color: var(--red)!important;
 }
 
+.dilekce-btn a{
+    text-decoration: none;
+}
