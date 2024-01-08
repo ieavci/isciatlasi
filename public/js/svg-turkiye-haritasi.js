@@ -1,18 +1,30 @@
+// Öncelikle fetch işlevini saran bir Proxy oluşturuyoruz
+const fetchProxy = new Proxy(fetch, {
+  apply: function (target, thisArg, args) {
+    const url = args[0]; // URL bilgisini alıyoruz
+
+    // Erişim kontrolü veya istek öncesi işlemleri burada gerçekleştirilebilir
+
+    // fetch işlemini gerçekleştiriyoruz ve sonucu döndürüyoruz
+    return fetch(...args)
+      .then(response => {
+        // Yanıt işlemleri yapılabilir
+        return response.json(); // JSON formatında yanıtı döndürüyoruz
+      })
+      .catch(error => {
+        // Hata işlemleri yapılabilir
+        throw error;
+      });
+  }
+});
+
+// fetchProxy'i kullanarak isteklerinizi yapabilirsiniz
 document.addEventListener('DOMContentLoaded', function () {
   addClickListeners(); // Tıklama işlemleri için listener ekleme
   addMouseEvents(); // Mouse olayları için listener ekleme
-
-  const grafikSecimi = document.getElementById('grafikSecimi');
-
-  grafikSecimi.addEventListener('change', function () {
-    const secilenGrafikTuru = grafikSecimi.value;
-    if (secilenGrafikTuru === 'pie' || secilenGrafikTuru === 'bar' || secilenGrafikTuru === 'radar') {
-      // Seçilen grafik türüne göre fonksiyonu çağır ve grafik türünü değiştir
-      changeChartType(secilenGrafikTuru);
-    }
-  });
 });
 
+// İl tıklama işlemleri için listener'ları eklemek için addClickListeners fonksiyonu
 function addClickListeners() {
   const element = document.querySelector('#svg-turkiye-haritasi');
   const info = document.querySelector('.il-isimleri');
@@ -23,108 +35,23 @@ function addClickListeners() {
     if (event.target.tagName === 'path') {
       const parent = event.target.parentNode;
       const ilAdi = parent.getAttribute('data-iladi');
-
-      fetch('/getVeri', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ilAdi: ilAdi }),
-      })
-        .then(response => response.json())
-        .then(data => {
-          const modalContent = document.querySelector('.modal-content');
-          const { istihdam, istihdamSayilari } = data;
-
-          modalContent.innerHTML = `
-
-
-          <table class="table table-hover">
-
-          <tbody>            
-
-              <span class="close">&times;</span>
-           
-            <h2>${ilAdi}</h2>
-            <h5>2023 Yılında Şehre Ait Sektöre Göre İstihdam Verileri</h5>   
-              <thead>
-                  <tr>
-                      
-                      <th scope="col">Toplam (Kişi)</th>
-                     
-                      <th scope="col">Tarım (Kişi)</th>
-                    
-                      <th scope="col">Sanayi (Kişi)</th>
-                    
-                      <th scope="col">Hizmet (Kişi)</th>
-                  </tr>
-              </thead>
-              <tr>
-
-                  
-                  <td>${istihdamSayilari[0]['Toplam']}</td>
-                 
-                  <td>${istihdamSayilari[0]['Tarım']}</td>
-                
-                  <td>${istihdamSayilari[0]['Sanayi']}</td>
-                
-                  <td>${istihdamSayilari[0]['Hizmet']}</td>
-              </tr>
-
-              
-          </tbody>
-      </table>
-        
-        
-
-            <select class="form-select form-select-sm" id="grafikSecimi">
-              <option value="pie">Pasta Grafiği</option>
-              <option value="bar">Çubuk Grafiği</option>
-              <option value="radar">Radar Grafiği</option>
-            </select>
-            
-          `;
-
-          createChart(
-            istihdam[0]['Tarım'],
-            istihdam[0]['Sanayi'],
-            istihdam[0]['Hizmet']
-          );
-
-          openModal();
-
-          event.preventDefault();
-        })
-        .catch(error => {
-          console.error('Bir hata oluştu:', error);
-        });
+      
+      fetchData(ilAdi);
     }
   });
-
   document.addEventListener('click', function (event) {
     const modal = document.getElementById('modal');
-    if (event.target.classList.contains('close') || event.target === modal) {
+    if (
+      event.target.classList.contains('close') || 
+      event.target === modal ||
+      event.target.classList.contains('modal-content')
+    ) {
       closeModal();
     }
   });
-
-  function openModal() {
-    const modal = document.getElementById('modal');
-    const body = document.body;
-
-    modal.style.display = 'block';
-    body.style.overflowX = 'hidden';
-  }
-
-  function closeModal() {
-    const modal = document.getElementById('modal');
-    const body = document.body;
-
-    modal.style.display = 'none';
-    body.style.overflowX = '';
-  }
 }
 
+// Mouse olayları için listener'ları eklemek için addMouseEvents fonksiyonu
 function addMouseEvents() {
   const element = document.querySelector('#svg-turkiye-haritasi');
   const info = document.querySelector('.il-isimleri');
@@ -147,6 +74,102 @@ function addMouseEvents() {
   });
 }
 
+// fetchData fonksiyonunu kullanarak istek yapılabilir
+function fetchData(ilAdi) {
+  fetchProxy('/getVeri', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ ilAdi: ilAdi }),
+  })
+    .then(data => {
+      const modalContent = document.querySelector('.modal-content');
+      const { istihdamSayilari, istihdam } = data;
+
+      modalContent.innerHTML = `
+
+
+      <table class="table table-hover">
+
+      <tbody>            
+
+          <span class="close">&times;</span>
+       
+        <h2>${ilAdi}</h2>
+        <h5>2023 Yılında Şehre Ait Sektöre Göre İstihdam Verileri</h5>   
+          <thead>
+              <tr>
+                  
+                  <th scope="col">Toplam (Kişi)</th>
+                 
+                  <th scope="col">Tarım (Kişi)</th>
+                
+                  <th scope="col">Sanayi (Kişi)</th>
+                
+                  <th scope="col">Hizmet (Kişi)</th>
+              </tr>
+          </thead>
+          <tr>
+
+              
+              <td>${istihdamSayilari[0]['Toplam']}</td>
+             
+              <td>${istihdamSayilari[0]['Tarım']}</td>
+            
+              <td>${istihdamSayilari[0]['Sanayi']}</td>
+            
+              <td>${istihdamSayilari[0]['Hizmet']}</td>
+          </tr>
+
+          
+      </tbody>
+  </table>
+    
+    
+
+        <select class="form-select form-select-sm" id="grafikSecimi">
+          <option value="pie">Pasta Grafiği</option>
+          <option value="bar">Çubuk Grafiği</option>
+          <option value="radar">Radar Grafiği</option>
+        </select>
+        
+      `;
+
+      createChart(
+        istihdam[0]['Tarım'],
+        istihdam[0]['Sanayi'],
+        istihdam[0]['Hizmet']
+      );
+
+      openModal();
+      
+
+      event.preventDefault();
+    })
+    .catch(error => {
+      console.error('Bir hata oluştu:', error);
+    });
+}
+
+// Modal işlemleri için openModal ve closeModal fonksiyonları buraya eklenebilir
+function openModal() {
+  const modal = document.getElementById('modal');
+  const body = document.body;
+
+  modal.style.display = 'block';
+  body.style.overflowX = 'hidden';
+}
+
+function closeModal() {
+  const modal = document.getElementById('modal');
+  const body = document.body;
+
+  modal.style.display = 'none';
+  body.style.overflowX = '';
+}
+
+// createChart fonksiyonu ve grafik işlemleri buraya eklenebilir
 function createChart(istihdamTarim, istihdamSanayi, istihdamHizmet) {
   const modalContent = document.querySelector('.modal-content');
   modalContent.innerHTML += `
