@@ -5,6 +5,37 @@ const router = express.Router();
 const path = require("path");
 const db = require("../data/db");
 
+class HaberObserver {
+    constructor() {
+        this.observers = [];
+    }
+
+    subscribe(observer) {
+        this.observers.push(observer);
+    }
+
+    unsubscribe(observer) {
+        this.observers = this.observers.filter(obs => obs !== observer);
+    }
+
+    notify(data) {
+        this.observers.forEach(observer => observer.update(data));
+    }
+}
+
+class HaberIstemci {
+    update(data) {
+        console.log('Yeni haberler geldi:', data);
+        
+    }
+}
+
+const haberObserver = new HaberObserver();
+const istemci = new HaberIstemci();
+haberObserver.subscribe(istemci);
+
+
+
 
 
 
@@ -82,16 +113,17 @@ router.use("/haberler/:id", async function (req, res) {
 });
 
 router.get("/haberler", async function (req, res) {
-    const [haberler] = await db.execute("select* from haberler")
+    // Haberlerin alınması işlemleri
     try {
-
+        const [haberler] = await db.execute("SELECT * FROM haberler ORDER BY id DESC LIMIT 3");
+        haberObserver.notify(haberler);
         res.render("haberler/haberler.ejs", {
             haberler: haberler
         });
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        res.status(500).send("Internal Server Error");
     }
-
 });
 
 router.post('/getVeri', async function (req, res) {
