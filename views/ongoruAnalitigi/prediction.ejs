@@ -21,6 +21,7 @@
 <body>
 
     <%- include("../partials/nav") %>
+    <div>
     <br><br><br><br><br><br><br><br><br><br>
     <h1>Predicted Values for 2024:</h1>
     <ul>
@@ -29,8 +30,33 @@
         <li>Labor Force Participation Rate: <%= predicted_labor_force_participation_rate.toFixed(2) %>%</li>
         <li>Employment Rate: <%= predicted_employment_rate.toFixed(2) %>%</li>
     </ul>
-    <br><br><br><br><br><br><br><br><br><br>
+    <ul>
+        <li>Tarım: <%= predicted_tarim.toFixed(0) %> (Yüzde <%= predicted_tarim_yuzde.toFixed(2) %>)</li>
+        <li>Sanayi: <%= predicted_sanayi.toFixed(0) %> (Yüzde <%= predicted_sanayi_yuzde.toFixed(2) %>)</li>
+        <li>İnşaat: <%= predicted_insaat.toFixed(0) %> (Yüzde <%= predicted_insaat_yuzde.toFixed(2) %>)</li>
+        <li>Hizmet: <%= predicted_hizmet.toFixed(0) %> (Yüzde <%= predicted_hizmet_yuzde.toFixed(2) %>)</li>
+    </ul>
+    <ul>
+        <ul>
+    <li>Tahmini Okur-Yazar Olmayan İşgücü: <%= predicted_uneducated_labor_force.toFixed(0) %></li>
+    <li>Tahmini Okur-Yazar Olmayan İstihdam: <%= predicted_uneducated_employment.toFixed(0) %></li>
+    <li>Tahmini Okur-Yazar Olmayan İşsizlik: <%= predicted_uneducated_unemployment.toFixed(0) %></li>
+    <li>Tahmini Lise Altı Eğitimli İşgücü: <%= predicted_less_than_highschool_labor_force.toFixed(0) %></li>
+    <li>Tahmini Lise Altı Eğitimli İstihdam: <%= predicted_less_than_highschool_employment.toFixed(0) %></li>
+    <li>Tahmini Lise Altı Eğitimli İşsizlik: <%= predicted_less_than_highschool_unemployment.toFixed(0) %></li>
+    <li>Tahmini Lise İşgücü: <%= predicted_highschool_labor_force.toFixed(0) %></li>
+    <li>Tahmini Lise İstihdam: <%= predicted_highschool_employment.toFixed(0) %></li>
+    <li>Tahmini Lise İşsizlik: <%= predicted_highschool_unemployment.toFixed(0) %></li>
+    <li>Tahmini Mesleki veya Teknik Lise İşgücü: <%= predicted_vocational_labor_force.toFixed(0) %></li>
+    <li>Tahmini Mesleki veya Teknik Lise İstihdam: <%= predicted_vocational_employment.toFixed(0) %></li>
+    <li>Tahmini Mesleki veya Teknik Lise İşsizlik: <%= predicted_vocational_unemployment.toFixed(0) %></li>
+    <li>Tahmini Yüksek Öğretim İşgücü: <%= predicted_highereducation_labor_force.toFixed(0) %></li>
+    <li>Tahmini Yüksek Öğretim İstihdam: <%= predicted_highereducation_employment.toFixed(0) %></li>
+    <li>Tahmini Yüksek Öğretim İşsizlik: <%= predicted_highereducation_unemployment.toFixed(0) %></li>
+</ul>
     
+    <br><br><br><br><br><br><br><br><br><br>
+</div>
     <%- include('../partials/footer') %>
 </body>
 </html>
