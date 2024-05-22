@@ -1,18 +1,17 @@
-// Öncelikle fetch işlevini saran bir Proxy oluşturuyoruz
+
 const fetchProxy = new Proxy(fetch, {
   apply: function (target, thisArg, args) {
-    const url = args[0]; // URL bilgisini alıyoruz
-
+    const url = args[0]; 
     // Erişim kontrolü veya istek öncesi işlemleri burada gerçekleştirilebilir
 
     // fetch işlemini gerçekleştiriyoruz ve sonucu döndürüyoruz
     return fetch(...args)
       .then(response => {
-        // Yanıt işlemleri yapılabilir
-        return response.json(); // JSON formatında yanıtı döndürüyoruz
+    
+        return response.json();
       })
       .catch(error => {
-        // Hata işlemleri yapılabilir
+       
         throw error;
       });
   }
@@ -20,8 +19,8 @@ const fetchProxy = new Proxy(fetch, {
 
 // fetchProxy'i kullanarak isteklerinizi yapabilirsiniz
 document.addEventListener('DOMContentLoaded', function () {
-  addClickListeners(); // Tıklama işlemleri için listener ekleme
-  addMouseEvents(); // Mouse olayları için listener ekleme
+  addClickListeners(); 
+  addMouseEvents(); 
 });
 
 // İl tıklama işlemleri için listener'ları eklemek için addClickListeners fonksiyonu

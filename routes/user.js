@@ -36,9 +36,6 @@ haberObserver.subscribe(istemci);
 
 
 
-
-
-
 router.use("/haklar", async function (req, res) {
 
     const [tblSosyal] = await db.execute("select * from sosyalsigortalar")
