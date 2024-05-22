@@ -41,7 +41,7 @@ df = pd.read_csv('labor_force_data.csv')
 df['Year'] = df['Year'].str.extract('(\d+)').astype(int)
 
 # Tahmin edilecek yıl
-predictYear = 2024
+predictYear = 2025
 
 # Tahmin modeli oluşturma ve eğitme
 X = df[['Year']]
