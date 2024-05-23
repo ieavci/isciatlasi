@@ -18,7 +18,10 @@ data = {
 
 # DataFrame oluşturma
 df = pd.DataFrame(data)
-predictYear = 2024
+import sys
+import json
+
+predictionYear = int(sys.argv[1])
 
 # Model oluşturma ve tahmin yapma fonksiyonu
 def predict_future(df, column, year):
@@ -30,14 +33,14 @@ def predict_future(df, column, year):
 
 # Sektörlere göre tahmin yapma
 predictions = {
-    'Tarım': predict_future(df, 'Tarım', predictYear),
-    'Sanayi': predict_future(df, 'Sanayi', predictYear),
-    'İnşaat': predict_future(df, 'İnşaat', predictYear),
-    'Hizmet': predict_future(df, 'Hizmet', predictYear),
-    'TarımYüzde': predict_future(df, 'TarımYüzde', predictYear),
-    'SanayiYüzde': predict_future(df, 'SanayiYüzde', predictYear),
-    'İnşaatYüzde': predict_future(df, 'İnşaatYüzde', predictYear),
-    'HizmetYüzde': predict_future(df, 'HizmetYüzde', predictYear)
+    'Tarım': predict_future(df, 'Tarım', predictionYear),
+    'Sanayi': predict_future(df, 'Sanayi', predictionYear),
+    'İnşaat': predict_future(df, 'İnşaat', predictionYear),
+    'Hizmet': predict_future(df, 'Hizmet', predictionYear),
+    'TarımYüzde': predict_future(df, 'TarımYüzde', predictionYear),
+    'SanayiYüzde': predict_future(df, 'SanayiYüzde', predictionYear),
+    'İnşaatYüzde': predict_future(df, 'İnşaatYüzde', predictionYear),
+    'HizmetYüzde': predict_future(df, 'HizmetYüzde', predictionYear)
 }
 
 # Tahmin edilen değerleri JSON formatında yazdırma

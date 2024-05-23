@@ -1,11 +1,11 @@
 const express = require("express");
 const { spawn } = require('child_process');
 const app = express();
-const body_parser = require('body-parser');
+const bodyParser = require('body-parser');
 const path = require("path");
 
-app.use(body_parser.json({ limit: "30mb", extends: true }))
-app.use(body_parser.urlencoded({ limit: "30mb", extends: true }))
+app.use(bodyParser.json({ limit: "30mb", extended: true }))
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
 
 const userRoutes = require("./routes/user");
 const adminRoutes = require("./routes/admin");
@@ -14,21 +14,29 @@ app.set("view engine", "ejs");
 
 app.use("/libs", express.static(path.join(__dirname, "node_modules")));
 app.use("/static", express.static(path.join(__dirname, "public")));
+
+// Prediction route with year parameter
 app.get('/prediction', (req, res) => {
+    let predictionYear = req.query.predictionYear;
+
+    if (!predictionYear) {
+        predictionYear=2024;
+    }
+
     // İlk Python betiği için spawn çağrısı
-    const pythonProcess1 = spawn('python', ['./ongoruAnalitigi/prediction.py']);
+    const pythonProcess1 = spawn('python', ['./ongoruAnalitigi/prediction.py', predictionYear]);
 
     pythonProcess1.stdout.on('data', (data) => {
         const result1 = JSON.parse(data.toString());
 
-        // işgücüne katılım verileri
+        // İşgücüne katılım verileri
         const predicted_unemployment_rate = result1.unemployment_rate;
         const predicted_not_in_labor_force = result1.not_in_labor_force;
         const predicted_labor_force_participation_rate = result1.labor_force_participation_rate;
         const predicted_employment_rate = result1.employment_rate;
 
         // İkinci Python betiği için spawn çağrısı
-        const pythonProcess2 = spawn('python', ['./ongoruAnalitigi/sektorPrediction.py']);
+        const pythonProcess2 = spawn('python', ['./ongoruAnalitigi/sektorPrediction.py', predictionYear]);
 
         pythonProcess2.stdout.on('data', (data) => {
             const result2 = JSON.parse(data.toString());
@@ -43,8 +51,8 @@ app.get('/prediction', (req, res) => {
             const predicted_insaat_yuzde = result2.İnşaatYüzde;
             const predicted_hizmet_yuzde = result2.HizmetYüzde;
 
-            // İkinci Python betiği için spawn çağrısı
-            const pythonProcess3 = spawn('python', ['./ongoruAnalitigi/egitimPrediction.py']);
+            // Üçüncü Python betiği için spawn çağrısı
+            const pythonProcess3 = spawn('python', ['./ongoruAnalitigi/egitimPrediction.py', predictionYear]);
 
             pythonProcess3.stdout.on('data', (data) => {
                 const result3 = JSON.parse(data.toString());
@@ -125,12 +133,10 @@ app.get('/prediction', (req, res) => {
     });
 });
 
-
-
 app.use("/admin", adminRoutes);
 app.use("/", userRoutes);
 app.use(express.urlencoded({ extended: false }))
 
 app.listen(3000, function () {
     console.log("listening port at 3000")
-})
+});

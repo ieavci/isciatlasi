@@ -1,0 +1,18 @@
+.btn-ozel {
+
+    background-color: var(--turuncu);
+    color: var(--beyaz);
+}
+
+.btn-ozel:hover {
+    background-color: var(--red);
+    color: var(--beyaz);
+}
+
+.form-control{
+    width: 350px;
+}
+
+.yilForm{
+   
+}

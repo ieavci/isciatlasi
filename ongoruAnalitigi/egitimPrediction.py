@@ -41,7 +41,10 @@ df = pd.read_csv('labor_force_data.csv')
 df['Year'] = df['Year'].str.extract('(\d+)').astype(int)
 
 # Tahmin edilecek yıl
-predictYear = 2025
+import sys
+import json
+
+predictionYear = int(sys.argv[1])
 
 # Tahmin modeli oluşturma ve eğitme
 X = df[['Year']]
@@ -58,7 +61,7 @@ for field in fields:
     y = df[field]
     model = LinearRegression()
     model.fit(X, y)
-    predicted_value = model.predict([[predictYear]])[0]
+    predicted_value = model.predict([[predictionYear]])[0]
     predictions[field] = predicted_value
 
 # Tahmin edilen değerleri JSON formatında yazdırma
