@@ -1,5 +1,7 @@
 import pandas as pd
 from sklearn.linear_model import LinearRegression
+import sys
+import json
 
 # Güncellenmiş veri seti
 data = {
@@ -16,42 +18,39 @@ data = {
 
 # DataFrame oluşturma
 df = pd.DataFrame(data)
-import sys
-import json
 
 predictionYear = int(sys.argv[1])
 
-X_unemployment = df[['Year']]
-y_unemployment = df['Unemployment_Rate']
-model_unemployment = LinearRegression()
-model_unemployment.fit(X_unemployment, y_unemployment)
-predicted_unemployment_rate = model_unemployment.predict([[predictionYear]])[0]
+# Model oluşturma ve tahmin etme fonksiyonu
+def predict_future(years, X, y):
+    model = LinearRegression()
+    model.fit(X, y)
+    predictions = []
+    for year in years:
+        predictions.append(model.predict([[year]])[0])
+    return predictions
 
-X_not_in_labor_force = df[['Year']]
-y_not_in_labor_force = df['Not_in_Labor_Force']
-model_not_in_labor_force = LinearRegression()
-model_not_in_labor_force.fit(X_not_in_labor_force, y_not_in_labor_force)
-predicted_not_in_labor_force = model_not_in_labor_force.predict([[predictionYear]])[0]
+future_years = list(range(2025, 2035))
 
-X_labor_force_participation_rate = df[['Year']]
-y_labor_force_participation_rate = df['Labor_Force_Participation_Rate']
-model_labor_force_participation_rate = LinearRegression()
-model_labor_force_participation_rate.fit(X_labor_force_participation_rate, y_labor_force_participation_rate)
-predicted_labor_force_participation_rate = model_labor_force_participation_rate.predict([[predictionYear]])[0]
-
-X_employment_rate = df[['Year']]
-y_employment_rate = df['Employment_Rate']
-model_employment_rate = LinearRegression()
-model_employment_rate.fit(X_employment_rate, y_employment_rate)
-predicted_employment_rate = model_employment_rate.predict([[predictionYear]])[0]
+predicted_unemployment_rate = predict_future(future_years, df[['Year']], df['Unemployment_Rate'])
+predicted_not_in_labor_force = predict_future(future_years, df[['Year']], df['Not_in_Labor_Force'])
+predicted_labor_force_participation_rate = predict_future(future_years, df[['Year']], df['Labor_Force_Participation_Rate'])
+predicted_employment_rate = predict_future(future_years, df[['Year']], df['Employment_Rate'])
 
 # Tahmin edilen değerleri JSON formatında yazdırma
 predictions = {
+    'years': future_years,
     'unemployment_rate': predicted_unemployment_rate,
     'not_in_labor_force': predicted_not_in_labor_force,
     'labor_force_participation_rate': predicted_labor_force_participation_rate,
-    'employment_rate': predicted_employment_rate
+    'employment_rate': predicted_employment_rate,
+    'selected_year_prediction': {
+        'year': predictionYear,
+        'unemployment_rate': predict_future([predictionYear], df[['Year']], df['Unemployment_Rate'])[0],
+        'not_in_labor_force': predict_future([predictionYear], df[['Year']], df['Not_in_Labor_Force'])[0],
+        'labor_force_participation_rate': predict_future([predictionYear], df[['Year']], df['Labor_Force_Participation_Rate'])[0],
+        'employment_rate': predict_future([predictionYear], df[['Year']], df['Employment_Rate'])[0]
+    }
 }
 
-import json
 print(json.dumps(predictions))

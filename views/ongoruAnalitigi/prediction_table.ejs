@@ -1,237 +1,310 @@
 <!-- Labor Force Table -->
+<link rel="stylesheet" href="/static/css/prediction.css">
 <div class="table-responsive">
-    <h2>İşgücü Verileri</h2>
-    <table class="table table-striped">
-        <tbody>
-            <tr>
-                <td>İşsizlik Oranı</td>
-                <td>
-                    <%= predicted_unemployment_rate.toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>İşgücüne Dahil Olmayanlar</td>
-                <td>
-                    <%= predicted_not_in_labor_force.toFixed(0) %>
-                </td>
-            </tr>
-            <tr>
-                <td>İşgücü Katılım Oranı</td>
-                <td>
-                    <%= predicted_labor_force_participation_rate.toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>İstihdam Oranı</td>
-                <td>
-                    <%= predicted_employment_rate.toFixed(2) %>%
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
 
-<!-- Sector Predictions Table -->
-<div class="table-responsive">
-    <h2>Sektöre Göre İstihdam</h2>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Category</th>
-                <th>Value</th>
-                <th>Percentage</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Tarım</td>
-                <td>
-                    <%= predicted_tarim.toFixed(0) %>
-                </td>
-                <td>
-                    <%= predicted_tarim_yuzde.toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>Sanayi</td>
-                <td>
-                    <%= predicted_sanayi.toFixed(0) %>
-                </td>
-                <td>
-                    <%= predicted_sanayi_yuzde.toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>İnşaat</td>
-                <td>
-                    <%= predicted_insaat.toFixed(0) %>
-                </td>
-                <td>
-                    <%= predicted_insaat_yuzde.toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>Hizmet</td>
-                <td>
-                    <%= predicted_hizmet.toFixed(0) %>
-                </td>
-                <td>
-                    <%= predicted_hizmet_yuzde.toFixed(2) %>%
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <div class="alert alert-info mt-5" role="alert">
+        <h4 class="alert-heading">Notlar:</h4>
+        <ul>
+            <li><strong>Veri Kaynağı:</strong> TÜİK, İşgücü İstatistikleri.</li>
+            <li><strong>Tahmin Yöntemi:</strong> ARIMA Modeli</li>
+            <li><strong>Açıklama:</strong> Tahminler, geçmiş verilere dayanarak oluşturulmuştur ve gelecek
+                dönemdeki olası
+                değişiklikleri yansıtabilir.
+            </li>
+        </ul>
+    </div>
+    <div class="col d-flex justify-content-end">
+        <div class="yilForm">
+            <form id="yearForm" action="/prediction" method="get">
+                <div class="col">
+                    <div class="col">
+                        <div class="form-group">
+                            <input type="text" placeholder="Lütfen Tahmin Etmek İstediğiniz Yılı Seçiniz"
+                                class="form-control" id="yearPicker" name="predictionYear">
+                        </div>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <button type="submit" class="btn btn-ozel mt-2">Tahmin Et</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
-<!-- Educational Attainment Table -->
-<div class="table-responsive">
-    <h2>Eğitim Durumuna Göre İşgücü Verileri</h2>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Category</th>
-                <th>Value</th>
-                <th>Percentage</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Tahmini Okur-Yazar Olmayan İşgücü</td>
-                <td>
-                    <%= predicted_uneducated_labor_force.toFixed(0) %>
-                </td>
-                <td>N/A</td>
-            </tr>
-            <tr>
-                <td>Tahmini Okur-Yazar Olmayan İstihdam</td>
-                <td>
-                    <%= predicted_uneducated_employment.toFixed(0) %>
-                </td>
-                <td>
-                    <%= ((predicted_uneducated_labor_force - predicted_uneducated_unemployment) /
-                        predicted_uneducated_labor_force * 100).toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>Tahmini Okur-Yazar Olmayan İşsizlik</td>
-                <td>
-                    <%= predicted_uneducated_unemployment.toFixed(0) %>
-                </td>
-                <td>
-                    <%= (predicted_uneducated_unemployment / predicted_uneducated_labor_force *
-                        100).toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>Tahmini Lise Altı Eğitimli İşgücü</td>
-                <td>
-                    <%= predicted_less_than_highschool_labor_force.toFixed(0) %>
-                </td>
-                <td>N/A</td>
-            </tr>
-            <tr>
-                <td>Tahmini Lise Altı Eğitimli İstihdam</td>
-                <td>
-                    <%= predicted_less_than_highschool_employment.toFixed(0) %>
-                </td>
-                <td>
-                    <%= ((predicted_less_than_highschool_labor_force -
-                        predicted_less_than_highschool_unemployment) /
-                        predicted_less_than_highschool_labor_force * 100).toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>Tahmini Lise Altı Eğitimli İşsizlik</td>
-                <td>
-                    <%= predicted_less_than_highschool_unemployment.toFixed(0) %>
-                </td>
-                <td>
-                    <%= (predicted_less_than_highschool_unemployment /
-                        predicted_less_than_highschool_labor_force * 100).toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>Tahmini Lise İşgücü</td>
-                <td>
-                    <%= predicted_highschool_labor_force.toFixed(0) %>
-                </td>
-                <td>N/A</td>
-            </tr>
-            <tr>
-                <td>Tahmini Lise İstihdam</td>
-                <td>
-                    <%= predicted_highschool_employment.toFixed(0) %>
-                </td>
-                <td>
-                    <%= ((predicted_highschool_labor_force - predicted_highschool_unemployment) /
-                        predicted_highschool_labor_force * 100).toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>Tahmini Lise İşsizlik</td>
-                <td>
-                    <%= predicted_highschool_unemployment.toFixed(0) %>
-                </td>
-                <td>
-                    <%= (predicted_highschool_unemployment / predicted_highschool_labor_force *
-                        100).toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>Tahmini Mesleki veya Teknik Lise İşgücü</td>
-                <td>
-                    <%= predicted_vocational_labor_force.toFixed(0) %>
-                </td>
-                <td>N/A</td>
-            </tr>
-            <tr>
-                <td>Tahmini Mesleki veya Teknik Lise İstihdam</td>
-                <td>
-                    <%= predicted_vocational_employment.toFixed(0) %>
-                </td>
-                <td>
-                    <%= ((predicted_vocational_labor_force - predicted_vocational_unemployment) /
-                        predicted_vocational_labor_force * 100).toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>Tahmini Mesleki veya Teknik Lise İşsizlik</td>
-                <td>
-                    <%= predicted_vocational_unemployment.toFixed(0) %>
-                </td>
-                <td>
-                    <%= (predicted_vocational_unemployment / predicted_vocational_labor_force *
-                        100).toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>Tahmini Yüksek Öğretim İşgücü</td>
-                <td>
-                    <%= predicted_highereducation_labor_force.toFixed(0) %>
-                </td>
-                <td>N/A</td>
-            </tr>
-            <tr>
-                <td>Tahmini Yüksek Öğretim İstihdam</td>
-                <td>
-                    <%= predicted_highereducation_employment.toFixed(0) %>
-                </td>
-                <td>
-                    <%= ((predicted_highereducation_labor_force -
-                        predicted_highereducation_unemployment) / predicted_highereducation_labor_force
-                        * 100).toFixed(2) %>%
-                </td>
-            </tr>
-            <tr>
-                <td>Tahmini Yüksek Öğretim İşsizlik</td>
-                <td>
-                    <%= predicted_highereducation_unemployment.toFixed(0) %>
-                </td>
-                <td>
-                    <%= (predicted_highereducation_unemployment / predicted_highereducation_labor_force
-                        * 100).toFixed(2) %>%
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <h1 class="mb-4 text-center">Öngörü Analitiği Verileri</h1>
+    <!-- Seçilen Yıla Ait Tahmin Verileri -->
+    <div class="col-12 mt-5">
+        <h4 class="mb-4 tableHeader text-center"> <%= predictions.selected_year_prediction.year %> Tahmin Verileri</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>İşsizlik Oranı</th>
+                    <th>İş Gücüne Dahil Olmayan</th>
+                    <th>İş Gücüne Katılım Oranı</th>
+                    <th>İstihdam Oranı</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <%= predictions.selected_year_prediction.unemployment_rate.toFixed(2) %>
+                    </td>
+                    <td>
+                        <%= predictions.selected_year_prediction.not_in_labor_force.toFixed(2) %>
+                    </td>
+                    <td>
+                        <%= predictions.selected_year_prediction.labor_force_participation_rate.toFixed(2) %>
+                    </td>
+                    <td>
+                        <%= predictions.selected_year_prediction.employment_rate.toFixed(2) %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-12 mt-5">
+        <h4 class="mb-4 tableHeader text-center">10 Yıllık Tahmin Verileri</h4>
+        
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Yıl</th>
+                    <th>İşsizlik Oranı</th>
+                    <th>İş Gücüne Dahil Olmayan</th>
+                    <th>İş Gücüne Katılım Oranı</th>
+                    <th>İstihdam Oranı</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < predictions.years.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= predictions.years[i] %>
+                        </td>
+                        <td>
+                            <%= predictions.unemployment_rate[i].toFixed(2) %>
+                        </td>
+                        <td>
+                            <%= predictions.not_in_labor_force[i].toFixed(2) %>
+                        </td>
+                        <td>
+                            <%= predictions.labor_force_participation_rate[i].toFixed(2) %>
+                        </td>
+                        <td>
+                            <%= predictions.employment_rate[i].toFixed(2) %>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </div>
+    <%- include('./prediction_chart') %>
+
+        <!-- Sector Predictions Table -->
+        <div class="table-responsive">
+            
+            <h4 class="mb-4 tableHeader text-center"> <%= predictions.selected_year_prediction.year %> Sektöre Göre İstihdam Tahmin Verileri</h4>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Value</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tarım</td>
+                        <td>
+                            <%= predicted_tarim.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= predicted_tarim_yuzde.toFixed(2) %>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sanayi</td>
+                        <td>
+                            <%= predicted_sanayi.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= predicted_sanayi_yuzde.toFixed(2) %>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>İnşaat</td>
+                        <td>
+                            <%= predicted_insaat.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= predicted_insaat_yuzde.toFixed(2) %>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hizmet</td>
+                        <td>
+                            <%= predicted_hizmet.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= predicted_hizmet_yuzde.toFixed(2) %>%
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Educational Attainment Table -->
+        <div class="table-responsive">
+            <h2></h2>
+            <h4 class="mb-4 tableHeader text-center"> <%= predictions.selected_year_prediction.year %> Eğitim Durumuna Göre İşgücü Tahmin Verileri</h4>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Value</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tahmini Okur-Yazar Olmayan İşgücü</td>
+                        <td>
+                            <%= predicted_uneducated_labor_force.toFixed(0) %>
+                        </td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Okur-Yazar Olmayan İstihdam</td>
+                        <td>
+                            <%= predicted_uneducated_employment.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= ((predicted_uneducated_labor_force - predicted_uneducated_unemployment) /
+                                predicted_uneducated_labor_force * 100).toFixed(2) %>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Okur-Yazar Olmayan İşsizlik</td>
+                        <td>
+                            <%= predicted_uneducated_unemployment.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= (predicted_uneducated_unemployment / predicted_uneducated_labor_force * 100).toFixed(2)
+                                %>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Lise Altı Eğitimli İşgücü</td>
+                        <td>
+                            <%= predicted_less_than_highschool_labor_force.toFixed(0) %>
+                        </td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Lise Altı Eğitimli İstihdam</td>
+                        <td>
+                            <%= predicted_less_than_highschool_employment.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= ((predicted_less_than_highschool_labor_force -
+                                predicted_less_than_highschool_unemployment) /
+                                predicted_less_than_highschool_labor_force * 100).toFixed(2) %>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Lise Altı Eğitimli İşsizlik</td>
+                        <td>
+                            <%= predicted_less_than_highschool_unemployment.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= (predicted_less_than_highschool_unemployment /
+                                predicted_less_than_highschool_labor_force * 100).toFixed(2) %>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Lise İşgücü</td>
+                        <td>
+                            <%= predicted_highschool_labor_force.toFixed(0) %>
+                        </td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Lise İstihdam</td>
+                        <td>
+                            <%= predicted_highschool_employment.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= ((predicted_highschool_labor_force - predicted_highschool_unemployment) /
+                                predicted_highschool_labor_force * 100).toFixed(2) %>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Lise İşsizlik</td>
+                        <td>
+                            <%= predicted_highschool_unemployment.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= (predicted_highschool_unemployment / predicted_highschool_labor_force * 100).toFixed(2)
+                                %>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Mesleki veya Teknik Lise İşgücü</td>
+                        <td>
+                            <%= predicted_vocational_labor_force.toFixed(0) %>
+                        </td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Mesleki veya Teknik Lise İstihdam</td>
+                        <td>
+                            <%= predicted_vocational_employment.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= ((predicted_vocational_labor_force - predicted_vocational_unemployment) /
+                                predicted_vocational_labor_force * 100).toFixed(2) %>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Mesleki veya Teknik Lise İşsizlik</td>
+                        <td>
+                            <%= predicted_vocational_unemployment.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= (predicted_vocational_unemployment / predicted_vocational_labor_force * 100).toFixed(2)
+                                %>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Yüksek Öğretim İşgücü</td>
+                        <td>
+                            <%= predicted_highereducation_labor_force.toFixed(0) %>
+                        </td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Yüksek Öğretim İstihdam</td>
+                        <td>
+                            <%= predicted_highereducation_employment.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= ((predicted_highereducation_labor_force - predicted_highereducation_unemployment) /
+                                predicted_highereducation_labor_force * 100).toFixed(2) %>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tahmini Yüksek Öğretim İşsizlik</td>
+                        <td>
+                            <%= predicted_highereducation_unemployment.toFixed(0) %>
+                        </td>
+                        <td>
+                            <%= (predicted_highereducation_unemployment / predicted_highereducation_labor_force *
+                                100).toFixed(2) %>%
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 </div>

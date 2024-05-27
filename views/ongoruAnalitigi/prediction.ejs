@@ -18,77 +18,38 @@
     <script src="/libs/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"
+        integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
-
     <!-- Navigation -->
     <%- include("../partials/nav") %>
         <%- include('./prediction_header.ejs') %>
 
+            <div class="container mt-5">
+                <div class="row">
 
 
-        <div class="container mt-5">
-            <div class="row">
+                    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+                    <script
+                        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
-                <h1 class="mb-4 text-center ">Öngörü Analitiği Verileri</h1>
-                <div class="col d-flex justify-content-end">
-                    <div class="yilForm">
-                        <form id="yearForm">
-                            <div class="col">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Lütfen Tahmin Etmek İstediğiniz Yılı Seçiniz"
-                                            class="form-control" id="yearPicker" name="predictionYear">
-                                    </div>
-                                </div>
-                                <div class="col d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-ozel mt-2">Tahmin Et</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    <!-- Tablo -->
+                    <%- include('./prediction_table') %>
+
                 </div>
-                <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-                <script
-                    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-
-
-
-                <!-- Modal -->
-                <div class="modal fade" id="yearModal" tabindex="-1" role="dialog" aria-labelledby="yearModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="yearModalLabel">Geçersiz Yıl</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Lütfen 2023 veya daha sonrası bir yıl seçiniz.
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <%- include('./prediction_table') %>
-
             </div>
-        </div>
-
-        <!-- Footer -->
-        <%- include('../partials/footer') %>
 
 
-            <script src="/static/js/prediction_table.js"></script>
-            <!-- Bootstrap JS -->
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+            <!-- Footer -->
+            <%- include('../partials/footer') %>
+
+                <script src="/static/js/prediction_table.js"></script>
+                <!-- Bootstrap JS -->
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

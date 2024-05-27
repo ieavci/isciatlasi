@@ -75,21 +75,13 @@ router.use('/prediction', (req, res) => {
     let predictionYear = req.query.predictionYear;
 
     if (!predictionYear) {
-        predictionYear=2024;
+        predictionYear = 2024;
     }
 
-    // İlk Python betiği için spawn çağrısı
-    const pythonProcess1 = spawn('python', ['./ongoruAnalitigi/prediction.py', predictionYear]);
+    const pythonProcess = spawn('python', ['./ongoruAnalitigi/prediction.py', predictionYear]);
 
-    pythonProcess1.stdout.on('data', (data) => {
-        const result1 = JSON.parse(data.toString());
-
-        // İşgücüne katılım verileri
-        const predicted_unemployment_rate = result1.unemployment_rate;
-        const predicted_not_in_labor_force = result1.not_in_labor_force;
-        const predicted_labor_force_participation_rate = result1.labor_force_participation_rate;
-        const predicted_employment_rate = result1.employment_rate;
-
+    pythonProcess.stdout.on('data', (data) => {
+        const predictions = JSON.parse(data.toString());
         // İkinci Python betiği için spawn çağrısı
         const pythonProcess2 = spawn('python', ['./ongoruAnalitigi/sektorPrediction.py', predictionYear]);
 
@@ -129,13 +121,9 @@ router.use('/prediction', (req, res) => {
                 const predicted_highereducation_employment = result3.HigherEducation_Employment;
                 const predicted_highereducation_unemployment = result3.HigherEducation_Unemployment;
 
-                // Render işlemi
-                res.render('./ongoruAnalitigi/prediction', { 
-                    predicted_unemployment_rate,
-                    predicted_not_in_labor_force,
-                    predicted_labor_force_participation_rate,
-                    predicted_employment_rate,
-                    predicted_tarim,
+        res.render('./ongoruAnalitigi/prediction', { 
+            predictions,
+            predicted_tarim,
                     predicted_sanayi,
                     predicted_insaat,
                     predicted_hizmet,
@@ -158,34 +146,33 @@ router.use('/prediction', (req, res) => {
                     predicted_highereducation_labor_force,
                     predicted_highereducation_employment,
                     predicted_highereducation_unemployment
-                });
-            });
-
-            pythonProcess3.stderr.on('data', (data) => {
-                console.error(`stderr: ${data}`);
-            });
-
-            pythonProcess3.on('close', (code) => {
-                console.log(`Eğitim tahmini betiği için child process exited with code ${code}`);
-            });
-        });
-        
-        pythonProcess2.stderr.on('data', (data) => {
-            console.error(`stderr: ${data}`);
-        });
-
-        pythonProcess2.on('close', (code) => {
-            console.log(`Sektör betiği için child process exited with code ${code}`);
-        });
+         });
     });
-
-    pythonProcess1.stderr.on('data', (data) => {
+    pythonProcess3.stderr.on('data', (data) => {
         console.error(`stderr: ${data}`);
     });
 
-    pythonProcess1.on('close', (code) => {
-        console.log(`Ana betiği için child process exited with code ${code}`);
+    pythonProcess3.on('close', (code) => {
+        console.log(`Eğitim tahmini betiği için child process exited with code ${code}`);
     });
+});
+
+pythonProcess2.stderr.on('data', (data) => {
+    console.error(`stderr: ${data}`);
+});
+
+pythonProcess2.on('close', (code) => {
+    console.log(`Sektör betiği için child process exited with code ${code}`);
+});
+});
+
+pythonProcess.stderr.on('data', (data) => {
+console.error(`stderr: ${data}`);
+});
+
+pythonProcess.on('close', (code) => {
+console.log(`Ana betiği için child process exited with code ${code}`);
+});
 });
 router.use("/sendikalar", async function (req, res) {
     const [tblDisk] = await db.execute("select * from `isciatlasi`.`disk sendika`");

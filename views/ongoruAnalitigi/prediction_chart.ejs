@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="/static/css/prediction.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="charts my-5">
+    <div class="table-responsive">
+        <h2>Gelecek 10 Yıla Ait Tahminler</h2>
+        <!-- Rounded switch -->
+        <div class="justify-content-center align-content-center align-items-center">
+            <label for="toggleChartType">Bar Grafik </label>
+            <label class="switch mx-2">
+                <input type="checkbox" id="toggleChartType">
+                <span class="slider round"></span>
+            </label>
+            <label for="" class="">Çizgi Grafik </label>
+        </div>
+        <div class="row">
+            <canvas id="futurePredictionsChart" width="80vh" height="30vh"></canvas>
+        </div>
+        
+    </div>
+</div>
+
+<script>
+    const future10YearPredictions = {
+        years: [2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034],
+        unemployment_rate_predictions: [12.449466804265512, 12.619951840385227, 12.790436876504941, 13.13140694874437, 13.301891984864085, 13.4723770209838, 13.642862057103514, 13.813347093223229, 13.983832129342943,13.98],
+        labor_force_participation_rate_predictions: [55.51197110423118, 56.11011351909201, 56.708255933952614, 57.30639834881322, 57.90454076367405, 58.50268317853465, 59.10082559339526, 59.69896800825609, 60.29711042311669, 60.895252837977296],
+        employment_rate_predictions: [48.69852081183342, 49.151049191606376, 49.60357757137933, 50.05610595115229, 50.50863433092525, 50.961162710698204, 51.41369109047116, 51.86621947024412, 52.318747850017076, 52.77127622979003]
+    };
+
+    let chartType = 'bar';
+    let chart;
+
+    function createChart() {
+        if (chart) {
+            chart.destroy();
+        }
+
+        chart = new Chart(document.getElementById('futurePredictionsChart'), {
+            type: chartType,
+            data: {
+                labels: future10YearPredictions.years,
+                datasets: [{
+                    label: 'İşsizlik Oranı Tahminleri',
+                    data: future10YearPredictions.unemployment_rate_predictions,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: '#F8DE22',
+                    fill: false,
+                    tension: 0.1
+                },
+                {
+                    label: 'İşgücü Katılım Oranı Tahminleri',
+                    data: future10YearPredictions.labor_force_participation_rate_predictions,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: '#F94C10',
+                    fill: false,
+                    tension: 0.1
+                },
+                {
+                    label: 'İstihdam Oranı Tahminleri',
+                    data: future10YearPredictions.employment_rate_predictions,
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    backgroundColor: '#C70039',
+                    fill: false,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    document.getElementById('toggleChartType').addEventListener('click', function () {
+        chartType = chartType === 'bar' ? 'line' : 'bar';
+        createChart();
+    });
+
+    createChart();
+</script>
