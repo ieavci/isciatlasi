@@ -188,6 +188,61 @@ router.use("/sendikalar", async function (req, res) {
     }
 
 });
+router.use("/graphs/graphs", async function (req, res) {
+    
+    try {
+        res.render("graphs/graphs.ejs", {
+            
+        });
+
+    } catch (error) {
+        console.log(error)
+    }
+});
+router.use("/graphs/network_2021", async function (req, res) {
+    
+    try {
+        res.render("graphs/network_2021.ejs", {
+            
+        });
+
+    } catch (error) {
+        console.log(error)
+    }
+});
+router.use("/graphs/network_2022", async function (req, res) {
+    
+    try {
+        res.render("graphs/network_2022.ejs", {
+            
+        });
+
+    } catch (error) {
+        console.log(error)
+    }
+});
+router.use("/graphs/network_employment", async function (req, res) {
+    
+    try {
+        res.render("graphs/network_employment.ejs", {
+            
+        });
+
+    } catch (error) {
+        console.log(error)
+    }
+});
+router.use("/graphs/network_labor_force", async function (req, res) {
+    
+    try {
+        res.render("graphs/network_labor_force.ejs", {
+            
+        });
+
+    } catch (error) {
+        console.log(error)
+    }
+});
 router.use("/haberler/:id", async function (req, res) {
     const id = req.params.id;
 
