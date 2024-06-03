@@ -1,0 +1,2265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css" />
+
+    <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>
+        #map_5128e817b2bab9a5001bcb898df6bf99 {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+
+        .leaflet-container {
+            font-size: 1rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <%- include("../partials/nav") %>
+
+    <div class="text-center" style="margin-top: 104px;">
+        <h2 class="text-center fw-bold"> Türk - İş İl Temsilcilikleri
+            Dağılımı</h2>
+    </div>
+    <div class="container w-100 h-100 my-4 ">
+        <div class="folium-map" id="map_5128e817b2bab9a5001bcb898df6bf99"></div>
+    </div>
+
+    <%- include("../partials/footer") %>
+
+
+</body>
+<script>
+
+
+    var map_5128e817b2bab9a5001bcb898df6bf99 = L.map(
+        "map_5128e817b2bab9a5001bcb898df6bf99",
+        {
+            center: [39.933364, 32.859742],
+            crs: L.CRS.EPSG3857,
+            zoom: 6,
+            zoomControl: true,
+            preferCanvas: false,
+        }
+    );
+
+
+
+
+
+    var tile_layer_c8def977bb97a60637a7efe8b8312f28 = L.tileLayer(
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        { "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false }
+    );
+
+
+    tile_layer_c8def977bb97a60637a7efe8b8312f28.addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var marker_a058cdfe6444ec4bf3752ab189e48374 = L.marker(
+        [37.760072, 38.276462],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_dd3a5a56c772480da7c88f1ad50ebd6a = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_9f6b8de3a131c4a44d0cad59853cd93c = $(`<div id="html_9f6b8de3a131c4a44d0cad59853cd93c" style="width: 100.0%; height: 100.0%;">
+    <h4>Mehmet KARAMAN - ADIYAMAN</h4>
+    <p><strong>Sendika:</strong> Petrol-İş</p>
+    <p><strong>Adres:</strong> Yavuz Selim Mahallesi Mehmet Akif Caddesi No</p>
+    <p><strong>Telefon:</strong> 416 213 69 74</p>
+    <p><strong>Faks:</strong> 416 214 34 13</p>
+    <p><strong>E-Posta:</strong> adiyamaniltem@turkis.org.tr</p>
+</div>
+`)[0];
+    popup_dd3a5a56c772480da7c88f1ad50ebd6a.setContent(html_9f6b8de3a131c4a44d0cad59853cd93c);
+
+
+
+    marker_a058cdfe6444ec4bf3752ab189e48374.bindPopup(popup_dd3a5a56c772480da7c88f1ad50ebd6a)
+        ;
+
+
+
+
+    var marker_34000a6dac447f7a8f878ae37462c88c = L.marker(
+        [38.750714, 30.556692],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_37be0ba57c12a7bafc8ef3fe1091e2c7 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_8d68212db6ed57ca19e0545f7c4de92b = $(`<div id="html_9f6b8de3a131c4a44d0cad59853cd93c" style="width: 100.0%; height: 100.0%;">
+    <h4>Muharrem USLU - AFYON</h4>
+    <p><strong>Sendika:</strong> Petrol-İş</p>
+    <p><strong>Adres:</strong> Yavuz Selim Mahallesi Mehmet Akif Caddesi No</p>
+    <p><strong>Telefon:</strong> 416 213 69 74</p>
+    <p><strong>Faks:</strong> 416 214 34 13</p>
+    <p><strong>E-Posta:</strong> adiyamaniltem@turkis.org.tr</p>
+</div>`)[0];
+    popup_37be0ba57c12a7bafc8ef3fe1091e2c7.setContent(html_8d68212db6ed57ca19e0545f7c4de92b);
+
+
+
+    marker_34000a6dac447f7a8f878ae37462c88c.bindPopup(popup_37be0ba57c12a7bafc8ef3fe1091e2c7)
+        ;
+
+
+
+
+    var marker_e36deaca17f9bc1e2d28f6de2612cf1e = L.marker(
+        [39.719089, 43.051833],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_97a3080fc75cbdc93a9ba387431c2598 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_4e391f65002de85262a1211edbc6ef17 = $(`<div id="html_4e391f65002de85262a1211edbc6ef17" style="width: 100.0%; height: 100.0%;">
+                    <h4>Agit ARSLAN
+ - AĞRI</h4>
+<p><strong>Sendika:</strong> Şeker-İş</p>
+<p><strong>Adres:</strong> Ağri Şeker Fabrikasi</p>
+<p><strong>Telefon:</strong> 472 215 49 24</p>
+<p><strong>Faks:</strong> 472 215 49 24</p>
+<p><strong>E-Posta:</strong> agriiltem@turkis.org.tr</p>
+</div>`)[0];
+    popup_97a3080fc75cbdc93a9ba387431c2598.setContent(html_4e391f65002de85262a1211edbc6ef17);
+
+
+
+    marker_e36deaca17f9bc1e2d28f6de2612cf1e.bindPopup(popup_97a3080fc75cbdc93a9ba387431c2598)
+        ;
+
+
+
+
+    var marker_4275096852ce13ca74c0c45b6c35f817 = L.marker(
+        [40.651676, 35.835315],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_9845777678bacda886c5c242916ee7e2 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_6c1c9075e9139508d3809db6d34beaf1 = $(`<div id="html_6c1c9075e9139508d3809db6d34beaf1" style="width: 100.0%; height: 100.0%;">
+        <h4>Ali TOPUZ
+ - AMASYA</h4>
+<p><strong>Sendika:</strong> Tes-İş</p>
+<p><strong>Adres:</strong> DSİ 73. Şube Müdürlüğü İşyeri Baştemsilcisi</p>
+<p><strong>Telefon:</strong> 358 218 40 60</p>
+<p><strong>Faks:</strong> 358 218 10 22</p>
+<p><strong>E-Posta:</strong> amasyailtem@turkis.org.tr</p>
+        </div>`)[0];
+    popup_9845777678bacda886c5c242916ee7e2.setContent(html_6c1c9075e9139508d3809db6d34beaf1);
+
+
+
+    marker_4275096852ce13ca74c0c45b6c35f817.bindPopup(popup_9845777678bacda886c5c242916ee7e2)
+        ;
+
+
+
+
+    var marker_3caba26188f92461520e3110f71d56b0 = L.marker(
+        [39.933364, 32.859742],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_8beaf99ef99a6b409b0b0a3280da1bd8 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_9fcb60a2030a5438e90c517dae1e2b09 = $(`<div id="html_9fcb60a2030a5438e90c517dae1e2b09" style="width: 100.0%; height: 100.0%;">
+        <h4>Nihat ZENGİN
+ - ANKARA</h4>
+<p><strong>Sendika:</strong> Türk Metal</p>
+<p><strong>Adres:</strong> Sağlik Mah. Süleyman Sirri Cad. Mutlu Apt. No</p>
+<p><strong>Telefon:</strong> 0 312 231 36 71</p>
+<p><strong>Faks:</strong> 0 312 231 36 73</p>
+<p><strong>E-Posta:</strong> ankarailtem@turkis.org.tr</p>
+        </div>`)[0];
+    popup_8beaf99ef99a6b409b0b0a3280da1bd8.setContent(html_9fcb60a2030a5438e90c517dae1e2b09);
+
+
+
+    marker_3caba26188f92461520e3110f71d56b0.bindPopup(popup_8beaf99ef99a6b409b0b0a3280da1bd8)
+        ;
+
+
+
+
+    var marker_f5c4f33f0ba57aa20ceafa6030707ef3 = L.marker(
+        [36.896896, 30.713323],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_7b06ce4e591ed018f531ede8e11a79da = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_672f1c9f770b1c76c93b0e98a6079799 = $(`<div id="html_672f1c9f770b1c76c93b0e98a6079799" style="width: 100.0%; height: 100.0%;">
+        <h4>Cemil ÜNAL
+ - ANTALYA</h4>
+<p><strong>Sendika:</strong> Yol-İş</p>
+<p><strong>Adres:</strong> Yüksekalan Mah. Fahrettin Altay Cad. YOL-İŞ Apt. K.4 PK.103 ANTALYA</p>
+<p><strong>Telefon:</strong> 242 321 74 97</p>
+<p><strong>Faks:</strong> 242 321 74 95</p>
+<p><strong>E-Posta:</strong> antalyailtem@turkis.org.tr</p>
+        </div>`)[0];
+    popup_7b06ce4e591ed018f531ede8e11a79da.setContent(html_672f1c9f770b1c76c93b0e98a6079799);
+
+
+
+    marker_f5c4f33f0ba57aa20ceafa6030707ef3.bindPopup(popup_7b06ce4e591ed018f531ede8e11a79da)
+        ;
+
+
+
+
+    var marker_e9981441b6e39720ce6f4d2788692a43 = L.marker(
+        [41.183516, 41.820231],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_e70017f51258f19e1557212ea6437357 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_df93aca3347b53ab49543b10f54819f1 = $(`<div id="html_df93aca3347b53ab49543b10f54819f1" style="width: 100.0%; height: 100.0%;">
+        <h4>Nizamettin GÜNEş - ARTViN</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> Artvin Karayollari 102.Bakim şefliği Baş Temsilcisi</p>
+    <p><strong>Telefon:</strong> 466 212 10 17</p>
+    <p><strong>Faks:</strong> 466 212 22 82</p>
+    <p><strong>E-Posta:</strong> artviniltem@turkis.org.tr</p>
+        </div>`)[0];
+    popup_e70017f51258f19e1557212ea6437357.setContent(html_df93aca3347b53ab49543b10f54819f1);
+
+
+
+    marker_e9981441b6e39720ce6f4d2788692a43.bindPopup(popup_e70017f51258f19e1557212ea6437357)
+        ;
+
+
+
+
+    var marker_30694eacefe91dd4dbb08fd1a83c39e5 = L.marker(
+        [37.849774, 27.845708],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_6303b1b4da50953109e0b9ae766329d1 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_3d6a50c0c5644957ffd586babcee76b4 = $(`<div id="html_3d6a50c0c5644957ffd586babcee76b4" style="width: 100.0%; height: 100.0%;">
+        <h4>Kazim GÜLTEKiN - AYDIN</h4>
+    <p><strong>Sendika:</strong> Tes-İş</p>
+    <p><strong>Adres:</strong> Efeler Mah. Firat Yilmaz Çakiroğlu Sk. Piramit Sitesi No</p>
+    <p><strong>Telefon:</strong> 256 213 62 02</p>
+    <p><strong>Faks:</strong> 256 225 88 17</p>
+    <p><strong>E-Posta:</strong> aydiniltem@turkis.org.tr</p>
+        </div>`)[0];
+    popup_6303b1b4da50953109e0b9ae766329d1.setContent(html_3d6a50c0c5644957ffd586babcee76b4);
+
+
+
+    marker_30694eacefe91dd4dbb08fd1a83c39e5.bindPopup(popup_6303b1b4da50953109e0b9ae766329d1)
+        ;
+
+
+
+
+    var marker_0a71ebf44c71ce19d0ad31c46e4ddb5c = L.marker(
+        [39.648369, 27.88261],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_8ab2cb90f7add3bebd8c1573cf5fe19d = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_3127d0efd6c8f1f2beefa81bb6b57b3d = $(`<div id="html_3127d0efd6c8f1f2beefa81bb6b57b3d" style="width: 100.0%; height: 100.0%;">
+        <h4>Nedim VESKE - BALIKESiR</h4>
+    <p><strong>Sendika:</strong> Türk Metal</p>
+    <p><strong>Adres:</strong> Eski Kuyumcular Mah. Çavuş Sok. imre Apt. D. Blok No.14 K.2</p>
+    <p><strong>Telefon:</strong> 266 243 68 12</p>
+    <p><strong>Faks:</strong> 266 243 68 13</p>
+    <p><strong>E-Posta:</strong> balikesiriltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_8ab2cb90f7add3bebd8c1573cf5fe19d.setContent(html_3127d0efd6c8f1f2beefa81bb6b57b3d);
+
+
+
+    marker_0a71ebf44c71ce19d0ad31c46e4ddb5c.bindPopup(popup_8ab2cb90f7add3bebd8c1573cf5fe19d)
+        ;
+
+
+
+
+    var marker_f71a599c1b40fb0a0001f8db52e3c795 = L.marker(
+        [40.142825, 29.979322],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_6e4d68e9009dc46f21e8c67bd9d930b0 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_8fe85cb36df40ed81778240e68569b10 = $(`<div id="html_8fe85cb36df40ed81778240e68569b10" style="width: 100.0%; height: 100.0%;">
+        <h4>Osman Vedat TAYLAN - BiLECiK</h4>
+    <p><strong>Sendika:</strong> ÇiMSE-İş</p>
+    <p><strong>Adres:</strong> Yeni Mah. Cami Cad. Başak Sok. No</p>
+    <p><strong>Telefon:</strong> 228 315 11 94</p>
+    <p><strong>Faks:</strong> 228 315 15 89</p>
+    <p><strong>E-Posta:</strong> bilecikiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_6e4d68e9009dc46f21e8c67bd9d930b0.setContent(html_8fe85cb36df40ed81778240e68569b10);
+
+
+
+    marker_f71a599c1b40fb0a0001f8db52e3c795.bindPopup(popup_6e4d68e9009dc46f21e8c67bd9d930b0)
+        ;
+
+
+
+
+    var marker_0ea48f24190efd71ad84c6a21fe815db = L.marker(
+        [38.885349, 40.49818],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_650d4a45fa9eb35ca4ffcd03ac031fa6 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_948a6a599a8a48df2eacc5fde6efd496 = $(`<div id="html_948a6a599a8a48df2eacc5fde6efd496" style="width: 100.0%; height: 100.0%;">
+        <h4>şeyhmus ALTUNBAY - BiNGÖL</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> il Özel idaresi</p>
+    <p><strong>Telefon:</strong> 426 213 12 89</p>
+    <p><strong>Faks:</strong> 426 213 10 64</p>
+    <p><strong>E-Posta:</strong> bingoliltem@turkis.org.tr</p>
+        </div>`)[0];
+    popup_650d4a45fa9eb35ca4ffcd03ac031fa6.setContent(html_948a6a599a8a48df2eacc5fde6efd496);
+
+
+
+    marker_0ea48f24190efd71ad84c6a21fe815db.bindPopup(popup_650d4a45fa9eb35ca4ffcd03ac031fa6)
+        ;
+
+
+
+
+    var marker_d034f9862837f9806ecb7eb721f761c5 = L.marker(
+        [38.39433, 42.123699],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_bf44c48af61df85a6c045ab2aa9a620a = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_2b9ec4dabbedb57192ac6313f5e2a94a = $(`<div id="html_2b9ec4dabbedb57192ac6313f5e2a94a" style="width: 100.0%; height: 100.0%;">
+        h4>Mustafa CENGiZ - BiTLiS</h4>
+    <p><strong>Sendika:</strong> T. Koop-İş</p>
+    <p><strong>Adres:</strong> Atatürk Mah. Merkez Mesleki ve Teknik Anadolu Lisesi</p>
+    <p><strong>Telefon:</strong> 434 226 77 24</p>
+    <p><strong>Faks:</strong> 434 226 77 24</p>
+    <p><strong>E-Posta:</strong> bitlisiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_bf44c48af61df85a6c045ab2aa9a620a.setContent(html_2b9ec4dabbedb57192ac6313f5e2a94a);
+
+
+
+    marker_d034f9862837f9806ecb7eb721f761c5.bindPopup(popup_bf44c48af61df85a6c045ab2aa9a620a)
+        ;
+
+
+
+
+    var marker_1f5fde40c76f8d0006b10bd8d41d6211 = L.marker(
+        [40.735483, 31.606795],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_22ef5dacd6b5a577150b3f35527f67fe = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_34d51efb8feb451b1cf14256be3ce82c = $(`<div id="html_34d51efb8feb451b1cf14256be3ce82c" style="width: 100.0%; height: 100.0%;">
+        <h4>Hakan GÜLEN - BOLU</h4>
+    <p><strong>Sendika:</strong> Türk Metal</p>
+    <p><strong>Adres:</strong> Tabaklar Mh. Ferit Talay Cd. Güneykaya Pasaji Arkasi ikizünal Apt. No</p>
+    <p><strong>Telefon:</strong> 374 215 46 65</p>
+    <p><strong>Faks:</strong> 374 217 73 75</p>
+    <p><strong>E-Posta:</strong> boluiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_22ef5dacd6b5a577150b3f35527f67fe.setContent(html_34d51efb8feb451b1cf14256be3ce82c);
+
+
+
+    marker_1f5fde40c76f8d0006b10bd8d41d6211.bindPopup(popup_22ef5dacd6b5a577150b3f35527f67fe)
+        ;
+
+
+
+
+    var marker_a2fc8ba97903cc31d71c3c4cfdc36b8b = L.marker(
+        [37.720979, 30.290277],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_edfb38aea8c627cc9b87af3916f33e67 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_451dc91de296f3f747aae30413990dd4 = $(`<div id="html_451dc91de296f3f747aae30413990dd4" style="width: 100.0%; height: 100.0%;">
+        <h4>Mustafa ONAY - BURDUR</h4>
+    <p><strong>Sendika:</strong> şeker-İş</p>
+    <p><strong>Adres:</strong> şeker Fabrikasi Burdur şb. Burç Mahl. Cumhuriyet Cad. No.17</p>
+    <p><strong>Telefon:</strong> 549 587 15 01</p>
+    <p><strong>Faks:</strong> 248 232 28 18</p>
+    <p><strong>E-Posta:</strong> burduriltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_edfb38aea8c627cc9b87af3916f33e67.setContent(html_451dc91de296f3f747aae30413990dd4);
+
+
+
+    marker_a2fc8ba97903cc31d71c3c4cfdc36b8b.bindPopup(popup_edfb38aea8c627cc9b87af3916f33e67)
+        ;
+
+
+
+
+    var marker_7a4f58f6ae4b4351cfe4b49af6283ca5 = L.marker(
+        [40.155312, 26.41416],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_69c5925d74b98e57dd7cf28d0e81349a = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_5e48150bc626172d4103a6acc8ef53f0 = $(`<div id="html_5e48150bc626172d4103a6acc8ef53f0" style="width: 100.0%; height: 100.0%;">
+        <h4>Hakan BAYTUR - ÇANAKKALE</h4>
+    <p><strong>Sendika:</strong> Türk Metal</p>
+    <p><strong>Adres:</strong> istiklal Mh. Kurtuluş Cd. No.17-19 K.4 D.3 Biga</p>
+    <p><strong>Telefon:</strong> 286 316 39 96</p>
+    <p><strong>Faks:</strong> 286 317 45 93</p>
+    <p><strong>E-Posta:</strong> canakkaleiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_69c5925d74b98e57dd7cf28d0e81349a.setContent(html_5e48150bc626172d4103a6acc8ef53f0);
+
+
+
+    marker_7a4f58f6ae4b4351cfe4b49af6283ca5.bindPopup(popup_69c5925d74b98e57dd7cf28d0e81349a)
+        ;
+
+
+
+
+    var marker_a062a77ad89ed6792c6be9bdbcc80de7 = L.marker(
+        [40.598728, 33.615257],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_910059190294c2e4bde0bafd586ebe81 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_2fbf4e595a318d08cc84e0e2d4e4aabf = $(`<div id="html_2fbf4e595a318d08cc84e0e2d4e4aabf" style="width: 100.0%; height: 100.0%;">
+        <h4>Vedat GÖKTEPE - ÇANKIRI</h4>
+    <p><strong>Sendika:</strong> Türk Metal</p>
+    <p><strong>Adres:</strong> Buğday Pazari Mah. Atatürk Bul. Filiz Apt. No.62/14</p>
+    <p><strong>Telefon:</strong> 376 212 03 33</p>
+    <p><strong>Faks:</strong> 376 212 22 33</p>
+    <p><strong>E-Posta:</strong> cankiriiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_910059190294c2e4bde0bafd586ebe81.setContent(html_2fbf4e595a318d08cc84e0e2d4e4aabf);
+
+
+
+    marker_a062a77ad89ed6792c6be9bdbcc80de7.bindPopup(popup_910059190294c2e4bde0bafd586ebe81)
+        ;
+
+
+
+
+    var marker_67ed703513fefdb4bebae3530c37da37 = L.marker(
+        [40.550556, 34.955556],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_5d0e11ad8b81eb36cc8437db606b6b21 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_03f9566f01a7d967b1448ce448b5099a = $(`<div id="html_03f9566f01a7d967b1448ce448b5099a" style="width: 100.0%; height: 100.0%;">
+        <h4>ihsan ÜÇTEPE - ÇORUM</h4>
+    <p><strong>Sendika:</strong> Yol-İş</p>
+    <p><strong>Adres:</strong> Mimar Sinan, inönü Cd. No</p>
+    <p><strong>Telefon:</strong> 364 225 74 00</p>
+    <p><strong>Faks:</strong> 364 213 34 43</p>
+    <p><strong>E-Posta:</strong> corumiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_5d0e11ad8b81eb36cc8437db606b6b21.setContent(html_03f9566f01a7d967b1448ce448b5099a);
+
+
+
+    marker_67ed703513fefdb4bebae3530c37da37.bindPopup(popup_5d0e11ad8b81eb36cc8437db606b6b21)
+        ;
+
+
+
+
+    var marker_9f44fe52d9536090c57494aa7cfd86b2 = L.marker(
+        [37.774929, 29.087509],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_2aa9a52c873e02f7188b8cc202ea09ea = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_951cd96d7a61f50d668c11ad7cceb73c = $(`<div id="html_951cd96d7a61f50d668c11ad7cceb73c" style="width: 100.0%; height: 100.0%;">
+        <h4>Yakup ÇETiN - DENiZLi</h4>
+    <p><strong>Sendika:</strong> Çimse-İş</p>
+    <p><strong>Adres:</strong> Talatpaşa Cad. Özdinç Pasaji Kat</p>
+    <p><strong>Telefon:</strong> 258 263 19 64</p>
+    <p><strong>Faks:</strong> 258 263 19 65</p>
+    <p><strong>E-Posta:</strong> denizliiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_2aa9a52c873e02f7188b8cc202ea09ea.setContent(html_951cd96d7a61f50d668c11ad7cceb73c);
+
+
+
+    marker_9f44fe52d9536090c57494aa7cfd86b2.bindPopup(popup_2aa9a52c873e02f7188b8cc202ea09ea)
+        ;
+
+
+
+
+    var marker_be45c1f62cb8e429f96b8d13addb7f11 = L.marker(
+        [41.677191, 26.555968],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_f892bb2e949278099a47003e06ed7c6a = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_a75c5a5687c4613240c88c185de6c2a9 = $(`<div id="html_a75c5a5687c4613240c88c185de6c2a9" style="width: 100.0%; height: 100.0%;">
+        <h4>Zeki şİşKO - EDiRNE</h4>
+    <p><strong>Sendika:</strong> Tes-İş</p>
+    <p><strong>Adres:</strong> Talatpaşa Cad. Özdinç Pasaji Kat</p>
+    <p><strong>Telefon:</strong> 284 225 24 56</p>
+    <p><strong>Faks:</strong> 284 212 53 33</p>
+    <p><strong>E-Posta:</strong> edirneiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_f892bb2e949278099a47003e06ed7c6a.setContent(html_a75c5a5687c4613240c88c185de6c2a9);
+
+
+
+    marker_be45c1f62cb8e429f96b8d13addb7f11.bindPopup(popup_f892bb2e949278099a47003e06ed7c6a)
+        ;
+
+
+
+
+    var marker_071f9eea954300f9098130b2eb81745c = L.marker(
+        [38.674761, 39.222576],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_9b872fb0f5c4fb7def8a3d707a3d49f4 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_678948f43a577ba50ad847bce6f2a1b6 = $(`<div id="html_678948f43a577ba50ad847bce6f2a1b6" style="width: 100.0%; height: 100.0%;">
+        <h4>Mehmet KARA  - ELAZIğ</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> Yeni Mah. Mimar Faruk Cad. Yol-İş Apt. No</p>
+    <p><strong>Telefon:</strong> 424 212 78 98</p>
+    <p><strong>Faks:</strong> 424 212 19 78</p>
+    <p><strong>E-Posta:</strong> elazigiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_9b872fb0f5c4fb7def8a3d707a3d49f4.setContent(html_678948f43a577ba50ad847bce6f2a1b6);
+
+
+
+    marker_071f9eea954300f9098130b2eb81745c.bindPopup(popup_9b872fb0f5c4fb7def8a3d707a3d49f4)
+        ;
+
+
+
+
+    var marker_ad2203cec0977759a394db95f44634fd = L.marker(
+        [39.75, 39.5],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_625e976c97411620ee6fb2cc6e8a57d8 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_9f009a734c56db731cfcbec895c9c809 = $(`<div id="html_9f009a734c56db731cfcbec895c9c809" style="width: 100.0%; height: 100.0%;">
+        <h4>Oğuz BiNGÖL - ERZiNCAN</h4>
+    <p><strong>Sendika:</strong> şeker-İş</p>
+    <p><strong>Adres:</strong> Erzincan Makine Fabrikasi imalat Müdürlüğü</p>
+    <p><strong>Telefon:</strong> 446 223 68 86</p>
+    <p><strong>Faks:</strong> 446 223 22 22</p>
+    <p><strong>E-Posta:</strong> erzincaniltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_625e976c97411620ee6fb2cc6e8a57d8.setContent(html_9f009a734c56db731cfcbec895c9c809);
+
+
+
+    marker_ad2203cec0977759a394db95f44634fd.bindPopup(popup_625e976c97411620ee6fb2cc6e8a57d8)
+        ;
+
+
+
+
+    var marker_1cb2e30eb6484606c5b547ad858dd3fe = L.marker(
+        [39.9, 41.27],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_192b09a3041110d3c81b0f2098de45e4 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_f10aca03e171dc5ad2782afb094ed07a = $(`<div id="html_f10aca03e171dc5ad2782afb094ed07a" style="width: 100.0%; height: 100.0%;">
+        <h4>Yusuf GÖKCAN - ERZURUM</h4>
+    <p><strong>Sendika:</strong> Demiryol-İş</p>
+    <p><strong>Adres:</strong> Kazim Karabekir Cad. Kuşkay 2. Sitesi B Blok no</p>
+    <p><strong>Telefon:</strong> 442 234 20 84</p>
+    <p><strong>Faks:</strong> 442 235 15 19</p>
+    <p><strong>E-Posta:</strong> erzurumiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_192b09a3041110d3c81b0f2098de45e4.setContent(html_f10aca03e171dc5ad2782afb094ed07a);
+
+
+
+    marker_1cb2e30eb6484606c5b547ad858dd3fe.bindPopup(popup_192b09a3041110d3c81b0f2098de45e4)
+        ;
+
+
+
+
+    var marker_e9312bde29e01309a48ab3a9194e83f8 = L.marker(
+        [37.06622, 37.38332],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_bba93dc69544d51fb982470279cf7dc6 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_07ee98c9e7e3c644b3221906d1337783 = $(`<div id="html_07ee98c9e7e3c644b3221906d1337783" style="width: 100.0%; height: 100.0%;">
+        <h4>Mehmet Akif SARICA - GAZiANTEP</h4>
+    <p><strong>Sendika:</strong> T.Koop-İş</p>
+    <p><strong>Adres:</strong> incirlipinar Mah. Kibris Cad. Zeugma İş Merkezi No</p>
+    <p><strong>Telefon:</strong> 342 321 37 30</p>
+    <p><strong>Faks:</strong> 342 321 37 30</p>
+    <p><strong>E-Posta:</strong> gaziantepiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_bba93dc69544d51fb982470279cf7dc6.setContent(html_07ee98c9e7e3c644b3221906d1337783);
+
+
+
+    marker_e9312bde29e01309a48ab3a9194e83f8.bindPopup(popup_bba93dc69544d51fb982470279cf7dc6)
+        ;
+
+
+
+
+    var marker_d1b4a431761c34cf939d27364aedaf52 = L.marker(
+        [40.912811, 38.389533],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_4b60f8af02eb1aeb27b770bb76bc342f = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_b901c87e4ee8d431d3d35917e5129428 = $(`<div id="html_b901c87e4ee8d431d3d35917e5129428" style="width: 100.0%; height: 100.0%;">
+        <h4>Tarik SAYIN - GiRESUN</h4>
+    <p><strong>Sendika:</strong> Tezkoop-İş</p>
+    <p><strong>Adres:</strong> Gazi Cad. No</p>
+    <p><strong>Telefon:</strong> 454 216 24 94</p>
+    <p><strong>Faks:</strong> 454 216 06 57</p>
+    <p><strong>E-Posta:</strong> giresuniltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_4b60f8af02eb1aeb27b770bb76bc342f.setContent(html_b901c87e4ee8d431d3d35917e5129428);
+
+
+
+    marker_d1b4a431761c34cf939d27364aedaf52.bindPopup(popup_4b60f8af02eb1aeb27b770bb76bc342f)
+        ;
+
+
+
+
+    var marker_b6492890d495ab039f4163aea8d91797 = L.marker(
+        [40.43806, 39.50861],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_a518f012b96acdbea470bc0b3f92bd0a = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_202bbbe940d752d8ba4f22cbe4d7a9f1 = $(`<div id="html_202bbbe940d752d8ba4f22cbe4d7a9f1" style="width: 100.0%; height: 100.0%;">
+        <h4>ilyas KOCAMAN - GÜMÜşHANE</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> il Özel idaresi Genel Müdürlüğü</p>
+    <p><strong>Telefon:</strong> 462 323 20 00</p>
+    <p><strong>Faks:</strong> 462 322 31 98</p>
+    <p><strong>E-Posta:</strong> gumushaneiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_a518f012b96acdbea470bc0b3f92bd0a.setContent(html_202bbbe940d752d8ba4f22cbe4d7a9f1);
+
+
+
+    marker_b6492890d495ab039f4163aea8d91797.bindPopup(popup_a518f012b96acdbea470bc0b3f92bd0a)
+        ;
+
+
+
+
+    var marker_f0606ffa2475533110e2542c2341225f = L.marker(
+        [37.574478, 43.740833],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_cd0ec4dcc8a44a3a195fbfc2ec67d990 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_832e713b7364528a0314ff02cf23c0bf = $(`<div id="html_832e713b7364528a0314ff02cf23c0bf" style="width: 100.0%; height: 100.0%;">
+        <h4>Murat ÇATAL - HAKKARi</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> il Özel idare Müdürlüğü</p>
+    <p><strong>Telefon:</strong> 438 211 61 90</p>
+    <p><strong>Faks:</strong> 438 211 65 95</p>
+    <p><strong>E-Posta:</strong> hakkariiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_cd0ec4dcc8a44a3a195fbfc2ec67d990.setContent(html_832e713b7364528a0314ff02cf23c0bf);
+
+
+
+    marker_f0606ffa2475533110e2542c2341225f.bindPopup(popup_cd0ec4dcc8a44a3a195fbfc2ec67d990)
+        ;
+
+
+
+
+    var marker_5d0f9878f57998624c7e98c05e5ae0e3 = L.marker(
+        [36.401824, 36.349809],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_22fe9212d45fc7aa11fe05f8c12aebe6 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_305eacc54b70e5dd09366eb292e5b899 = $(`<div id="html_305eacc54b70e5dd09366eb292e5b899" style="width: 100.0%; height: 100.0%;">
+        <h4>Çakir VARAN - HATAY</h4>
+    <p><strong>Sendika:</strong> Türk Metal</p>
+    <p><strong>Adres:</strong> Çay Mah. Osman Gazi Cad. No</p>
+    <p><strong>Telefon:</strong> 326 614 28 11</p>
+    <p><strong>Faks:</strong> 326 614 31 93</p>
+    <p><strong>E-Posta:</strong> hatayiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_22fe9212d45fc7aa11fe05f8c12aebe6.setContent(html_305eacc54b70e5dd09366eb292e5b899);
+
+
+
+    marker_5d0f9878f57998624c7e98c05e5ae0e3.bindPopup(popup_22fe9212d45fc7aa11fe05f8c12aebe6)
+        ;
+
+
+
+
+    var marker_4fad0d6b3580fbc5507cafc77dea2132 = L.marker(
+        [37.770202, 30.55808],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_de8ac1596c7e0f98b3005d160ea54eda = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_034b6b4678a34fdc6ca5b3459d2b4996 = $(`<div id="html_034b6b4678a34fdc6ca5b3459d2b4996" style="width: 100.0%; height: 100.0%;">
+        <h4>Osman KORKMAZ - ISPARTA</h4>
+    <p><strong>Sendika:</strong> Tes-İş</p>
+    <p><strong>Adres:</strong> Mimar Sinan Cad. Hali Sarayi C Blok Kat2</p>
+    <p><strong>Telefon:</strong> 246 218 36 13</p>
+    <p><strong>Faks:</strong> 246 218 29 01</p>
+    <p><strong>E-Posta:</strong> ispartailtem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_de8ac1596c7e0f98b3005d160ea54eda.setContent(html_034b6b4678a34fdc6ca5b3459d2b4996);
+
+
+
+    marker_4fad0d6b3580fbc5507cafc77dea2132.bindPopup(popup_de8ac1596c7e0f98b3005d160ea54eda)
+        ;
+
+
+
+
+    var marker_71c879557adcedbbab6a8e054f6dcd25 = L.marker(
+        [36.795068, 34.617739],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_5761b70db2c0d867641f919f3679d68e = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_2c53345bb330401671f4fe6b3d85e3e4 = $(`<div id="html_2c53345bb330401671f4fe6b3d85e3e4" style="width: 100.0%; height: 100.0%;">
+        <h4>irfan GÜLTEKiN - iÇEL MERSiN</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> Yeni Mah. inönü Bulv. Kurtuluş Meydani 78 Clas Plaza A Blok No</p>
+    <p><strong>Telefon:</strong> 324 231 22 29  233 19 22</p>
+    <p><strong>Faks:</strong> 324 233 73 95</p>
+    <p><strong>E-Posta:</strong> mersiniltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_5761b70db2c0d867641f919f3679d68e.setContent(html_2c53345bb330401671f4fe6b3d85e3e4);
+
+
+
+    marker_71c879557adcedbbab6a8e054f6dcd25.bindPopup(popup_5761b70db2c0d867641f919f3679d68e)
+        ;
+
+
+
+
+    var marker_33f249aff1a6cd1f7fcef12376755325 = L.marker(
+        [40.601911, 43.097751],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_c22f3e21effc7ce288f051e0e6783df6 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_48e1d41a48a404edb3ad4759d1769e08 = $(`<div id="html_48e1d41a48a404edb3ad4759d1769e08" style="width: 100.0%; height: 100.0%;">
+        <h4>Dinçer YILMAZ  - KARS</h4>
+    <p><strong>Sendika:</strong> Demiryol-İş</p>
+    <p><strong>Adres:</strong> TCDD Gar Merkez / KARS</p>
+    <p><strong>Telefon:</strong> 474 212 44 55</p>
+    <p><strong>Faks:</strong> 474 212 44 55</p>
+    <p><strong>E-Posta:</strong> karsiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_c22f3e21effc7ce288f051e0e6783df6.setContent(html_48e1d41a48a404edb3ad4759d1769e08);
+
+
+
+    marker_33f249aff1a6cd1f7fcef12376755325.bindPopup(popup_c22f3e21effc7ce288f051e0e6783df6)
+        ;
+
+
+
+
+    var marker_e55391be15c743ebd99d8d748eb96eaf = L.marker(
+        [41.388713, 33.78273],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_9507b13a22a38d7af7160b70dd93bcb5 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_19a719e24d40725fb97f0b7ec32d107c = $(`<div id="html_19a719e24d40725fb97f0b7ec32d107c" style="width: 100.0%; height: 100.0%;">
+        
+        <h4>Mehmet ÇELiK - KASTAMONU</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> Candaroğullari Mh Alpalslan Türkeş Blv. Altinbulut Sitesi A Blok No</p>
+    <p><strong>Telefon:</strong> 366 214 23 53</p>
+    <p><strong>Faks:</strong> 366 214 48 87</p>
+    <p><strong>E-Posta:</strong> kastamonuiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_9507b13a22a38d7af7160b70dd93bcb5.setContent(html_19a719e24d40725fb97f0b7ec32d107c);
+
+
+
+    marker_e55391be15c743ebd99d8d748eb96eaf.bindPopup(popup_9507b13a22a38d7af7160b70dd93bcb5)
+        ;
+
+
+
+
+    var marker_d08841502764fa5a77443bee50fb5767 = L.marker(
+        [38.733334, 35.483765],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_9728ad37c5efdfad006879135d0fcde9 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_e1ffb7911b3b20a488d387e442668f36 = $(`<div id="html_e1ffb7911b3b20a488d387e442668f36" style="width: 100.0%; height: 100.0%;">
+        <h4>idris GÜVEN  - KAYSERi</h4>
+    <p><strong>Sendika:</strong> Koop-İş</p>
+    <p><strong>Adres:</strong> Sahabiye Mah. Buyurkan Sok. Türkaslan İş Merkezi Kat</p>
+    <p><strong>Telefon:</strong> 352 222 19 15</p>
+    <p><strong>Faks:</strong> 352 222 19 15</p>
+    <p><strong>E-Posta:</strong> kayseriiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_9728ad37c5efdfad006879135d0fcde9.setContent(html_e1ffb7911b3b20a488d387e442668f36);
+
+
+
+    marker_d08841502764fa5a77443bee50fb5767.bindPopup(popup_9728ad37c5efdfad006879135d0fcde9)
+        ;
+
+
+
+
+    var marker_c10ab6b5b792cfbde5f38624b36eff75 = L.marker(
+        [41.733334, 27.216667],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_f8bd65b76ab0f81a122c4a9852c22964 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_0edea0f6b7ca50225c2b865853614071 = $(`<div id="html_0edea0f6b7ca50225c2b865853614071" style="width: 100.0%; height: 100.0%;">
+        h4>Mehmet ÖZMÜş - KIRKLARELi</h4>
+    <p><strong>Sendika:</strong> Kristal İş</p>
+    <p><strong>Adres:</strong> Özenler Mah. Findikli Sok.Belediye Karşisi Kat.3 Lüleburgaz</p>
+    <p><strong>Telefon:</strong> 288 417 44 03</p>
+    <p><strong>Faks:</strong> 288 412 63 51</p>
+    <p><strong>E-Posta:</strong> kirklareliiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_f8bd65b76ab0f81a122c4a9852c22964.setContent(html_0edea0f6b7ca50225c2b865853614071);
+
+
+
+    marker_c10ab6b5b792cfbde5f38624b36eff75.bindPopup(popup_f8bd65b76ab0f81a122c4a9852c22964)
+        ;
+
+
+
+
+    var marker_e4ce466eb4604f44ed900c615b1102ed = L.marker(
+        [39.145561, 34.163497],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_56f33c773a0ac6989c0a8d00f06ee09f = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_1422ab332ce0e5c682206fca5ccdeb35 = $(`<div id="html_1422ab332ce0e5c682206fca5ccdeb35" style="width: 100.0%; height: 100.0%;">
+        <h4>Muzaffer YILMAZ - KIRşEHiR</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> il Özel idaresi</p>
+    <p><strong>Telefon:</strong> 386 212 84 44</p>
+    <p><strong>Faks:</strong> 386 212 84 44</p>
+    <p><strong>E-Posta:</strong> kirsehiriltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_56f33c773a0ac6989c0a8d00f06ee09f.setContent(html_1422ab332ce0e5c682206fca5ccdeb35);
+
+
+
+    marker_e4ce466eb4604f44ed900c615b1102ed.bindPopup(popup_56f33c773a0ac6989c0a8d00f06ee09f)
+        ;
+
+
+
+
+    var marker_8aa5aaf6078ae8982f7df3d21c445d1e = L.marker(
+        [40.85327, 29.88152],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_b5139e4a96620157c8d2a2cdd62f4aab = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_8a4613a56c93ca8cbf258bee6f279b10 = $(`<div id="html_8a4613a56c93ca8cbf258bee6f279b10" style="width: 100.0%; height: 100.0%;">
+        <h4>Ali Bostan - KOCAELi</h4>
+    <p><strong>Sendika:</strong> TEKGIDA-İş</p>
+    <p><strong>Adres:</strong> ÖMERAğA MAHALLESi şAHABETTiN BiLGiSU CADDESi NO</p>
+    <p><strong>Telefon:</strong> 0262 331 7755</p>
+    <p><strong>Faks:</strong> 0262 331 7755</p>
+    <p><strong>E-Posta:</strong> -</p>
+        </div>`)[0];
+    popup_b5139e4a96620157c8d2a2cdd62f4aab.setContent(html_8a4613a56c93ca8cbf258bee6f279b10);
+
+
+
+    marker_8aa5aaf6078ae8982f7df3d21c445d1e.bindPopup(popup_b5139e4a96620157c8d2a2cdd62f4aab)
+        ;
+
+
+
+
+    var marker_825f52623b9d0ad4bff9dcee6b08f75f = L.marker(
+        [37.871422, 32.503975],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_9caf1831e6a7263e18dee1f2c50675cf = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_f027690df09f505e6807d44c934d4739 = $(`<div id="html_f027690df09f505e6807d44c934d4739" style="width: 100.0%; height: 100.0%;">
+        <h4>Abdülkadir TAMAK - KONYA</h4>
+    <p><strong>Sendika:</strong> Tarim-İş</p>
+    <p><strong>Adres:</strong> Nişantaşi Mahallesi Ahmet Hilmi Nalçaci Caddesi Ecza Sitesi No</p>
+    <p><strong>Telefon:</strong> 332 351 58 53</p>
+    <p><strong>Faks:</strong> 332 351 43 64</p>
+    <p><strong>E-Posta:</strong> konyailtem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_9caf1831e6a7263e18dee1f2c50675cf.setContent(html_f027690df09f505e6807d44c934d4739);
+
+
+
+    marker_825f52623b9d0ad4bff9dcee6b08f75f.bindPopup(popup_9caf1831e6a7263e18dee1f2c50675cf)
+        ;
+
+
+
+
+    var marker_1c8a7c02d6eae9d106af9c0f9b15d653 = L.marker(
+        [39.424702, 29.983864],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_9faeec5ee4adc443e3649a75dffa16b8 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_7275dcb5181719fbb655be906574ac54 = $(`<div id="html_7275dcb5181719fbb655be906574ac54" style="width: 100.0%; height: 100.0%;">
+        <h4>ismail GÖK - KÜTAHYA</h4>
+    <p><strong>Sendika:</strong> Çimse-İş</p>
+    <p><strong>Adres:</strong> Sebilerenler Cad. Eren Apt. A Blok Zemin Kat. No</p>
+    <p><strong>Telefon:</strong> 274 224 36 95</p>
+    <p><strong>Faks:</strong> 274 224 36 93</p>
+    <p><strong>E-Posta:</strong> kutahyailtem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_9faeec5ee4adc443e3649a75dffa16b8.setContent(html_7275dcb5181719fbb655be906574ac54);
+
+
+
+    marker_1c8a7c02d6eae9d106af9c0f9b15d653.bindPopup(popup_9faeec5ee4adc443e3649a75dffa16b8)
+        ;
+
+
+
+
+    var marker_10e1107f62d0c7d45fbee2b57ede0b40 = L.marker(
+        [38.355518, 38.309118],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_7690949c901f6c2f1320a8069dd1ba7d = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_fb624fe9aa5911302682a130f6d44f2d = $(`<div id="html_fb624fe9aa5911302682a130f6d44f2d" style="width: 100.0%; height: 100.0%;">
+        <h4>Hikmet KAZGAN - MALATYA</h4>
+    <p><strong>Sendika:</strong> Demiryol-İş</p>
+    <p><strong>Adres:</strong> inönü Mah. Yakamoz Cad. No.2</p>
+    <p><strong>Telefon:</strong> 422 212 44 77</p>
+    <p><strong>Faks:</strong> 422 212 44 91</p>
+    <p><strong>E-Posta:</strong> malatyailtem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_7690949c901f6c2f1320a8069dd1ba7d.setContent(html_fb624fe9aa5911302682a130f6d44f2d);
+
+
+
+    marker_10e1107f62d0c7d45fbee2b57ede0b40.bindPopup(popup_7690949c901f6c2f1320a8069dd1ba7d)
+        ;
+
+
+
+
+    var marker_ac37d7ed4ccd3072252e37ba52b34877 = L.marker(
+        [38.613838, 27.425384],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_9f0bca843566df70ab3af6fa53cdcd56 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_1743350692fb670b0e1284ee6fe30717 = $(`<div id="html_1743350692fb670b0e1284ee6fe30717" style="width: 100.0%; height: 100.0%;">
+        <h4>Ercan DERELi - MANiSA</h4>
+    <p><strong>Sendika:</strong> Türk Metal</p>
+    <p><strong>Adres:</strong> Yar Hasanlar Mah. Erdem Sok.</p>
+    <p><strong>Telefon:</strong> 236 231 84 63-236 237 94 62</p>
+    <p><strong>Faks:</strong> 236 238 00 45</p>
+    <p><strong>E-Posta:</strong> manisailtem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_9f0bca843566df70ab3af6fa53cdcd56.setContent(html_1743350692fb670b0e1284ee6fe30717);
+
+
+
+    marker_ac37d7ed4ccd3072252e37ba52b34877.bindPopup(popup_9f0bca843566df70ab3af6fa53cdcd56)
+        ;
+
+
+
+
+    var marker_8d4d3b695bcada97b29f850f13186b33 = L.marker(
+        [37.574782, 36.93744],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_d71495754f7aa93b4b70f1a5c995dcbf = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_bfdb8088d78a357456cc901ad15d9926 = $(`<div id="html_bfdb8088d78a357456cc901ad15d9926" style="width: 100.0%; height: 100.0%;">
+        <h4>Haci Mehmet KAVUK - KAHRAMANMARAş</h4>
+    <p><strong>Sendika:</strong> Tes-İş</p>
+    <p><strong>Adres:</strong> isa Divanli Mh. şeyhadil Cd. No</p>
+    <p><strong>Telefon:</strong> 344 221 36 94</p>
+    <p><strong>Faks:</strong> 344 221 36 95</p>
+    <p><strong>E-Posta:</strong> kahramanmarasiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_d71495754f7aa93b4b70f1a5c995dcbf.setContent(html_bfdb8088d78a357456cc901ad15d9926);
+
+
+
+    marker_8d4d3b695bcada97b29f850f13186b33.bindPopup(popup_d71495754f7aa93b4b70f1a5c995dcbf)
+        ;
+
+
+
+
+    var marker_8d09636b38cf783b6b586db301edf5b4 = L.marker(
+        [37.312236, 40.735112],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_6d7a29b6407673e6f2731d69716a4e30 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_951e16a4be83f5b50fc398cca7f9b790 = $(`<div id="html_951e16a4be83f5b50fc398cca7f9b790" style="width: 100.0%; height: 100.0%;">
+        
+        <h4>Cemal ÖZKAN - MARDiN</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> Karayollari 93. şube şefliği YOL-İş Sendikasi İşyeri Baş Temsilcisi / Mardin</p>
+    <p><strong>Telefon:</strong> 482 212 24 04</p>
+    <p><strong>Faks:</strong> 482 212 76 97</p>
+    <p><strong>E-Posta:</strong> mardiniltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_6d7a29b6407673e6f2731d69716a4e30.setContent(html_951e16a4be83f5b50fc398cca7f9b790);
+
+
+
+    marker_8d09636b38cf783b6b586db301edf5b4.bindPopup(popup_6d7a29b6407673e6f2731d69716a4e30)
+        ;
+
+
+
+
+    var marker_2e9ee2baa6d4b8cc706d6476dd88d2d0 = L.marker(
+        [37.213333, 28.363611],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_728a0416fc0d5137d312839aa3d75b7b = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_f628eb048a61f482928cfec1ff3cb801 = $(`<div id="html_f628eb048a61f482928cfec1ff3cb801" style="width: 100.0%; height: 100.0%;">
+        <h4>Fatih ERÇELiK  - MUğLA</h4>
+    <p><strong>Sendika:</strong> Tes-İş</p>
+    <p><strong>Adres:</strong> Yeni Mah.inönü Bul. Toksöz Cad. No</p>
+    <p><strong>Telefon:</strong> 252 572 69 66</p>
+    <p><strong>Faks:</strong> 252 572 25 03</p>
+    <p><strong>E-Posta:</strong> muglailtem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_728a0416fc0d5137d312839aa3d75b7b.setContent(html_f628eb048a61f482928cfec1ff3cb801);
+
+
+
+    marker_2e9ee2baa6d4b8cc706d6476dd88d2d0.bindPopup(popup_728a0416fc0d5137d312839aa3d75b7b)
+        ;
+
+
+
+
+    var marker_e0d72bb4bf259aa7e4bd9591f5a229fc = L.marker(
+        [38.746667, 41.496944],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_3bce764f2c74f50fd077100b3eb05e78 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_cb68b5876d4620cb0aebaeb922969641 = $(`<div id="html_cb68b5876d4620cb0aebaeb922969641" style="width: 100.0%; height: 100.0%;">
+        <h4>Salih AKYÜREK - MUş</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> Muş il Özel idaresi</p>
+    <p><strong>Telefon:</strong> 0436 212 11 65 dahili 1005</p>
+    <p><strong>Faks:</strong> 0436 212 17 92</p>
+    <p><strong>E-Posta:</strong> musiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_3bce764f2c74f50fd077100b3eb05e78.setContent(html_cb68b5876d4620cb0aebaeb922969641);
+
+
+
+    marker_e0d72bb4bf259aa7e4bd9591f5a229fc.bindPopup(popup_3bce764f2c74f50fd077100b3eb05e78)
+        ;
+
+
+
+
+    var marker_98978ba76c3cb32e8176b1942903b4a0 = L.marker(
+        [38.693333, 34.68505],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_16da8aaaf8c5cf12034bfee2375d7566 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_e9d3ac78144a49dc4ca15362acbaf7ac = $(`<div id="html_e9d3ac78144a49dc4ca15362acbaf7ac" style="width: 100.0%; height: 100.0%;">
+        <h4>Ersin DÖRTKOL - NEVşEHiR</h4>
+    <p><strong>Sendika:</strong> Yol-İş</p>
+    <p><strong>Adres:</strong> 15 Temmuz Mahallesi Zübeyde Hanim Caddesi No</p>
+    <p><strong>Telefon:</strong> 384 215 12 15</p>
+    <p><strong>Faks:</strong> 384 215 12 29</p>
+    <p><strong>E-Posta:</strong> nevsehiriltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_16da8aaaf8c5cf12034bfee2375d7566.setContent(html_e9d3ac78144a49dc4ca15362acbaf7ac);
+
+
+
+    marker_98978ba76c3cb32e8176b1942903b4a0.bindPopup(popup_16da8aaaf8c5cf12034bfee2375d7566)
+        ;
+
+
+
+
+    var marker_7c4eda8e3e28203c64de1fa505814199 = L.marker(
+        [37.966667, 34.683333],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_3b807315e4905e01bb08916c3ca96b9b = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_41f52110768ace00e2ddd8db12907236 = $(`<div id="html_41f52110768ace00e2ddd8db12907236" style="width: 100.0%; height: 100.0%;">
+        <h4>Barİş AYDOğAN - NiğDE</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> KARAYOLLARI 64. şUBE şEFLiği NiğDE</p>
+    <p><strong>Telefon:</strong> 388 232 34 06</p>
+    <p><strong>Faks:</strong> 388 232 34 04</p>
+    <p><strong>E-Posta:</strong> nigdeiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_3b807315e4905e01bb08916c3ca96b9b.setContent(html_41f52110768ace00e2ddd8db12907236);
+
+
+
+    marker_7c4eda8e3e28203c64de1fa505814199.bindPopup(popup_3b807315e4905e01bb08916c3ca96b9b)
+        ;
+
+
+
+
+    var marker_2e22308a4b96952ca589ff7d7cb6eb6e = L.marker(
+        [40.983334, 37.883331],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_812750e7713aa8313b8f050eadc3d1e4 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_ad236db5e4f3a5ec761fa9aa02ca7a4e = $(`<div id="html_ad236db5e4f3a5ec761fa9aa02ca7a4e" style="width: 100.0%; height: 100.0%;">
+        <h4>Ulvi şEN - ORDU</h4>
+    <p><strong>Sendika:</strong> Tes-İş</p>
+    <p><strong>Adres:</strong> Tes-İş Sendikasi İşyeri Baştemsilcisi DSi 75. şube Müdürlüğü</p>
+    <p><strong>Telefon:</strong> 452 522 33 26</p>
+    <p><strong>Faks:</strong> 452 522 33 42</p>
+    <p><strong>E-Posta:</strong> orduiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_812750e7713aa8313b8f050eadc3d1e4.setContent(html_ad236db5e4f3a5ec761fa9aa02ca7a4e);
+
+
+
+    marker_2e22308a4b96952ca589ff7d7cb6eb6e.bindPopup(popup_812750e7713aa8313b8f050eadc3d1e4)
+        ;
+
+
+
+
+    var marker_002f6b0b82379e6d9ce89088c5815ccd = L.marker(
+        [40.894825, 40.983535],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_bf82933806b5cdd8d648a451067e37ec = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_59de8a62d320f0a79a81e8809826d2f5 = $(`<div id="html_59de8a62d320f0a79a81e8809826d2f5" style="width: 100.0%; height: 100.0%;">
+        <h4>Harun ERDOğAN - RiZE</h4>
+    <p><strong>Sendika:</strong> Yol-İş</p>
+    <p><strong>Adres:</strong> Atatürk Alani Suluhan İşhani Kat 4</p>
+    <p><strong>Telefon:</strong> 462 323 20 00</p>
+    <p><strong>Faks:</strong> 464 322 31 98</p>
+    <p><strong>E-Posta:</strong> rizeiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_bf82933806b5cdd8d648a451067e37ec.setContent(html_59de8a62d320f0a79a81e8809826d2f5);
+
+
+
+    marker_002f6b0b82379e6d9ce89088c5815ccd.bindPopup(popup_bf82933806b5cdd8d648a451067e37ec)
+        ;
+
+
+
+
+    var marker_7bd565508ddd2e1d61db6ad8c4933eea = L.marker(
+        [40.76078, 30.378139],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_6a99fa45b8e9e491cea59b7dd690598f = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_77019884e35b603c1a420be45d7c70ca = $(`<div id="html_77019884e35b603c1a420be45d7c70ca" style="width: 100.0%; height: 100.0%;">
+        <h4>Cemal YAMAN - SAKARYA</h4>
+    <p><strong>Sendika:</strong> Demiryol-İş</p>
+    <p><strong>Adres:</strong> Milli Egemenlik Cad. No</p>
+    <p><strong>Telefon:</strong> 264 277 38 90</p>
+    <p><strong>Faks:</strong> 264 279 42 20</p>
+    <p><strong>E-Posta:</strong> sakaryailtem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_6a99fa45b8e9e491cea59b7dd690598f.setContent(html_77019884e35b603c1a420be45d7c70ca);
+
+
+
+    marker_7bd565508ddd2e1d61db6ad8c4933eea.bindPopup(popup_6a99fa45b8e9e491cea59b7dd690598f)
+        ;
+
+
+
+
+    var marker_cd706102bb8b1617359229f7650c8ea3 = L.marker(
+        [41.28667, 36.330002],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_c7aeb70a02f19595984b60357ecf33dd = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_6ad3ffdbf29065d0b0bfb7250be3cbca = $(`<div id="html_6ad3ffdbf29065d0b0bfb7250be3cbca" style="width: 100.0%; height: 100.0%;">
+        <h4>Fati KÖYMEN - SAMSUN</h4>
+    <p><strong>Sendika:</strong> Koop-İş</p>
+    <p><strong>Adres:</strong> Kale Mahallesi istiklal Caddesi Sağlam İşhani No</p>
+    <p><strong>Telefon:</strong> 0362 234 40 34</p>
+    <p><strong>Faks:</strong> 362 234 40 34</p>
+    <p><strong>E-Posta:</strong> </p>
+        </div>`)[0];
+    popup_c7aeb70a02f19595984b60357ecf33dd.setContent(html_6ad3ffdbf29065d0b0bfb7250be3cbca);
+
+
+
+    marker_cd706102bb8b1617359229f7650c8ea3.bindPopup(popup_c7aeb70a02f19595984b60357ecf33dd)
+        ;
+
+
+
+
+    var marker_0cff8fb8f476e745aee5d2ca740736cb = L.marker(
+        [37.927251, 41.94471],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_f3f508d52d7ff0e1964a5ef2e7514b5c = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_2abaef2620a8687a2913e91f57bbaff1 = $(`<div id="html_2abaef2620a8687a2913e91f57bbaff1" style="width: 100.0%; height: 100.0%;">
+        <h4>Fahrettin NAZLIER - SiiRT</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> Siirt il Özel idaresi Genel Sekreterliği</p>
+    <p><strong>Telefon:</strong> 484 223 13 86</p>
+    <p><strong>Faks:</strong> 484 223 13 86</p>
+    <p><strong>E-Posta:</strong> siirtiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_f3f508d52d7ff0e1964a5ef2e7514b5c.setContent(html_2abaef2620a8687a2913e91f57bbaff1);
+
+
+
+    marker_0cff8fb8f476e745aee5d2ca740736cb.bindPopup(popup_f3f508d52d7ff0e1964a5ef2e7514b5c)
+        ;
+
+
+
+
+    var marker_ebf11d35caef75c8bdb57ca6613fe7f8 = L.marker(
+        [42.026422, 35.155075],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_e54f3c9c9e65efe5e776f153fa272afa = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_39ba5fdbc9c710a30232e03f7cf0f41f = $(`<div id="html_39ba5fdbc9c710a30232e03f7cf0f41f" style="width: 100.0%; height: 100.0%;">
+        <h4>Muhittin DURDU - SiNOP</h4>
+    <p><strong>Sendika:</strong> Sağlik-İş</p>
+    <p><strong>Adres:</strong> il Sağlik Müdürlüğü Yeni Mahalle Okulak Sokak No</p>
+    <p><strong>Telefon:</strong> 368 261 19 62</p>
+    <p><strong>Faks:</strong> 368 261 16 32</p>
+    <p><strong>E-Posta:</strong> sinopiltem@turkis.org.tr</p>
+        </div>`)[0];
+    popup_e54f3c9c9e65efe5e776f153fa272afa.setContent(html_39ba5fdbc9c710a30232e03f7cf0f41f);
+
+
+
+    marker_ebf11d35caef75c8bdb57ca6613fe7f8.bindPopup(popup_e54f3c9c9e65efe5e776f153fa272afa)
+        ;
+
+
+
+
+    var marker_48a31bee91606443a003f7174bc2f7e8 = L.marker(
+        [40.983334, 27.516666],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_47bc261afe55ddd6f8828030ac10c172 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_b2b48656e92d885a9aec585e97809686 = $(`<div id="html_b2b48656e92d885a9aec585e97809686" style="width: 100.0%; height: 100.0%;">
+        <h4>Murat KOÇAK - TEKiRDAğ</h4>
+    <p><strong>Sendika:</strong> Türk Metal</p>
+    <p><strong>Adres:</strong> Gaziosmanpaşa Mh. Güven-iş Caddesi No</p>
+    <p><strong>Telefon:</strong> 282 726 56 95</p>
+    <p><strong>Faks:</strong> 282 726 61 59</p>
+    <p><strong>E-Posta:</strong> tekirdagiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_47bc261afe55ddd6f8828030ac10c172.setContent(html_b2b48656e92d885a9aec585e97809686);
+
+
+
+    marker_48a31bee91606443a003f7174bc2f7e8.bindPopup(popup_47bc261afe55ddd6f8828030ac10c172)
+        ;
+
+
+
+
+    var marker_1ae21702a928645b59e089aa82ffb912 = L.marker(
+        [40.313889, 36.554722],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_4f44ed2c572a3d873385896d78ff7b4d = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_3f2a18b2e2533fd3a1edaa6db5be27fc = $(`<div id="html_3f2a18b2e2533fd3a1edaa6db5be27fc" style="width: 100.0%; height: 100.0%;">
+        <h4>Nurullah ALFAT - TOKAT</h4>
+    <p><strong>Sendika:</strong> şeker-İş</p>
+    <p><strong>Adres:</strong> Zille Cad. No</p>
+    <p><strong>Telefon:</strong> 356 275 10 01</p>
+    <p><strong>Faks:</strong> 356 275 10 01</p>
+    <p><strong>E-Posta:</strong> tokatiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_4f44ed2c572a3d873385896d78ff7b4d.setContent(html_3f2a18b2e2533fd3a1edaa6db5be27fc);
+
+
+
+    marker_1ae21702a928645b59e089aa82ffb912.bindPopup(popup_4f44ed2c572a3d873385896d78ff7b4d)
+        ;
+
+
+
+
+    var marker_fb5d72a9a3abb85bfec0c2825bbb9fa8 = L.marker(
+        [41.00527, 39.72472],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_9ffe5feda0539e748c120145f0e82640 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_0e5d7c9236ba4f82a079a1bc5b676e04 = $(`<div id="html_0e5d7c9236ba4f82a079a1bc5b676e04" style="width: 100.0%; height: 100.0%;">
+        <h4>Gökhan GEDiKLi - TRABZON</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> Cumhuriyet Mah. Yavuzselim Bulvari Yusufhan İşhani Kat.6 No.167 Ortahisar</p>
+    <p><strong>Telefon:</strong> 462 323 23 11  326 20 69</p>
+    <p><strong>Faks:</strong> 462 322 35 58</p>
+    <p><strong>E-Posta:</strong> trabzoniltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_9ffe5feda0539e748c120145f0e82640.setContent(html_0e5d7c9236ba4f82a079a1bc5b676e04);
+
+
+
+    marker_fb5d72a9a3abb85bfec0c2825bbb9fa8.bindPopup(popup_9ffe5feda0539e748c120145f0e82640)
+        ;
+
+
+
+
+    var marker_5ab73fabb46d1a0d78933a354dac5d15 = L.marker(
+        [39.10889, 39.548611],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_195016cec3e6d137be2ccfdee7c0bdba = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_98f26f5862fdd9da09609aa87aa4639d = $(`<div id="html_98f26f5862fdd9da09609aa87aa4639d" style="width: 100.0%; height: 100.0%;">
+        <h4>Ali Bedri KIRMIZITOPRAK - TUNCELi</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> Karayollari 86nci şube şefliği Merkez</p>
+    <p><strong>Telefon:</strong> 428 212 13 25</p>
+    <p><strong>Faks:</strong> 428 212 10 22</p>
+    <p><strong>E-Posta:</strong> tunceliiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_195016cec3e6d137be2ccfdee7c0bdba.setContent(html_98f26f5862fdd9da09609aa87aa4639d);
+
+
+
+    marker_5ab73fabb46d1a0d78933a354dac5d15.bindPopup(popup_195016cec3e6d137be2ccfdee7c0bdba)
+        ;
+
+
+
+
+    var marker_af3715928c45d9485191239df74a4701 = L.marker(
+        [37.16708, 38.793919],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_07e67032cd896a3e2b61763b06c05e36 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_f3b98d327e96b9aa00757bb97963196a = $(`<div id="html_f3b98d327e96b9aa00757bb97963196a" style="width: 100.0%; height: 100.0%;">
+        <h4>Erol DÜZME - şANLIURFA</h4>
+    <p><strong>Sendika:</strong> Tesİş</p>
+    <p><strong>Adres:</strong> Esentepe Mah. Temiz Sok. Tes-İş Apt.</p>
+    <p><strong>Telefon:</strong> 414 313 79 03</p>
+    <p><strong>Faks:</strong> 414 313 21 85</p>
+    <p><strong>E-Posta:</strong> sanliurfailtem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_07e67032cd896a3e2b61763b06c05e36.setContent(html_f3b98d327e96b9aa00757bb97963196a);
+
+
+
+    marker_af3715928c45d9485191239df74a4701.bindPopup(popup_07e67032cd896a3e2b61763b06c05e36)
+        ;
+
+
+
+
+    var marker_152a2848bd039614c1e7d5b4273738e5 = L.marker(
+        [38.674339, 29.405919],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_651572bd601eda49a2b5717d4d97871b = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_fc480b470805775c2519c64197aab4c6 = $(`<div id="html_fc480b470805775c2519c64197aab4c6" style="width: 100.0%; height: 100.0%;">
+        <h4>Ali Murat YALÇINDAğ - UşAK</h4>
+    <p><strong>Sendika:</strong> Çimse-İş</p>
+    <p><strong>Adres:</strong> ismetpaşa Cd. Başaran İşhani No</p>
+    <p><strong>Telefon:</strong> 276 215 25 57</p>
+    <p><strong>Faks:</strong> 276 215 59 39</p>
+    <p><strong>E-Posta:</strong> usakiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_651572bd601eda49a2b5717d4d97871b.setContent(html_fc480b470805775c2519c64197aab4c6);
+
+
+
+    marker_152a2848bd039614c1e7d5b4273738e5.bindPopup(popup_651572bd601eda49a2b5717d4d97871b)
+        ;
+
+
+
+
+    var marker_898135ab45203500320f682619b062c1 = L.marker(
+        [37.517879, 42.457775],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_cc65c75d3db573b0dd8832f1db80ad40 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_79c4df1b542d6a90605b9d011d67adb2 = $(`<div id="html_79c4df1b542d6a90605b9d011d67adb2" style="width: 100.0%; height: 100.0%;">
+        <h4>Selim ÖğMEN - şIRNAK</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> Köy Hizmetleri il Müdürlüğü</p>
+    <p><strong>Telefon:</strong> 486 216 14 46</p>
+    <p><strong>Faks:</strong> 486 216 15 22</p>
+    <p><strong>E-Posta:</strong> sirnakiltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_cc65c75d3db573b0dd8832f1db80ad40.setContent(html_79c4df1b542d6a90605b9d011d67adb2);
+
+
+
+    marker_898135ab45203500320f682619b062c1.bindPopup(popup_cc65c75d3db573b0dd8832f1db80ad40)
+        ;
+
+
+
+
+    var marker_b9ef238402f6f4c74016b9550a13535e = L.marker(
+        [41.636967, 32.337502],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_42d3ff1d50fa54a278cf84ff540694b6 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_bb66b36213b35dbf7a893e8349e5ee66 = $(`<div id="html_bb66b36213b35dbf7a893e8349e5ee66" style="width: 100.0%; height: 100.0%;">
+        h4>Ümit Çinar - BARTIN</h4>
+    <p><strong>Sendika:</strong> G.Maden-İş</p>
+    <p><strong>Adres:</strong> KUM MAHALLESi AMiRAL CELAL EYiCEOğLU CADDESi NO</p>
+    <p><strong>Telefon:</strong> 378 315 11 31</p>
+    <p><strong>Faks:</strong> 378 315 11 31</p>
+    <p><strong>E-Posta:</strong> -</p>
+        </div>`)[0];
+    popup_42d3ff1d50fa54a278cf84ff540694b6.setContent(html_bb66b36213b35dbf7a893e8349e5ee66);
+
+
+
+    marker_b9ef238402f6f4c74016b9550a13535e.bindPopup(popup_42d3ff1d50fa54a278cf84ff540694b6)
+        ;
+
+
+
+
+    var marker_1f2e5ee6b4aa2d7fb80d7ac516d574ce = L.marker(
+        [41.110458, 42.702223],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_2ff2beb3f909a69d28e7573d866cba68 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_3e71ca616f10e4e1646443807fcd9b39 = $(`<div id="html_3e71ca616f10e4e1646443807fcd9b39" style="width: 100.0%; height: 100.0%;">
+        <h4>Mehmet ÖZDEMiR - ARDAHAN</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> il Özel idaresi Ardahan</p>
+    <p><strong>Telefon:</strong> 478 211 46 82</p>
+    <p><strong>Faks:</strong> 478 211 35 46</p>
+    <p><strong>E-Posta:</strong> ardahaniltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_2ff2beb3f909a69d28e7573d866cba68.setContent(html_3e71ca616f10e4e1646443807fcd9b39);
+
+
+
+    marker_1f2e5ee6b4aa2d7fb80d7ac516d574ce.bindPopup(popup_2ff2beb3f909a69d28e7573d866cba68)
+        ;
+
+
+
+
+    var marker_86eb5c39c304803d52d2b94cb68a626c = L.marker(
+        [39.923275, 44.045006],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_90c10b0da5f098d598fa2929e62eb562 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_6a313cef41f1f2e18dbcd061c1c03487 = $(`<div id="html_6a313cef41f1f2e18dbcd061c1c03487" style="width: 100.0%; height: 100.0%;">
+        <h4>Mehmet Siddik KAMAN - IğDIR</h4>
+    <p><strong>Sendika:</strong> T.Yol-İş</p>
+    <p><strong>Adres:</strong> il Özel idaresi Müdürlüğü</p>
+    <p><strong>Telefon:</strong> 476 226 24 57</p>
+    <p><strong>Faks:</strong> 476 226 21 99</p>
+    <p><strong>E-Posta:</strong> igdiriltem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_90c10b0da5f098d598fa2929e62eb562.setContent(html_6a313cef41f1f2e18dbcd061c1c03487);
+
+
+
+    marker_86eb5c39c304803d52d2b94cb68a626c.bindPopup(popup_90c10b0da5f098d598fa2929e62eb562)
+        ;
+
+
+
+
+    var marker_45249fa3b902164c10998795c2348b5b = L.marker(
+        [40.655014, 29.275351],
+        {}
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var popup_ac196db2492446b74da21cdbb74fca43 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_d6fea43937d8b51d3fafe373b7b922af = $(`<div id="html_d6fea43937d8b51d3fafe373b7b922af" style="width: 100.0%; height: 100.0%;">
+        <h4>Murat şAHiN - YALOVA</h4>
+    <p><strong>Sendika:</strong> Toleyis</p>
+    <p><strong>Adres:</strong> Sağlik Bakanliği Yalova Kaplicalari İşletme idaresi</p>
+    <p><strong>Telefon:</strong> 226 675 74 00</p>
+    <p><strong>Faks:</strong> 226 675 74 08</p>
+    <p><strong>E-Posta:</strong> yalovailtem@turkis.org.tr</p>
+    
+        </div>`)[0];
+    popup_ac196db2492446b74da21cdbb74fca43.setContent(html_d6fea43937d8b51d3fafe373b7b922af);
+
+
+
+    marker_45249fa3b902164c10998795c2348b5b.bindPopup(popup_ac196db2492446b74da21cdbb74fca43)
+        ;
+
+
+
+
+    var poly_line_1a2e892836e879d624825d08a210c6a4 = L.polyline(
+        [[37.760072, 38.276462], [39.933364, 32.859742]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_82be80d2cec49cb233dec8f8082cc0f0 = L.polyline(
+        [[38.750714, 30.556692], [39.933364, 32.859742]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_0324f6e1be1e357ee2c1b8883f334586 = L.polyline(
+        [[39.719089, 43.051833], [39.933364, 32.859742]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_f7f9391477f294aa50f65bbacdbca460 = L.polyline(
+        [[40.651676, 35.835315], [39.933364, 32.859742]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_e4d7b99eb591abb789cf73e4d92d3476 = L.polyline(
+        [[39.933364, 32.859742], [36.896896, 30.713323]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_1f4d2b2d6810bdd33b231cb20f4b7010 = L.polyline(
+        [[39.933364, 32.859742], [41.183516, 41.820231]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_eb3e6fea7f6aa22d821a609f714b5592 = L.polyline(
+        [[39.933364, 32.859742], [37.849774, 27.845708]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_950c8d373f7a0661733f15a353e40e8b = L.polyline(
+        [[39.933364, 32.859742], [39.648369, 27.88261]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_fbfb7019d8aadcccbb4fb88cb4856bce = L.polyline(
+        [[39.933364, 32.859742], [40.142825, 29.979322]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_668ae0754ee7b076edeb82568bef77ad = L.polyline(
+        [[39.933364, 32.859742], [38.885349, 40.49818]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_afc5e698682d42c1bb6e200e7ab29539 = L.polyline(
+        [[39.933364, 32.859742], [38.39433, 42.123699]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_37fa46eb942c0a7c478d0414a55f118b = L.polyline(
+        [[39.933364, 32.859742], [40.735483, 31.606795]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_18a1032c8911dbd6fcf55aafdf46c9e6 = L.polyline(
+        [[39.933364, 32.859742], [37.720979, 30.290277]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_a74696b51b7dac80a5da41fe161da4fd = L.polyline(
+        [[39.933364, 32.859742], [40.155312, 26.41416]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_65220089b2ce7a3588b20aeb74de33d7 = L.polyline(
+        [[39.933364, 32.859742], [40.598728, 33.615257]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_870922d7ea3440945ecdb773798c8d43 = L.polyline(
+        [[39.933364, 32.859742], [40.550556, 34.955556]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_f431fd8680376688a37d83bd4c8972d0 = L.polyline(
+        [[39.933364, 32.859742], [37.774929, 29.087509]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_89572d65f13646677effb96ff3487cbe = L.polyline(
+        [[39.933364, 32.859742], [41.677191, 26.555968]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_fadcfc50645eb7613aded1da6b1ed340 = L.polyline(
+        [[39.933364, 32.859742], [38.674761, 39.222576]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_17d9c7c1a9cfa9247963fdd576223e6b = L.polyline(
+        [[39.933364, 32.859742], [39.75, 39.5]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_19d630928571a9217bbe94f599b7e3c1 = L.polyline(
+        [[39.933364, 32.859742], [39.9, 41.27]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_d2c05183d9f9d7eedecd8a4d6d09fdaf = L.polyline(
+        [[39.933364, 32.859742], [37.06622, 37.38332]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_65ba6ebc9b6885cdd2d3ebc61e717032 = L.polyline(
+        [[39.933364, 32.859742], [40.912811, 38.389533]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_290572c7b60a219a9c318cfad72c5d23 = L.polyline(
+        [[39.933364, 32.859742], [40.43806, 39.50861]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_c8218c8c86049ace5c2ed48cfab70327 = L.polyline(
+        [[39.933364, 32.859742], [37.574478, 43.740833]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_2947107e47389cb48d9b573c2ecb30e8 = L.polyline(
+        [[39.933364, 32.859742], [36.401824, 36.349809]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_d97c9c4c9fa33d6bd82c54725835a25e = L.polyline(
+        [[39.933364, 32.859742], [37.770202, 30.55808]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_fa4716561d460120918fe3a1fab72713 = L.polyline(
+        [[39.933364, 32.859742], [36.795068, 34.617739]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_c9fbe37c5194a4da5a37210deb3eb1ca = L.polyline(
+        [[39.933364, 32.859742], [40.601911, 43.097751]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_fbef13d4626a4b03715a91c2184c746c = L.polyline(
+        [[39.933364, 32.859742], [41.388713, 33.78273]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_8b4c325368333cd9faf32df885cafb75 = L.polyline(
+        [[39.933364, 32.859742], [38.733334, 35.483765]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_ca3ca41fe49059e3ac5b8fc252943f95 = L.polyline(
+        [[39.933364, 32.859742], [41.733334, 27.216667]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_c92893ef256856d976a252cab0b15a97 = L.polyline(
+        [[39.933364, 32.859742], [39.145561, 34.163497]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_f9c06d87de0539a2b55691a678a21506 = L.polyline(
+        [[39.933364, 32.859742], [40.85327, 29.88152]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_f601e697d5c9cc4c9fd6175d4cc89cbe = L.polyline(
+        [[39.933364, 32.859742], [37.871422, 32.503975]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_6d65bf5c0539f9b05527ecd0dfa50725 = L.polyline(
+        [[39.933364, 32.859742], [39.424702, 29.983864]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_4751752e736fc7022d14e3ab43443597 = L.polyline(
+        [[39.933364, 32.859742], [38.355518, 38.309118]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_ef16905c7dff6ca078867d86b0b138bf = L.polyline(
+        [[39.933364, 32.859742], [38.613838, 27.425384]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_1429aa62f8991bbc354dfeca0c684858 = L.polyline(
+        [[39.933364, 32.859742], [37.574782, 36.93744]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_de4aabea3799709ae9d5c69075f7f1fd = L.polyline(
+        [[39.933364, 32.859742], [37.312236, 40.735112]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_0b2410aefdd725035052e4939d6c451b = L.polyline(
+        [[39.933364, 32.859742], [37.213333, 28.363611]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_cfb52cdef57f61c924531a28a2c4a189 = L.polyline(
+        [[39.933364, 32.859742], [38.746667, 41.496944]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_0e1cf5c31e3aade43a4b0fe833d3fff5 = L.polyline(
+        [[39.933364, 32.859742], [38.693333, 34.68505]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_7ef6df909c96c61c4d2b0b7c90814378 = L.polyline(
+        [[39.933364, 32.859742], [37.966667, 34.683333]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_2e515ba2ad3492b8804785c0d8a70c9a = L.polyline(
+        [[39.933364, 32.859742], [40.983334, 37.883331]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_3f95afea7e80622dcb2af4abe40edb2c = L.polyline(
+        [[39.933364, 32.859742], [40.894825, 40.983535]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_93bd74ab2abc79e132577b75f911915f = L.polyline(
+        [[39.933364, 32.859742], [40.76078, 30.378139]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_568c0a68dd3837db9746233ad197a813 = L.polyline(
+        [[39.933364, 32.859742], [41.28667, 36.330002]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_c9eee507b920112f1cab4537e0bbce90 = L.polyline(
+        [[39.933364, 32.859742], [37.927251, 41.94471]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_1d1008cbf51da88c8b8e745ca9d97f07 = L.polyline(
+        [[39.933364, 32.859742], [42.026422, 35.155075]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_fac60a436e507a1b96c34fe2315a8a8c = L.polyline(
+        [[39.933364, 32.859742], [40.983334, 27.516666]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_8b4364240cc0a5dcbc10db956cf49790 = L.polyline(
+        [[39.933364, 32.859742], [40.313889, 36.554722]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_e6fa587880fbe39492faf6e7cc768d60 = L.polyline(
+        [[39.933364, 32.859742], [41.00527, 39.72472]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_c6edded8fb8a9217574bd17d3e6db874 = L.polyline(
+        [[39.933364, 32.859742], [39.10889, 39.548611]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_03d13dbcedb03502645c665f9d77dee2 = L.polyline(
+        [[39.933364, 32.859742], [37.16708, 38.793919]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_803ee2c042c0f7d67c3d710c42826b01 = L.polyline(
+        [[39.933364, 32.859742], [38.674339, 29.405919]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_f862ca9a5540e27366039139a6e9105e = L.polyline(
+        [[39.933364, 32.859742], [37.517879, 42.457775]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_7acd2bf07fecea352a0bb27a35bf1eaf = L.polyline(
+        [[39.933364, 32.859742], [41.636967, 32.337502]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_8ae6da6fd5768a07073bcd5f9a87bc1e = L.polyline(
+        [[39.933364, 32.859742], [41.110458, 42.702223]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_c22b8d8869f829c8ee41e7952f924780 = L.polyline(
+        [[39.933364, 32.859742], [39.923275, 44.045006]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+
+    var poly_line_5848f76c6152ffea0b3ee1c0775d49b2 = L.polyline(
+        [[39.933364, 32.859742], [40.655014, 29.275351]],
+        { "bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 1 }
+    ).addTo(map_5128e817b2bab9a5001bcb898df6bf99);
+
+</script>
+
+</html>

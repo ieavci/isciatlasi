@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;1,400&display=swap');
+
+        :root {
+            --lacivert: #222831;
+            --gri: #393E46;
+            --mavi: #00ADB5;
+            --beyaz: #EEEEEE;
+            --normal-font: 'Ubuntu', serif;
+        }
+    </style>
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css" />
+
+    <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>
+        #map_5fe12cb20a31f003f7e1a8ee59f14db9 {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+
+        .leaflet-container {
+            font-size: 1rem;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
+
+        :root {
+            --lg-font: 'Kaisei Tokumin', serif;
+            --sm-font: 'Poppins', sans-serif;
+            --red: #af0006;
+            --mavi: #346EAA;
+            --beyaz: #FFFFFF;
+            --turuncu: #EF4040;
+
+        }
+
+        .btn-ozel {
+
+            background-color: var(--turuncu);
+            color: var(--beyaz);
+        }
+
+        .btn-ozel:hover {
+            background-color: var(--red);
+            color: var(--beyaz);
+        }
+
+
+
+        .leaflet-popup-content-wrapper {
+            width: 20rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <%- include("../partials/nav") %>
+        <div class="text-center" style="margin-top: 104px;">
+            <h2 class="text-center fw-bold"> 2021 Yılı İstihdamın Bölgelere Göre Sektörel
+                Dağılımı</h2>
+
+            <a class="text-center btn btn-ozel" href="/sektorHarita/sektorMap2022">2022 Yılı Verilerine Gözat</a>
+        </div>
+        <div class="container w-100 h-100 my-4 ">
+            <div class="folium-map" id="map_5fe12cb20a31f003f7e1a8ee59f14db9"></div>
+        </div>
+        <%- include("../partials/footer") %>
+</body>
+<script>
+
+
+    var map_5fe12cb20a31f003f7e1a8ee59f14db9 = L.map(
+        "map_5fe12cb20a31f003f7e1a8ee59f14db9",
+        {
+            center: [39.0, 35.0],
+            crs: L.CRS.EPSG3857,
+            zoom: 6,
+            zoomControl: true,
+            preferCanvas: false,
+        }
+    );
+
+
+
+
+
+    var tile_layer_fbab274fb94bc12381a4db55e0d3b4b8 = L.tileLayer(
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        { "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false }
+    );
+
+
+    tile_layer_fbab274fb94bc12381a4db55e0d3b4b8.addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var marker_c5865010beb7d8237d95c15a2f83f614 = L.marker(
+        [41.0082, 28.9784],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_ab0aadbef3420dcb6d111e8546ad15d5 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_c5865010beb7d8237d95c15a2f83f614.setIcon(icon_ab0aadbef3420dcb6d111e8546ad15d5);
+
+
+    var popup_ae8677235994445780d816d7a83541c6 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_6f34f451c7bd06a0977e3274d07daf87 = $(`<div id="html_6f34f451c7bd06a0977e3274d07daf87" style="width: 100.0%; height: 100.0%;">TR10 (Istanbul)<br>Toplam: 5 781<br>Tarım: 0,5%<br>Sanayi: 31,9%<br>Hizmetler: 67,7%</div>`)[0];
+    popup_ae8677235994445780d816d7a83541c6.setContent(html_6f34f451c7bd06a0977e3274d07daf87);
+
+
+
+    marker_c5865010beb7d8237d95c15a2f83f614.bindPopup(popup_ae8677235994445780d816d7a83541c6)
+        ;
+
+
+
+
+    var marker_841020c4b37541dab515459ca6d71f01 = L.marker(
+        [41.2867, 36.33],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_d7d65860a585eb84db70dee064d35d95 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_841020c4b37541dab515459ca6d71f01.setIcon(icon_d7d65860a585eb84db70dee064d35d95);
+
+
+    var popup_6436600bdb0eac82ff47bead53716e6f = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_76033ea8239057df35c1d43f97791a29 = $(`<div id="html_76033ea8239057df35c1d43f97791a29" style="width: 100.0%; height: 100.0%;">TR21 (Tekirdag, Edirne, Kirklareli)<br>Toplam: 778<br>Tarım: 15,8%<br>Sanayi: 37,3%<br>Hizmetler: 46,9%</div>`)[0];
+    popup_6436600bdb0eac82ff47bead53716e6f.setContent(html_76033ea8239057df35c1d43f97791a29);
+
+
+
+    marker_841020c4b37541dab515459ca6d71f01.bindPopup(popup_6436600bdb0eac82ff47bead53716e6f)
+        ;
+
+
+
+
+    var marker_8635b35bc48daf0cf68da3d2236107f8 = L.marker(
+        [39.6484, 27.8826],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_add84cc71cc1fa73498a5e38a1d6a305 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_8635b35bc48daf0cf68da3d2236107f8.setIcon(icon_add84cc71cc1fa73498a5e38a1d6a305);
+
+
+    var popup_ab2f6b5705f3de16b6cbc5ccb892a41e = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_01059c9cfacf6e7786873c3b7d33c886 = $(`<div id="html_01059c9cfacf6e7786873c3b7d33c886" style="width: 100.0%; height: 100.0%;">TR22 (Balikesir, Canakkale)<br>Toplam: 661<br>Tarım: 24,1%<br>Sanayi: 22,9%<br>Hizmetler: 53,1%</div>`)[0];
+    popup_ab2f6b5705f3de16b6cbc5ccb892a41e.setContent(html_01059c9cfacf6e7786873c3b7d33c886);
+
+
+
+    marker_8635b35bc48daf0cf68da3d2236107f8.bindPopup(popup_ab2f6b5705f3de16b6cbc5ccb892a41e)
+        ;
+
+
+
+
+    var marker_45b8b4be36ee073238577b946ebe87b7 = L.marker(
+        [38.4192, 27.1287],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_6d4f73319714d870a01d1a6d09b9cdb2 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_45b8b4be36ee073238577b946ebe87b7.setIcon(icon_6d4f73319714d870a01d1a6d09b9cdb2);
+
+
+    var popup_f4147a67bde081f2b90c650d9d7767a9 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_b60b816b83a3304a7ffd7a4556f1ab0f = $(`<div id="html_b60b816b83a3304a7ffd7a4556f1ab0f" style="width: 100.0%; height: 100.0%;">TR31 (Izmir)<br>Toplam: 1 588<br>Tarım: 9%<br>Sanayi: 32,9%<br>Hizmetler: 58,1%</div>`)[0];
+    popup_f4147a67bde081f2b90c650d9d7767a9.setContent(html_b60b816b83a3304a7ffd7a4556f1ab0f);
+
+
+
+    marker_45b8b4be36ee073238577b946ebe87b7.bindPopup(popup_f4147a67bde081f2b90c650d9d7767a9)
+        ;
+
+
+
+
+    var marker_fafd862105241ecc89be11364316f9a5 = L.marker(
+        [37.8483, 27.8455],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_074f304f7452efed3d351603811b5fa0 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_fafd862105241ecc89be11364316f9a5.setIcon(icon_074f304f7452efed3d351603811b5fa0);
+
+
+    var popup_dfa93724188651d0941e794191854517 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_02e5eea68ca5fe8053cb0e12579bc714 = $(`<div id="html_02e5eea68ca5fe8053cb0e12579bc714" style="width: 100.0%; height: 100.0%;">TR32 (Aydin, Denizli, Mugla)<br>Toplam: 1 211<br>Tarım: 22,4%<br>Sanayi: 24,5%<br>Hizmetler: 53,2%</div>`)[0];
+    popup_dfa93724188651d0941e794191854517.setContent(html_02e5eea68ca5fe8053cb0e12579bc714);
+
+
+
+    marker_fafd862105241ecc89be11364316f9a5.bindPopup(popup_dfa93724188651d0941e794191854517)
+        ;
+
+
+
+
+    var marker_158fa2e7596c91a68ddd3bc51eb10bb4 = L.marker(
+        [38.7637, 30.5387],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_63ee376c537e91699a45dbbb3d21259e = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_158fa2e7596c91a68ddd3bc51eb10bb4.setIcon(icon_63ee376c537e91699a45dbbb3d21259e);
+
+
+    var popup_5768015f4865abc919a1db8a03e5b4c8 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_1f0cbdf3c461032810819cd88f999796 = $(`<div id="html_1f0cbdf3c461032810819cd88f999796" style="width: 100.0%; height: 100.0%;">TR33 (Manisa, Afyonkarahisar, Kutahya, Usak)<br>Toplam: 1 169<br>Tarım: 30,8%<br>Sanayi: 30,7%<br>Hizmetler: 38,5%</div>`)[0];
+    popup_5768015f4865abc919a1db8a03e5b4c8.setContent(html_1f0cbdf3c461032810819cd88f999796);
+
+
+
+    marker_158fa2e7596c91a68ddd3bc51eb10bb4.bindPopup(popup_5768015f4865abc919a1db8a03e5b4c8)
+        ;
+
+
+
+
+    var marker_997777585e2ecc8593c183376649fe7f = L.marker(
+        [40.1885, 29.061],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_077afb06fd4543761969361293278a2c = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_997777585e2ecc8593c183376649fe7f.setIcon(icon_077afb06fd4543761969361293278a2c);
+
+
+    var popup_2d8f5cc6876e704210109399463ffa31 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_a5ea5ea6a66203d807d0b6eb26006d74 = $(`<div id="html_a5ea5ea6a66203d807d0b6eb26006d74" style="width: 100.0%; height: 100.0%;">TR41 (Bursa, Eskisehir, Bilecik)<br>Toplam: 1 579<br>Tarım: 9,3%<br>Sanayi: 40,4%<br>Hizmetler: 50,3%</div>`)[0];
+    popup_2d8f5cc6876e704210109399463ffa31.setContent(html_a5ea5ea6a66203d807d0b6eb26006d74);
+
+
+
+    marker_997777585e2ecc8593c183376649fe7f.bindPopup(popup_2d8f5cc6876e704210109399463ffa31)
+        ;
+
+
+
+
+    var marker_1efbe0f15f30e20efef5d28bbaa6c7af = L.marker(
+        [40.8533, 29.8815],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_0ec486c79f18cc492ab7e1c1ce1aaaa1 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_1efbe0f15f30e20efef5d28bbaa6c7af.setIcon(icon_0ec486c79f18cc492ab7e1c1ce1aaaa1);
+
+
+    var popup_cc41e45a16ba8e532076d53496db6c8f = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_3e7feb5dc6c1ede1e2a00946e9552956 = $(`<div id="html_3e7feb5dc6c1ede1e2a00946e9552956" style="width: 100.0%; height: 100.0%;">TR42 (Kocaeli, Sakarya, Duzce, Bolu, Yalova)<br>Toplam: 1 474<br>Tarım: 13,4%<br>Sanayi: 37,4%<br>Hizmetler: 49,2%</div>`)[0];
+    popup_cc41e45a16ba8e532076d53496db6c8f.setContent(html_3e7feb5dc6c1ede1e2a00946e9552956);
+
+
+
+    marker_1efbe0f15f30e20efef5d28bbaa6c7af.bindPopup(popup_cc41e45a16ba8e532076d53496db6c8f)
+        ;
+
+
+
+
+    var marker_68ddcfa5cea3e36fe345a5bca9554229 = L.marker(
+        [39.9334, 32.8597],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_004cc89d98c772828cdedff1e8c0493d = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_68ddcfa5cea3e36fe345a5bca9554229.setIcon(icon_004cc89d98c772828cdedff1e8c0493d);
+
+
+    var popup_18d8751cdb0d1ba419b79e3f45a06518 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_052d3dbaa6cb6e6298439ee1e61ebfb1 = $(`<div id="html_052d3dbaa6cb6e6298439ee1e61ebfb1" style="width: 100.0%; height: 100.0%;">TR51 (Ankara)<br>Toplam: 2 027<br>Tarım: 3,8%<br>Sanayi: 24,5%<br>Hizmetler: 71,7%</div>`)[0];
+    popup_18d8751cdb0d1ba419b79e3f45a06518.setContent(html_052d3dbaa6cb6e6298439ee1e61ebfb1);
+
+
+
+    marker_68ddcfa5cea3e36fe345a5bca9554229.bindPopup(popup_18d8751cdb0d1ba419b79e3f45a06518)
+        ;
+
+
+
+
+    var marker_db08b23b61df312d898923f4bde4704d = L.marker(
+        [37.8746, 32.4934],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_6e31954e60c2b932f222adf9cecbc6be = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_db08b23b61df312d898923f4bde4704d.setIcon(icon_6e31954e60c2b932f222adf9cecbc6be);
+
+
+    var popup_7820fdb6f2fda27c066db8e7570c5167 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_45ece496cad16844c4d10e2782d1fea4 = $(`<div id="html_45ece496cad16844c4d10e2782d1fea4" style="width: 100.0%; height: 100.0%;">TR52 (Konya, Karaman)<br>Toplam: 855<br>Tarım: 25,4%<br>Sanayi: 30,3%<br>Hizmetler: 44,3%</div>`)[0];
+    popup_7820fdb6f2fda27c066db8e7570c5167.setContent(html_45ece496cad16844c4d10e2782d1fea4);
+
+
+
+    marker_db08b23b61df312d898923f4bde4704d.bindPopup(popup_7820fdb6f2fda27c066db8e7570c5167)
+        ;
+
+
+
+
+    var marker_467d329504ad44465d53e91f012bff54 = L.marker(
+        [36.8969, 30.7133],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_d98d09b16de91ff6cb9036642193f122 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_467d329504ad44465d53e91f012bff54.setIcon(icon_d98d09b16de91ff6cb9036642193f122);
+
+
+    var popup_d58d5a1462ad0e8eafbc968336b036b5 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_5ef829916c5dfd31a565f483e422c991 = $(`<div id="html_5ef829916c5dfd31a565f483e422c991" style="width: 100.0%; height: 100.0%;">TR61 (Antalya, Isparta, Burdur)<br>Toplam: 1 257<br>Tarım: 20%<br>Sanayi: 15,9%<br>Hizmetler: 64,2%</div>`)[0];
+    popup_d58d5a1462ad0e8eafbc968336b036b5.setContent(html_5ef829916c5dfd31a565f483e422c991);
+
+
+
+    marker_467d329504ad44465d53e91f012bff54.bindPopup(popup_d58d5a1462ad0e8eafbc968336b036b5)
+        ;
+
+
+
+
+    var marker_6c3f4b06dec2fe58f637b899694d1422 = L.marker(
+        [37.0, 35.3213],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_9b5f24f64934988d13ce3fb25fc6962f = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_6c3f4b06dec2fe58f637b899694d1422.setIcon(icon_9b5f24f64934988d13ce3fb25fc6962f);
+
+
+    var popup_b6230045c8e120479c8a235b692ca6b3 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_7cdc074a1c76366f0902e849e5c767ef = $(`<div id="html_7cdc074a1c76366f0902e849e5c767ef" style="width: 100.0%; height: 100.0%;">TR62 (Adana, Mersin)<br>Toplam: 1 371<br>Tarım: 19%<br>Sanayi: 22,5%<br>Hizmetler: 58,5%</div>`)[0];
+    popup_b6230045c8e120479c8a235b692ca6b3.setContent(html_7cdc074a1c76366f0902e849e5c767ef);
+
+
+
+    marker_6c3f4b06dec2fe58f637b899694d1422.bindPopup(popup_b6230045c8e120479c8a235b692ca6b3)
+        ;
+
+
+
+
+    var marker_c0df9320a2712fd12373a5dc3c7a1c58 = L.marker(
+        [37.074, 36.2462],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_f56ecccfd580976ba872f2f1746dfffc = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_c0df9320a2712fd12373a5dc3c7a1c58.setIcon(icon_f56ecccfd580976ba872f2f1746dfffc);
+
+
+    var popup_745ad19c573db06e47cb4f7fd49b1132 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_7de61f84c0efed20315dad4ad941a8cb = $(`<div id="html_7de61f84c0efed20315dad4ad941a8cb" style="width: 100.0%; height: 100.0%;">TR63 (Hatay, Kahramanmaras, Osmaniye)<br>Toplam: 957<br>Tarım: 19,8%<br>Sanayi: 26%<br>Hizmetler: 54,3%</div>`)[0];
+    popup_745ad19c573db06e47cb4f7fd49b1132.setContent(html_7de61f84c0efed20315dad4ad941a8cb);
+
+
+
+    marker_c0df9320a2712fd12373a5dc3c7a1c58.bindPopup(popup_745ad19c573db06e47cb4f7fd49b1132)
+        ;
+
+
+
+
+    var marker_a128605fca938b3c61fff7b531546d9c = L.marker(
+        [38.3686, 34.0292],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_19752cab98bed869e6096547e1e46218 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_a128605fca938b3c61fff7b531546d9c.setIcon(icon_19752cab98bed869e6096547e1e46218);
+
+
+    var popup_298c50d7dba1c7a6f7a39b9be6bfd400 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_dc4704b0c4a24da8b4952a15ded20d8b = $(`<div id="html_dc4704b0c4a24da8b4952a15ded20d8b" style="width: 100.0%; height: 100.0%;">TR71 (Kirikkale, Aksaray, Nigde, Nevsehir, Kirsehir)<br>Toplam: 526<br>Tarım: 29%<br>Sanayi: 20%<br>Hizmetler: 51%</div>`)[0];
+    popup_298c50d7dba1c7a6f7a39b9be6bfd400.setContent(html_dc4704b0c4a24da8b4952a15ded20d8b);
+
+
+
+    marker_a128605fca938b3c61fff7b531546d9c.bindPopup(popup_298c50d7dba1c7a6f7a39b9be6bfd400)
+        ;
+
+
+
+
+    var marker_3a7434bed7159221a5942d1c474775ae = L.marker(
+        [38.7225, 35.4853],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_f1a0c378990d9927f6ca5ce6d8607926 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_3a7434bed7159221a5942d1c474775ae.setIcon(icon_f1a0c378990d9927f6ca5ce6d8607926);
+
+
+    var popup_0a34cc231842688d128f2708591d6698 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_cd294b928725503e42aab30a06366e5d = $(`<div id="html_cd294b928725503e42aab30a06366e5d" style="width: 100.0%; height: 100.0%;">TR72 (Kayseri, Sivas, Yozgat)<br>Toplam: 791<br>Tarım: 20,3%<br>Sanayi: 27,4%<br>Hizmetler: 52,3%</div>`)[0];
+    popup_0a34cc231842688d128f2708591d6698.setContent(html_cd294b928725503e42aab30a06366e5d);
+
+
+
+    marker_3a7434bed7159221a5942d1c474775ae.bindPopup(popup_0a34cc231842688d128f2708591d6698)
+        ;
+
+
+
+
+    var marker_4e83683d3d0745d99854c8189d24f6d6 = L.marker(
+        [41.4564, 31.7987],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_37937425ad298c1c268f1203a3e89dee = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_4e83683d3d0745d99854c8189d24f6d6.setIcon(icon_37937425ad298c1c268f1203a3e89dee);
+
+
+    var popup_efbef328e538a86e55e57f6369ddd41f = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_aa8bae17d41891c77c3867d7c90bfb94 = $(`<div id="html_aa8bae17d41891c77c3867d7c90bfb94" style="width: 100.0%; height: 100.0%;">TR81 (Zonguldak, Karabuk, Bartin)<br>Toplam: 362<br>Tarım: 24,7%<br>Sanayi: 27,8%<br>Hizmetler: 47,5%</div>`)[0];
+    popup_efbef328e538a86e55e57f6369ddd41f.setContent(html_aa8bae17d41891c77c3867d7c90bfb94);
+
+
+
+    marker_4e83683d3d0745d99854c8189d24f6d6.bindPopup(popup_efbef328e538a86e55e57f6369ddd41f)
+        ;
+
+
+
+
+    var marker_a6b9291e37bf34fa278c8408ecb5e369 = L.marker(
+        [41.3887, 33.7827],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_2297991126617f4a9559bd0b2efa1ee9 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_a6b9291e37bf34fa278c8408ecb5e369.setIcon(icon_2297991126617f4a9559bd0b2efa1ee9);
+
+
+    var popup_066f93b266024f64e564dfd86ebfdb62 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_4744ee1b39ae0656d70329e0bd6d54b1 = $(`<div id="html_4744ee1b39ae0656d70329e0bd6d54b1" style="width: 100.0%; height: 100.0%;">TR82 (Kastamonu, Cankiri, Sinop)<br>Toplam: 309<br>Tarım: 38,6%<br>Sanayi: 18,5%<br>Hizmetler: 42,9%</div>`)[0];
+    popup_066f93b266024f64e564dfd86ebfdb62.setContent(html_4744ee1b39ae0656d70329e0bd6d54b1);
+
+
+
+    marker_a6b9291e37bf34fa278c8408ecb5e369.bindPopup(popup_066f93b266024f64e564dfd86ebfdb62)
+        ;
+
+
+
+
+    var marker_b0d3efc6a258ada7b26a315d9c340bd9 = L.marker(
+        [41.2867, 36.33],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_4e221791811753982a96379eaab4f174 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_b0d3efc6a258ada7b26a315d9c340bd9.setIcon(icon_4e221791811753982a96379eaab4f174);
+
+
+    var popup_ddff8c4ce17a3fffdd405506af491445 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_0698818806b58b8884677261701b09fa = $(`<div id="html_0698818806b58b8884677261701b09fa" style="width: 100.0%; height: 100.0%;">TR83 (Samsun, Tokat, Corum, Amasya)<br>Toplam: 1 085<br>Tarım: 38,3%<br>Sanayi: 19,3%<br>Hizmetler: 42,4%</div>`)[0];
+    popup_ddff8c4ce17a3fffdd405506af491445.setContent(html_0698818806b58b8884677261701b09fa);
+
+
+
+    marker_b0d3efc6a258ada7b26a315d9c340bd9.bindPopup(popup_ddff8c4ce17a3fffdd405506af491445)
+        ;
+
+
+
+
+    var marker_b064430e789e6f577544facb82bef0a5 = L.marker(
+        [40.9128, 38.3895],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_2c95ae10c6d6be9f023faebd231fe8ba = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_b064430e789e6f577544facb82bef0a5.setIcon(icon_2c95ae10c6d6be9f023faebd231fe8ba);
+
+
+    var popup_9cbb88afdb6f3b00b0ab271a793cbde5 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_22d5136809ed1bcc72befdad69646b1c = $(`<div id="html_22d5136809ed1bcc72befdad69646b1c" style="width: 100.0%; height: 100.0%;">TR90 (Trabzon, Ordu, Giresun, Rize, Artvin, Gumushane)<br>Toplam: 1 048<br>Tarım: 40,7%<br>Sanayi: 16,8%<br>Hizmetler: 42,5%</div>`)[0];
+    popup_9cbb88afdb6f3b00b0ab271a793cbde5.setContent(html_22d5136809ed1bcc72befdad69646b1c);
+
+
+
+    marker_b064430e789e6f577544facb82bef0a5.bindPopup(popup_9cbb88afdb6f3b00b0ab271a793cbde5)
+        ;
+
+
+
+
+    var marker_10f64ac4208e124c0788cf0a5929af49 = L.marker(
+        [39.9043, 41.2675],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_5884d3ccb7f3eb8844554e78d1da8d1b = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_10f64ac4208e124c0788cf0a5929af49.setIcon(icon_5884d3ccb7f3eb8844554e78d1da8d1b);
+
+
+    var popup_787de0a72187f1578089e58e1a52f2c3 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_e7adc0917f22f345ad5d7814a84a13a3 = $(`<div id="html_e7adc0917f22f345ad5d7814a84a13a3" style="width: 100.0%; height: 100.0%;">TRA1 (Erzurum, Erzincan, Bayburt)<br>Toplam: 339<br>Tarım: 33,2%<br>Sanayi: 11,4%<br>Hizmetler: 55,5%</div>`)[0];
+    popup_787de0a72187f1578089e58e1a52f2c3.setContent(html_e7adc0917f22f345ad5d7814a84a13a3);
+
+
+
+    marker_10f64ac4208e124c0788cf0a5929af49.bindPopup(popup_787de0a72187f1578089e58e1a52f2c3)
+        ;
+
+
+
+
+    var marker_9daabefe8ce2caa2e711c4a5a4b3887e = L.marker(
+        [40.6167, 43.0975],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_5cf081720e0105ca4f9a904010192ec7 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_9daabefe8ce2caa2e711c4a5a4b3887e.setIcon(icon_5cf081720e0105ca4f9a904010192ec7);
+
+
+    var popup_5eb84c5d515f50e9cb13003cea80abcc = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_1168dd8805b60ab5dd5aaaddc3e35b35 = $(`<div id="html_1168dd8805b60ab5dd5aaaddc3e35b35" style="width: 100.0%; height: 100.0%;">TRA2 (Agri, Kars, Igdir, Ardahan)<br>Toplam: 330<br>Tarım: 52,1%<br>Sanayi: 12,8%<br>Hizmetler: 35,1%</div>`)[0];
+    popup_5eb84c5d515f50e9cb13003cea80abcc.setContent(html_1168dd8805b60ab5dd5aaaddc3e35b35);
+
+
+
+    marker_9daabefe8ce2caa2e711c4a5a4b3887e.bindPopup(popup_5eb84c5d515f50e9cb13003cea80abcc)
+        ;
+
+
+
+
+    var marker_77ac39bb13571b31db56ce754f2f3f1e = L.marker(
+        [38.6748, 39.2228],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_630451e0531afcac514f9f2e38e0891b = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_77ac39bb13571b31db56ce754f2f3f1e.setIcon(icon_630451e0531afcac514f9f2e38e0891b);
+
+
+    var popup_5c7c943142407664c6cdef73878c06d5 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_c2cbd3238337d12c760dc749ad53a267 = $(`<div id="html_c2cbd3238337d12c760dc749ad53a267" style="width: 100.0%; height: 100.0%;">TRB1 (Malatya, Elazig, Bingol, Tunceli)<br>Toplam: 587<br>Tarım: 29,1%<br>Sanayi: 19,1%<br>Hizmetler: 51,9%</div>`)[0];
+    popup_5c7c943142407664c6cdef73878c06d5.setContent(html_c2cbd3238337d12c760dc749ad53a267);
+
+
+
+    marker_77ac39bb13571b31db56ce754f2f3f1e.bindPopup(popup_5c7c943142407664c6cdef73878c06d5)
+        ;
+
+
+
+
+    var marker_dcbab7162c020f6f844d46e3c65204d8 = L.marker(
+        [37.576, 43.737],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_b23e818a86cee3af3e1b906306914815 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_dcbab7162c020f6f844d46e3c65204d8.setIcon(icon_b23e818a86cee3af3e1b906306914815);
+
+
+    var popup_95c0fd32561a5e7cd3ea9f96a2034cd2 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_a527b64f5ad7362b9c67f31e89e92251 = $(`<div id="html_a527b64f5ad7362b9c67f31e89e92251" style="width: 100.0%; height: 100.0%;">TRB2 (Van, Mus, Bitlis, Hakkari)<br>Toplam: 536<br>Tarım: 37,5%<br>Sanayi: 21,4%<br>Hizmetler: 41,1%</div>`)[0];
+    popup_95c0fd32561a5e7cd3ea9f96a2034cd2.setContent(html_a527b64f5ad7362b9c67f31e89e92251);
+
+
+
+    marker_dcbab7162c020f6f844d46e3c65204d8.bindPopup(popup_95c0fd32561a5e7cd3ea9f96a2034cd2)
+        ;
+
+
+
+
+    var marker_b051ee96152089c3e79104b3a5437f8c = L.marker(
+        [37.0662, 37.3833],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_6e222885faae7ea0aa57525000c26ff0 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_b051ee96152089c3e79104b3a5437f8c.setIcon(icon_6e222885faae7ea0aa57525000c26ff0);
+
+
+    var popup_f97b562ccd052fa15283708669882c4a = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_c9f8079211a1711c46ab5eb754b47169 = $(`<div id="html_c9f8079211a1711c46ab5eb754b47169" style="width: 100.0%; height: 100.0%;">TRC1 (Gaziantep, Adiyaman, Kilis)<br>Toplam: 871<br>Tarım: 19,1%<br>Sanayi: 32,4%<br>Hizmetler: 48,5%</div>`)[0];
+    popup_f97b562ccd052fa15283708669882c4a.setContent(html_c9f8079211a1711c46ab5eb754b47169);
+
+
+
+    marker_b051ee96152089c3e79104b3a5437f8c.bindPopup(popup_f97b562ccd052fa15283708669882c4a)
+        ;
+
+
+
+
+    var marker_8e01f670fd54ff924305e1f22673c90e = L.marker(
+        [37.1673, 38.7939],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_dfcb0462f0ebad4d0ec8d8222ebe0a87 = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_8e01f670fd54ff924305e1f22673c90e.setIcon(icon_dfcb0462f0ebad4d0ec8d8222ebe0a87);
+
+
+    var popup_4fc5ccfb7f392fb5729ebec1656f40bd = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_4e9fa9a27a04e369282bab61a9e73e0a = $(`<div id="html_4e9fa9a27a04e369282bab61a9e73e0a" style="width: 100.0%; height: 100.0%;">TRC2 (Sanliurfa, Diyarbakir)<br>Toplam: 854<br>Tarım: 31,8%<br>Sanayi: 23,4%<br>Hizmetler: 44,8%</div>`)[0];
+    popup_4fc5ccfb7f392fb5729ebec1656f40bd.setContent(html_4e9fa9a27a04e369282bab61a9e73e0a);
+
+
+
+    marker_8e01f670fd54ff924305e1f22673c90e.bindPopup(popup_4fc5ccfb7f392fb5729ebec1656f40bd)
+        ;
+
+
+
+
+    var marker_2681bf1254844014bae1fae90ec3a385 = L.marker(
+        [37.3212, 40.7245],
+        {}
+    ).addTo(map_5fe12cb20a31f003f7e1a8ee59f14db9);
+
+
+    var icon_8d9592346e1f86004394a913d8f4b7ce = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_2681bf1254844014bae1fae90ec3a385.setIcon(icon_8d9592346e1f86004394a913d8f4b7ce);
+
+
+    var popup_06a4e6975623aef689b7e6c8f6340898 = L.popup({ "maxWidth": "100%" });
+
+
+
+    var html_d714e99a73b83f2f0f7b9677765bc72d = $(`<div id="html_d714e99a73b83f2f0f7b9677765bc72d" style="width: 100.0%; height: 100.0%;">TRC3 (Mardin, Batman, Sirnak, Siirt)<br>Toplam: 453<br>Tarım: 15,1%<br>Sanayi: 22,9%<br>Hizmetler: 62%</div>`)[0];
+    popup_06a4e6975623aef689b7e6c8f6340898.setContent(html_d714e99a73b83f2f0f7b9677765bc72d);
+
+
+
+    marker_2681bf1254844014bae1fae90ec3a385.bindPopup(popup_06a4e6975623aef689b7e6c8f6340898)
+        ;
+
+
+
+</script>
+
+</html>

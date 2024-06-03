@@ -188,6 +188,17 @@ router.use("/sendikalar", async function (req, res) {
     }
 
 });
+router.use("/sendikaHarita", async function (req, res) {
+    
+    try {
+        res.render("sendikaGraphs/sendikaHarita.ejs", {
+            
+        });
+
+    } catch (error) {
+        console.log(error)
+    }
+});
 router.use("/graphs/graphs", async function (req, res) {
     
     try {
@@ -199,6 +210,18 @@ router.use("/graphs/graphs", async function (req, res) {
         console.log(error)
     }
 });
+router.use("/graphs/sendikaGraphs", async function (req, res) {
+    
+    try {
+        res.render("sendikaGraphs/network_graphB.ejs", {
+            
+        });
+
+    } catch (error) {
+        console.log(error)
+    }
+});
+
 router.use("/graphs/network_2021", async function (req, res) {
     
     try {
@@ -236,6 +259,28 @@ router.use("/graphs/network_labor_force", async function (req, res) {
     
     try {
         res.render("graphs/network_labor_force.ejs", {
+            
+        });
+
+    } catch (error) {
+        console.log(error)
+    }
+});
+router.use("/sektorHarita/sektorMap2021", async function (req, res) {
+    
+    try {
+        res.render("sektorHarita/turkey_map_2021.ejs", {
+            
+        });
+
+    } catch (error) {
+        console.log(error)
+    }
+});
+router.use("/sektorHarita/sektorMap2022", async function (req, res) {
+    
+    try {
+        res.render("sektorHarita/turkey_map_2022.ejs", {
             
         });
 
