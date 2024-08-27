@@ -15,7 +15,7 @@ Bu proje [ISC lisansı](https://opensource.org/licenses/ISC) altında lisanslanm
 Soru veya geri bildirimleriniz için aşağıdaki iletişim bilgilerini kullanabilirsiniz:
 
 - GitHub: [ieavci/Labor-Rights](https://github.com/ieavci/Labor-Rights)
-- Hata bildirimleri için: [LinkedIn](www.linkedin.com/in/ismail-avci-tr)
+- Hata bildirimleri için: [LinkedIn](https://www.linkedin.com/in/ismail-avci-tr)
 
   
 ### Gereksinimler
